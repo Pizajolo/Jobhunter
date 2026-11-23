@@ -1,8 +1,186 @@
 {
-  "nav": { "skip": "Saltar al contenido", "menu": "Menú", "main": "Principal", "pipeline": "Pipeline", "approvals": "Aprobaciones", "review": "Cola de revisión", "inbox": "Bandeja de entrada", "stats": "Estadísticas", "profile": "Perfil", "settings": "Ajustes", "diagnostics": "Diagnóstico", "agent": "Agente", "model": "Modelo", "email": "Correo", "nextScan": "Próximo escaneo", "agentSettings": "Ajustes del agente" },
-  "common": { "connected": "Conectado", "notConnected": "No conectado", "save": "Guardar", "cancel": "Cancelar", "saved": "Guardado", "delete": "Eliminar", "edit": "Editar", "confirm": "Confirmar", "back": "Atrás", "next": "Siguiente", "skip": "Omitir", "loading": "Cargando…", "close": "Cerrar", "yes": "Sí", "no": "No", "add": "Añadir", "remove": "Quitar", "none": "Ninguno", "retry": "Reintentar", "search": "Buscar" },
-  "pages": { "pipeline": "Pipeline", "job_detail": "Vacante", "approvals": "Aprobaciones", "review_queue": "Cola de revisión", "inbox": "Bandeja de entrada", "stats": "Estadísticas", "profile": "Perfil", "settings": "Ajustes", "diagnostics": "Diagnóstico", "onboarding": "Bienvenido a Jobhunter", "login": "Iniciar sesión" },
-  "chat": { "open": "Chat", "close": "Cerrar chat", "title": "Chatear con Jobhunter", "hint": "Haz preguntas (\"¿Qué candidaturas tienen más de 3 semanas?\") o pide cambios (\"busca también climate tech en Lisboa\"). Los cambios se muestran primero para que los confirmes.", "placeholder": "Pregunta o dile algo a Jobhunter…", "send": "Enviar", "thinking": "Pensando…", "apply": "Aplicar cambio", "reject": "Descartar", "status": { "pending": "Esperando tu decisión", "applied": "Aplicado", "rejected": "Descartado" } },
-  "notifications": { "title": "Notificaciones ({{count}} sin leer)", "empty": "Aún no hay notificaciones." },
-  "diff": { "none": "Sin cambios." }
+  "nav": {
+    "skip": "Saltar al contenido",
+    "menu": "Menú",
+    "main": "Principal",
+    "pipeline": "Pipeline",
+    "approvals": "Aprobaciones",
+    "review": "Cola de revisión",
+    "inbox": "Bandeja de entrada",
+    "stats": "Estadísticas",
+    "profile": "Perfil",
+    "settings": "Ajustes",
+    "diagnostics": "Diagnóstico",
+    "agent": "Agente",
+    "model": "Modelo",
+    "email": "Correo",
+    "nextScan": "Próximo escaneo",
+    "agentSettings": "Ajustes del agente"
+  },
+  "common": {
+    "connected": "Conectado",
+    "notConnected": "No conectado",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "saved": "Guardado",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "confirm": "Confirmar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "skip": "Omitir",
+    "loading": "Cargando…",
+    "close": "Cerrar",
+    "yes": "Sí",
+    "no": "No",
+    "add": "Añadir",
+    "remove": "Quitar",
+    "none": "Ninguno",
+    "retry": "Reintentar",
+    "search": "Buscar"
+  },
+  "pages": {
+    "pipeline": "Pipeline",
+    "job_detail": "Vacante",
+    "approvals": "Aprobaciones",
+    "review_queue": "Cola de revisión",
+    "inbox": "Bandeja de entrada",
+    "stats": "Estadísticas",
+    "profile": "Perfil",
+    "settings": "Ajustes",
+    "diagnostics": "Diagnóstico",
+    "onboarding": "Bienvenido a Jobhunter",
+    "login": "Iniciar sesión"
+  },
+  "chat": {
+    "open": "Chat",
+    "close": "Cerrar chat",
+    "title": "Chatear con Jobhunter",
+    "hint": "Haz preguntas (\"¿Qué candidaturas tienen más de 3 semanas?\") o pide cambios (\"busca también climate tech en Lisboa\"). Los cambios se muestran primero para que los confirmes.",
+    "placeholder": "Pregunta o dile algo a Jobhunter…",
+    "send": "Enviar",
+    "thinking": "Pensando…",
+    "apply": "Aplicar cambio",
+    "reject": "Descartar",
+    "status": {
+      "pending": "Esperando tu decisión",
+      "applied": "Aplicado",
+      "rejected": "Descartado"
+    }
+  },
+  "notifications": {
+    "title": "Notificaciones ({{count}} sin leer)",
+    "empty": "Aún no hay notificaciones."
+  },
+  "diff": {
+    "none": "Sin cambios."
+  },
+  "claude": {
+    "method": "Cómo se comunica Jobhunter con Claude",
+    "default": "Predeterminado",
+    "experimental": "Experimental, sin soporte",
+    "status": "Estado",
+    "modes": {
+      "subscription": {
+        "title": "Mi suscripción a Claude",
+        "desc": "Usa tu propio plan Claude Pro/Max mediante el inicio de sesión oficial de Claude Code. Jobhunter nunca ve tus credenciales."
+      },
+      "api_key": {
+        "title": "Clave de API de Anthropic",
+        "desc": "Tu propia clave de la Claude Console, guardada en el llavero del sistema. Se cobra por token en tu cuenta."
+      },
+      "compatible": {
+        "title": "Proveedor compatible con Anthropic",
+        "desc": "Otro proveedor con API compatible con Anthropic (por ejemplo Kimi o GLM): URL base más tu clave de ese proveedor."
+      },
+      "openai_proxy": {
+        "title": "OpenAI mediante proxy (LiteLLM, etc.)",
+        "desc": "Un proxy compatible con Anthropic delante de otros modelos. Experimental y sin soporte: las respuestas estructuradas y las herramientas pueden no funcionar."
+      }
+    },
+    "loginHelp": "Inicia sesión con el inicio de sesión oficial de Anthropic. Ejecuta este comando en una terminal, sigue el inicio de sesión en el navegador y luego haz clic en \"Comprobar de nuevo\":",
+    "loginNote": "El inicio de sesión se queda en el almacén de credenciales del propio Claude Code. Jobhunter solo comprueba si existe.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "baseUrl": "URL base",
+    "baseUrlHint": "El endpoint compatible con Anthropic del proveedor, según su documentación.",
+    "apiKey": "Clave de API de Anthropic",
+    "providerKey": "Clave de API de este proveedor",
+    "keyHint": "Se guarda en el llavero del sistema (o en el archivo de secretos cifrado en modo servidor). No se vuelve a mostrar.",
+    "saveKey": "Guardar clave",
+    "checkAgain": "Comprobar de nuevo",
+    "test": "Probar conexión",
+    "termsNote": "Los términos de Anthropic limitan cómo las apps de terceros pueden usar inicios de sesión de suscripción. Lee docs/CLAUDE_ACCOUNT.md y decide tú; puedes cambiar a una clave de API en cualquier momento."
+  },
+  "settings": {
+    "general": {
+      "title": "Idioma",
+      "uiLanguage": "Idioma de la app",
+      "applicationLanguage": "Idioma de las candidaturas",
+      "applicationLanguageHint": "Idioma del CV, la carta de presentación y las respuestas de formularios.",
+      "langPosting": "El mismo que la oferta",
+      "langUi": "El mismo que la app",
+      "langFixed": "Siempre {{lang}}"
+    },
+    "claude": {
+      "title": "Cuenta de Claude"
+    },
+    "models": {
+      "title": "Modelos por tarea",
+      "hint": "Elige un modelo por nivel y, si quieres, cambia tareas concretas.",
+      "perTask": "Cambios por tarea",
+      "tier": {
+        "small": "Pequeño / rápido",
+        "strong": "Potente",
+        "strongest": "El más potente"
+      }
+    },
+    "budget": {
+      "title": "Presupuesto",
+      "hint": "Cuando el gasto mensual estimado alcanza el presupuesto, los escaneos, el descubrimiento y los borradores automáticos se pausan y recibes un aviso.",
+      "subscriptionNote": "Con una suscripción, los costes mostrados son estimaciones a precios de la API; se aplican los límites de tu plan. Un presupuesto sigue pausando tareas no esenciales.",
+      "monthly": "Presupuesto mensual (USD)",
+      "none": "Sin límite",
+      "spent": "Gasto estimado este mes: {{amount}}"
+    }
+  },
+  "tasks": {
+    "connection_test": "Prueba de conexión",
+    "profile_extract": "Extracción del CV",
+    "cv_interview": "Entrevista del CV",
+    "interview_summary": "Resumen de la entrevista",
+    "style_analyze": "Estilo de escritura",
+    "style_rules": "Reglas de estilo a partir de ediciones",
+    "search_profile_chat": "Chat del perfil de búsqueda",
+    "chat": "Chat",
+    "job_extract": "Extracción de ofertas",
+    "match_score": "Puntuación de encaje",
+    "company_discovery": "Descubrimiento de empresas",
+    "cv_tailor": "Redacción del CV",
+    "cover_letter": "Carta de presentación",
+    "form_answers": "Respuestas de formularios",
+    "form_fill": "Rellenar formularios",
+    "email_classify": "Clasificación de correos",
+    "alert_parse": "Lectura de alertas de empleo"
+  },
+  "diagnostics": {
+    "downloadLogs": "Descargar registros",
+    "lastScan": "Último escaneo",
+    "noScan": "Aún no se ha hecho ningún escaneo.",
+    "newJobs": "{{count}} ofertas nuevas",
+    "failedSources": "{{count}} fuentes con error",
+    "sources": "Estado de las fuentes",
+    "source": "Fuente",
+    "lastSuccess": "Último éxito",
+    "jobs": "Ofertas",
+    "lastError": "Último error",
+    "noSources": "Aún no hay fuentes configuradas.",
+    "failedTasks": "Tareas con error ({{count}})",
+    "noFailures": "No hay tareas con error.",
+    "recentTasks": "Tareas recientes",
+    "task": "Tarea",
+    "status": "Estado",
+    "cost": "Coste est.",
+    "when": "Cuándo"
+  }
 }

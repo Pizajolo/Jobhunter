@@ -7,25 +7,15 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import type { AppContext } from '../context.js';
 import { HttpError, sendError } from './http.js';
-import { registerCoreRoutes } from './routes/core.js';
-import { registerNotificationRoutes } from '../notify.js';
-import { registerSummaryRoutes } from './routes/summary.js';
 import { scrubSecrets } from '../logger.js';
 
 export type RouteRegistrar = (app: FastifyInstance, ctx: AppContext) => void | Promise<void>;
 
-const registrars: RouteRegistrar[] = [registerCoreRoutes, registerNotificationRoutes, registerSummaryRoutes];
-
-/** Feature modules add their routes here at import time. */
-export function addRoutes(r: RouteRegistrar): void {
-  if (!registrars.includes(r)) registrars.push(r);
-}
 
 export async function buildApp(ctx: AppContext): Promise<FastifyInstance> {
   const app: FastifyInstance = Fastify({
     // pino's Logger is a FastifyBaseLogger at runtime; the generic only differs in optional typing
-    loggerInstance: ctx.log.child({ mod: 'http' }) as FastifyBaseLogger,
-    disableRequestLogging: ctx.config.mode !== 'dev',
+    loggerInstance: ctx.log.child({ mod: 'http' }, { level: ctx.config.mode === 'dev' ? 'info' : 'warn' }) as FastifyBaseLogger,
     bodyLimit: 25 * 1024 * 1024,
     trustProxy: ctx.config.mode === 'server',
   });
@@ -51,7 +41,8 @@ export async function buildApp(ctx: AppContext): Promise<FastifyInstance> {
     socket.on('close', off);
   });
 
-  for (const r of registrars) await r(app, ctx);
+  const { featureRoutes } = await import('../modules.js');
+  for (const r of featureRoutes) await r(app, ctx);
 
   const webDist = ctx.config.webDistDir;
   if (webDist && existsSync(join(webDist, 'index.html'))) {

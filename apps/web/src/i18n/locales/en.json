@@ -1,8 +1,186 @@
 {
-  "nav": { "skip": "Skip to content", "menu": "Menu", "main": "Main", "pipeline": "Pipeline", "approvals": "Approvals", "review": "Review queue", "inbox": "Inbox", "stats": "Stats", "profile": "Profile", "settings": "Settings", "diagnostics": "Diagnostics", "agent": "Agent", "model": "Model", "email": "Email", "nextScan": "Next scan", "agentSettings": "Agent settings" },
-  "common": { "connected": "Connected", "notConnected": "Not connected", "save": "Save", "cancel": "Cancel", "saved": "Saved", "delete": "Delete", "edit": "Edit", "confirm": "Confirm", "back": "Back", "next": "Next", "skip": "Skip", "loading": "Loading…", "close": "Close", "yes": "Yes", "no": "No", "add": "Add", "remove": "Remove", "none": "None", "retry": "Try again", "search": "Search" },
-  "pages": { "pipeline": "Pipeline", "job_detail": "Job", "approvals": "Approvals", "review_queue": "Review queue", "inbox": "Inbox", "stats": "Stats", "profile": "Profile", "settings": "Settings", "diagnostics": "Diagnostics", "onboarding": "Welcome to Jobhunter", "login": "Sign in" },
-  "chat": { "open": "Chat", "close": "Close chat", "title": "Chat with Jobhunter", "hint": "Ask questions (\"Which applications are older than 3 weeks?\") or request changes (\"also look at climate tech in Lisbon\"). Changes are shown for confirmation first.", "placeholder": "Ask or tell Jobhunter something…", "send": "Send", "thinking": "Thinking…", "apply": "Apply change", "reject": "Discard", "status": { "pending": "Waiting for your decision", "applied": "Applied", "rejected": "Discarded" } },
-  "notifications": { "title": "Notifications ({{count}} unread)", "empty": "No notifications yet." },
-  "diff": { "none": "No changes." }
+  "nav": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "main": "Main",
+    "pipeline": "Pipeline",
+    "approvals": "Approvals",
+    "review": "Review queue",
+    "inbox": "Inbox",
+    "stats": "Stats",
+    "profile": "Profile",
+    "settings": "Settings",
+    "diagnostics": "Diagnostics",
+    "agent": "Agent",
+    "model": "Model",
+    "email": "Email",
+    "nextScan": "Next scan",
+    "agentSettings": "Agent settings"
+  },
+  "common": {
+    "connected": "Connected",
+    "notConnected": "Not connected",
+    "save": "Save",
+    "cancel": "Cancel",
+    "saved": "Saved",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "loading": "Loading…",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "add": "Add",
+    "remove": "Remove",
+    "none": "None",
+    "retry": "Try again",
+    "search": "Search"
+  },
+  "pages": {
+    "pipeline": "Pipeline",
+    "job_detail": "Job",
+    "approvals": "Approvals",
+    "review_queue": "Review queue",
+    "inbox": "Inbox",
+    "stats": "Stats",
+    "profile": "Profile",
+    "settings": "Settings",
+    "diagnostics": "Diagnostics",
+    "onboarding": "Welcome to Jobhunter",
+    "login": "Sign in"
+  },
+  "chat": {
+    "open": "Chat",
+    "close": "Close chat",
+    "title": "Chat with Jobhunter",
+    "hint": "Ask questions (\"Which applications are older than 3 weeks?\") or request changes (\"also look at climate tech in Lisbon\"). Changes are shown for confirmation first.",
+    "placeholder": "Ask or tell Jobhunter something…",
+    "send": "Send",
+    "thinking": "Thinking…",
+    "apply": "Apply change",
+    "reject": "Discard",
+    "status": {
+      "pending": "Waiting for your decision",
+      "applied": "Applied",
+      "rejected": "Discarded"
+    }
+  },
+  "notifications": {
+    "title": "Notifications ({{count}} unread)",
+    "empty": "No notifications yet."
+  },
+  "diff": {
+    "none": "No changes."
+  },
+  "claude": {
+    "method": "How Jobhunter talks to Claude",
+    "default": "Default",
+    "experimental": "Experimental, unsupported",
+    "status": "Status",
+    "modes": {
+      "subscription": {
+        "title": "My Claude subscription",
+        "desc": "Uses your own Claude Pro/Max plan through the official Claude Code login. Jobhunter never sees your credentials."
+      },
+      "api_key": {
+        "title": "Anthropic API key",
+        "desc": "Your own key from the Claude Console, stored in your OS keychain. Billed per token to your account."
+      },
+      "compatible": {
+        "title": "Anthropic-compatible provider",
+        "desc": "Another provider with an Anthropic-compatible API (for example Kimi or GLM): base URL plus your key for that provider."
+      },
+      "openai_proxy": {
+        "title": "OpenAI via proxy (LiteLLM etc.)",
+        "desc": "An Anthropic-compatible proxy in front of other models. Experimental and unsupported: structured output and tools may not work."
+      }
+    },
+    "loginHelp": "Sign in with Anthropic's official login. Run this command in a terminal, follow the browser login, then click \"Check again\":",
+    "loginNote": "The login stays in Claude Code's own credential store. Jobhunter only checks whether a login exists.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "baseUrl": "Base URL",
+    "baseUrlHint": "The provider's Anthropic-compatible endpoint, as given in its documentation.",
+    "apiKey": "Anthropic API key",
+    "providerKey": "API key for this provider",
+    "keyHint": "Stored in your OS keychain (or the encrypted secrets file in server mode). Never shown again.",
+    "saveKey": "Save key",
+    "checkAgain": "Check again",
+    "test": "Test connection",
+    "termsNote": "Anthropic's terms limit how subscription logins may be used by third-party apps. See docs/CLAUDE_ACCOUNT.md and decide for yourself; you can switch to an API key at any time."
+  },
+  "settings": {
+    "general": {
+      "title": "Language",
+      "uiLanguage": "App language",
+      "applicationLanguage": "Application language",
+      "applicationLanguageHint": "Language of CVs, cover letters and form answers.",
+      "langPosting": "Same as the job posting",
+      "langUi": "Same as the app",
+      "langFixed": "Always {{lang}}"
+    },
+    "claude": {
+      "title": "Claude account"
+    },
+    "models": {
+      "title": "Models per task",
+      "hint": "Pick a model for each tier, and optionally override single tasks.",
+      "perTask": "Per-task overrides",
+      "tier": {
+        "small": "Small / fast",
+        "strong": "Strong",
+        "strongest": "Strongest"
+      }
+    },
+    "budget": {
+      "title": "Budget",
+      "hint": "When the estimated monthly spend reaches the budget, scans, discovery and auto-drafting pause and you get a notification.",
+      "subscriptionNote": "With a subscription, costs shown are API-price estimates; your plan's usage limits apply. A budget still pauses non-essential tasks.",
+      "monthly": "Monthly budget (USD)",
+      "none": "No limit",
+      "spent": "Estimated spend this month: {{amount}}"
+    }
+  },
+  "tasks": {
+    "connection_test": "Connection test",
+    "profile_extract": "CV extraction",
+    "cv_interview": "CV interview",
+    "interview_summary": "Interview summary",
+    "style_analyze": "Writing style",
+    "style_rules": "Style rules from edits",
+    "search_profile_chat": "Search profile chat",
+    "chat": "Chat",
+    "job_extract": "Job extraction",
+    "match_score": "Match scoring",
+    "company_discovery": "Company discovery",
+    "cv_tailor": "CV writing",
+    "cover_letter": "Cover letter",
+    "form_answers": "Form answers",
+    "form_fill": "Form filling",
+    "email_classify": "Email classification",
+    "alert_parse": "Job alert parsing"
+  },
+  "diagnostics": {
+    "downloadLogs": "Download logs",
+    "lastScan": "Last scan",
+    "noScan": "No scan has run yet.",
+    "newJobs": "{{count}} new jobs",
+    "failedSources": "{{count}} failed sources",
+    "sources": "Source health",
+    "source": "Source",
+    "lastSuccess": "Last success",
+    "jobs": "Jobs",
+    "lastError": "Last error",
+    "noSources": "No sources configured yet.",
+    "failedTasks": "Failed tasks ({{count}})",
+    "noFailures": "No failed tasks.",
+    "recentTasks": "Recent tasks",
+    "task": "Task",
+    "status": "Status",
+    "cost": "Est. cost",
+    "when": "When"
+  }
 }

@@ -3,6 +3,7 @@ import { UI_LANGUAGES, PERMANENT_AUTO_APPLY_EXCLUSIONS } from './constants.js';
 
 /** Every model-backed task. Each has its own prompt file and routing entry (spec §3.4). */
 export const TASK_NAMES = [
+  'connection_test',
   'profile_extract',
   'cv_interview',
   'interview_summary',
@@ -27,6 +28,7 @@ export const MODEL_TIERS = ['small', 'strong', 'strongest'] as const;
 export type ModelTier = (typeof MODEL_TIERS)[number];
 
 export const TASK_TIER: Record<TaskName, ModelTier> = {
+  connection_test: 'small',
   profile_extract: 'strong',
   cv_interview: 'strong',
   interview_summary: 'strong',
@@ -47,6 +49,7 @@ export const TASK_TIER: Record<TaskName, ModelTier> = {
 
 /** Tasks that keep running when the monthly budget is reached (spec §3.4). */
 export const ESSENTIAL_TASKS: ReadonlySet<TaskName> = new Set<TaskName>([
+  'connection_test',
   'email_classify',
   'chat',
   'cv_interview',

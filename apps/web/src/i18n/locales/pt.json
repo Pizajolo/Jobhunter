@@ -1,8 +1,186 @@
 {
-  "nav": { "skip": "Saltar para o conteúdo", "menu": "Menu", "main": "Principal", "pipeline": "Pipeline", "approvals": "Aprovações", "review": "Fila de revisão", "inbox": "Caixa de entrada", "stats": "Estatísticas", "profile": "Perfil", "settings": "Definições", "diagnostics": "Diagnóstico", "agent": "Agente", "model": "Modelo", "email": "Email", "nextScan": "Próxima pesquisa", "agentSettings": "Definições do agente" },
-  "common": { "connected": "Ligado", "notConnected": "Não ligado", "save": "Guardar", "cancel": "Cancelar", "saved": "Guardado", "delete": "Eliminar", "edit": "Editar", "confirm": "Confirmar", "back": "Voltar", "next": "Seguinte", "skip": "Saltar", "loading": "A carregar…", "close": "Fechar", "yes": "Sim", "no": "Não", "add": "Adicionar", "remove": "Remover", "none": "Nenhum", "retry": "Tentar novamente", "search": "Pesquisar" },
-  "pages": { "pipeline": "Pipeline", "job_detail": "Vaga", "approvals": "Aprovações", "review_queue": "Fila de revisão", "inbox": "Caixa de entrada", "stats": "Estatísticas", "profile": "Perfil", "settings": "Definições", "diagnostics": "Diagnóstico", "onboarding": "Bem-vindo ao Jobhunter", "login": "Iniciar sessão" },
-  "chat": { "open": "Chat", "close": "Fechar chat", "title": "Conversar com o Jobhunter", "hint": "Faz perguntas (\"Que candidaturas têm mais de 3 semanas?\") ou pede alterações (\"procura também climate tech em Lisboa\"). As alterações são mostradas primeiro para confirmação.", "placeholder": "Pergunta ou diz algo ao Jobhunter…", "send": "Enviar", "thinking": "A pensar…", "apply": "Aplicar alteração", "reject": "Descartar", "status": { "pending": "À espera da tua decisão", "applied": "Aplicado", "rejected": "Descartado" } },
-  "notifications": { "title": "Notificações ({{count}} por ler)", "empty": "Ainda não há notificações." },
-  "diff": { "none": "Sem alterações." }
+  "nav": {
+    "skip": "Saltar para o conteúdo",
+    "menu": "Menu",
+    "main": "Principal",
+    "pipeline": "Pipeline",
+    "approvals": "Aprovações",
+    "review": "Fila de revisão",
+    "inbox": "Caixa de entrada",
+    "stats": "Estatísticas",
+    "profile": "Perfil",
+    "settings": "Definições",
+    "diagnostics": "Diagnóstico",
+    "agent": "Agente",
+    "model": "Modelo",
+    "email": "Email",
+    "nextScan": "Próxima pesquisa",
+    "agentSettings": "Definições do agente"
+  },
+  "common": {
+    "connected": "Ligado",
+    "notConnected": "Não ligado",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "saved": "Guardado",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "next": "Seguinte",
+    "skip": "Saltar",
+    "loading": "A carregar…",
+    "close": "Fechar",
+    "yes": "Sim",
+    "no": "Não",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "none": "Nenhum",
+    "retry": "Tentar novamente",
+    "search": "Pesquisar"
+  },
+  "pages": {
+    "pipeline": "Pipeline",
+    "job_detail": "Vaga",
+    "approvals": "Aprovações",
+    "review_queue": "Fila de revisão",
+    "inbox": "Caixa de entrada",
+    "stats": "Estatísticas",
+    "profile": "Perfil",
+    "settings": "Definições",
+    "diagnostics": "Diagnóstico",
+    "onboarding": "Bem-vindo ao Jobhunter",
+    "login": "Iniciar sessão"
+  },
+  "chat": {
+    "open": "Chat",
+    "close": "Fechar chat",
+    "title": "Conversar com o Jobhunter",
+    "hint": "Faz perguntas (\"Que candidaturas têm mais de 3 semanas?\") ou pede alterações (\"procura também climate tech em Lisboa\"). As alterações são mostradas primeiro para confirmação.",
+    "placeholder": "Pergunta ou diz algo ao Jobhunter…",
+    "send": "Enviar",
+    "thinking": "A pensar…",
+    "apply": "Aplicar alteração",
+    "reject": "Descartar",
+    "status": {
+      "pending": "À espera da tua decisão",
+      "applied": "Aplicado",
+      "rejected": "Descartado"
+    }
+  },
+  "notifications": {
+    "title": "Notificações ({{count}} por ler)",
+    "empty": "Ainda não há notificações."
+  },
+  "diff": {
+    "none": "Sem alterações."
+  },
+  "claude": {
+    "method": "Como o Jobhunter comunica com o Claude",
+    "default": "Predefinido",
+    "experimental": "Experimental, sem suporte",
+    "status": "Estado",
+    "modes": {
+      "subscription": {
+        "title": "A minha subscrição Claude",
+        "desc": "Usa o teu próprio plano Claude Pro/Max através do login oficial do Claude Code. O Jobhunter nunca vê as tuas credenciais."
+      },
+      "api_key": {
+        "title": "Chave da API da Anthropic",
+        "desc": "A tua própria chave da Claude Console, guardada no porta-chaves do sistema. Cobrada por token na tua conta."
+      },
+      "compatible": {
+        "title": "Fornecedor compatível com a Anthropic",
+        "desc": "Outro fornecedor com API compatível com a Anthropic (por exemplo Kimi ou GLM): URL base mais a tua chave desse fornecedor."
+      },
+      "openai_proxy": {
+        "title": "OpenAI via proxy (LiteLLM, etc.)",
+        "desc": "Um proxy compatível com a Anthropic à frente de outros modelos. Experimental e sem suporte: respostas estruturadas e ferramentas podem não funcionar."
+      }
+    },
+    "loginHelp": "Inicia sessão com o login oficial da Anthropic. Executa este comando num terminal, segue o login no navegador e depois clica em \"Verificar novamente\":",
+    "loginNote": "O login fica no armazenamento de credenciais do próprio Claude Code. O Jobhunter só verifica se existe um login.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "baseUrl": "URL base",
+    "baseUrlHint": "O endpoint compatível com a Anthropic do fornecedor, conforme a sua documentação.",
+    "apiKey": "Chave da API da Anthropic",
+    "providerKey": "Chave da API deste fornecedor",
+    "keyHint": "Guardada no porta-chaves do sistema (ou no ficheiro de segredos cifrado no modo servidor). Nunca volta a ser mostrada.",
+    "saveKey": "Guardar chave",
+    "checkAgain": "Verificar novamente",
+    "test": "Testar ligação",
+    "termsNote": "Os termos da Anthropic limitam a forma como apps de terceiros podem usar logins de subscrição. Lê docs/CLAUDE_ACCOUNT.md e decide por ti; podes mudar para uma chave da API a qualquer momento."
+  },
+  "settings": {
+    "general": {
+      "title": "Idioma",
+      "uiLanguage": "Idioma da app",
+      "applicationLanguage": "Idioma das candidaturas",
+      "applicationLanguageHint": "Idioma do CV, da carta de apresentação e das respostas a formulários.",
+      "langPosting": "O mesmo do anúncio",
+      "langUi": "O mesmo da app",
+      "langFixed": "Sempre {{lang}}"
+    },
+    "claude": {
+      "title": "Conta Claude"
+    },
+    "models": {
+      "title": "Modelos por tarefa",
+      "hint": "Escolhe um modelo por nível e, se quiseres, substitui tarefas individuais.",
+      "perTask": "Substituições por tarefa",
+      "tier": {
+        "small": "Pequeno / rápido",
+        "strong": "Forte",
+        "strongest": "O mais forte"
+      }
+    },
+    "budget": {
+      "title": "Orçamento",
+      "hint": "Quando o custo mensal estimado atinge o orçamento, as pesquisas, a descoberta e os rascunhos automáticos ficam em pausa e recebes uma notificação.",
+      "subscriptionNote": "Com uma subscrição, os custos mostrados são estimativas a preços da API; aplicam-se os limites do teu plano. Um orçamento continua a pausar tarefas não essenciais.",
+      "monthly": "Orçamento mensal (USD)",
+      "none": "Sem limite",
+      "spent": "Custo estimado este mês: {{amount}}"
+    }
+  },
+  "tasks": {
+    "connection_test": "Teste de ligação",
+    "profile_extract": "Extração do CV",
+    "cv_interview": "Entrevista ao CV",
+    "interview_summary": "Resumo da entrevista",
+    "style_analyze": "Estilo de escrita",
+    "style_rules": "Regras de estilo a partir de edições",
+    "search_profile_chat": "Chat do perfil de pesquisa",
+    "chat": "Chat",
+    "job_extract": "Extração de vagas",
+    "match_score": "Pontuação de compatibilidade",
+    "company_discovery": "Descoberta de empresas",
+    "cv_tailor": "Redação do CV",
+    "cover_letter": "Carta de apresentação",
+    "form_answers": "Respostas a formulários",
+    "form_fill": "Preenchimento de formulários",
+    "email_classify": "Classificação de emails",
+    "alert_parse": "Leitura de alertas de emprego"
+  },
+  "diagnostics": {
+    "downloadLogs": "Transferir registos",
+    "lastScan": "Última pesquisa",
+    "noScan": "Ainda não correu nenhuma pesquisa.",
+    "newJobs": "{{count}} vagas novas",
+    "failedSources": "{{count}} fontes com falha",
+    "sources": "Estado das fontes",
+    "source": "Fonte",
+    "lastSuccess": "Último sucesso",
+    "jobs": "Vagas",
+    "lastError": "Último erro",
+    "noSources": "Ainda não há fontes configuradas.",
+    "failedTasks": "Tarefas com falha ({{count}})",
+    "noFailures": "Nenhuma tarefa com falha.",
+    "recentTasks": "Tarefas recentes",
+    "task": "Tarefa",
+    "status": "Estado",
+    "cost": "Custo est.",
+    "when": "Quando"
+  }
 }

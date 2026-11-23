@@ -1,10 +1,8 @@
 import { lazy, Suspense, useEffect, type ReactNode } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider, useLocation } from 'react-router';
-import { useQuery } from '@tanstack/react-query';
-import type { Settings } from '@jobhunter/shared';
 import { Layout } from './components/Layout';
 import { Spinner } from './components/ui';
-import { api } from './lib/api';
+import { useSettings } from './lib/settings';
 import { useLiveUpdates } from './lib/live';
 import { setUiLanguage } from './i18n';
 
@@ -19,10 +17,6 @@ const SettingsPage = lazy(() => import('./routes/Settings'));
 const Diagnostics = lazy(() => import('./routes/Diagnostics'));
 const Onboarding = lazy(() => import('./routes/Onboarding'));
 const Login = lazy(() => import('./routes/Login'));
-
-export function useSettings() {
-  return useQuery({ queryKey: ['settings'], queryFn: () => api.get<Settings>('/api/settings') });
-}
 
 function Loading() {
   return (
