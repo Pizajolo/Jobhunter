@@ -1,0 +1,8 @@
+{
+  "nav": { "skip": "Skip to content", "menu": "Menu", "main": "Main", "pipeline": "Pipeline", "approvals": "Approvals", "review": "Review queue", "inbox": "Inbox", "stats": "Stats", "profile": "Profile", "settings": "Settings", "diagnostics": "Diagnostics", "agent": "Agent", "model": "Model", "email": "Email", "nextScan": "Next scan", "agentSettings": "Agent settings" },
+  "common": { "connected": "Connected", "notConnected": "Not connected", "save": "Save", "cancel": "Cancel", "saved": "Saved", "delete": "Delete", "edit": "Edit", "confirm": "Confirm", "back": "Back", "next": "Next", "skip": "Skip", "loading": "Loading…", "close": "Close", "yes": "Yes", "no": "No", "add": "Add", "remove": "Remove", "none": "None", "retry": "Try again", "search": "Search" },
+  "pages": { "pipeline": "Pipeline", "job_detail": "Job", "approvals": "Approvals", "review_queue": "Review queue", "inbox": "Inbox", "stats": "Stats", "profile": "Profile", "settings": "Settings", "diagnostics": "Diagnostics", "onboarding": "Welcome to Jobhunter", "login": "Sign in" },
+  "chat": { "open": "Chat", "close": "Close chat", "title": "Chat with Jobhunter", "hint": "Ask questions (\"Which applications are older than 3 weeks?\") or request changes (\"also look at climate tech in Lisbon\"). Changes are shown for confirmation first.", "placeholder": "Ask or tell Jobhunter something…", "send": "Send", "thinking": "Thinking…", "apply": "Apply change", "reject": "Discard", "status": { "pending": "Waiting for your decision", "applied": "Applied", "rejected": "Discarded" } },
+  "notifications": { "title": "Notifications ({{count}} unread)", "empty": "No notifications yet." },
+  "diff": { "none": "No changes." }
+}

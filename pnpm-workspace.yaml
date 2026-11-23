@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+  - e2e
+onlyBuiltDependencies:
+  - better-sqlite3
+  - esbuild
+  - electron
+  - '@napi-rs/keyring'
+  - '@node-rs/argon2'

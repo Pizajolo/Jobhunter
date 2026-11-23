@@ -1,0 +1,37 @@
+{
+  "name": "@jobhunter/engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/main.js",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "test:prompts": "tsx scripts/test-prompts.ts",
+    "eval:email": "tsx scripts/eval-email.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^11.1.5",
+    "@fastify/multipart": "^10.1.9",
+    "@fastify/static": "^10.1.12",
+    "@fastify/websocket": "^11.3.7",
+    "@jobhunter/db": "workspace:*",
+    "@jobhunter/shared": "workspace:*",
+    "@napi-rs/keyring": "^2.1.2",
+    "better-sqlite3": "^13.2.0",
+    "croner": "^11.0.1",
+    "drizzle-orm": "^0.45.4",
+    "fastify": "^5.12.8",
+    "pino": "^10.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.2",
+    "esbuild": "^0.28.2",
+    "pino-pretty": "^13.2.0"
+  }
+}
