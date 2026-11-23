@@ -182,5 +182,162 @@
     "status": "Status",
     "cost": "Gesch. Kosten",
     "when": "Wann"
+  },
+  "profile": {
+    "subtitle": "Version {{version}} · {{facts}} bestätigte Fakten",
+    "tabs": {
+      "overview": "Profil",
+      "facts": "Fakten",
+      "interview": "Interview",
+      "style": "Schreibstil",
+      "templates": "Lebenslauf-Vorlagen"
+    },
+    "upload": {
+      "title": "Lebenslauf hochladen",
+      "choose": "Datei auswählen",
+      "formats": "PDF oder DOCX, bis 20 MB. Der Text wird auf diesem Gerät gelesen.",
+      "linkedin": "Das ist ein LinkedIn-Profil als PDF-Export",
+      "submit": "Lebenslauf lesen",
+      "extracting": "{{file}} wird gelesen…",
+      "failed": "Diese Datei konnte nicht gelesen werden."
+    },
+    "review": {
+      "intro": "Prüfe jeden Eintrag, den Jobhunter ausgelesen hat. Bestätige, bearbeite oder lösche ihn. Nur was du behältst, kommt in dein Profil.",
+      "original": "Ausgelesener Text",
+      "basics": "Kontakt und Zusammenfassung",
+      "confirmed": "Bestätigt",
+      "deleted": "Gelöscht",
+      "confirm": "Bestätigen",
+      "doneEditing": "Fertig",
+      "restore": "Wiederherstellen",
+      "save": "Im Profil speichern",
+      "confirmAll": "Alle übrigen bestätigen",
+      "discard": "Import verwerfen",
+      "remaining": "Noch {{count}} Einträge zu prüfen"
+    },
+    "fields": {
+      "name": "Name",
+      "label": "Titel",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "url": "Website",
+      "summary": "Zusammenfassung",
+      "position": "Position",
+      "location": "Ort",
+      "startDate": "Beginn",
+      "endDate": "Ende",
+      "highlights": "Highlights (eines pro Zeile)",
+      "studyType": "Abschluss",
+      "area": "Fachrichtung",
+      "institution": "Institution",
+      "score": "Note",
+      "level": "Niveau",
+      "keywords": "Stichworte (durch Komma getrennt)",
+      "language": "Sprache",
+      "fluency": "Niveau",
+      "description": "Beschreibung",
+      "issuer": "Aussteller",
+      "date": "Datum",
+      "text": "Text",
+      "metric": "Kennzahl",
+      "workAuthorization": "Arbeitserlaubnis",
+      "salaryExpectation": "Gehaltsvorstellung",
+      "noticePeriod": "Kündigungsfrist",
+      "motivation": "Allgemeine Motivation",
+      "willingToRelocate": "Bereit umzuziehen"
+    },
+    "sections": {
+      "work": "Berufserfahrung",
+      "education": "Ausbildung",
+      "skills": "Fähigkeiten",
+      "languages": "Sprachen",
+      "projects": "Projekte",
+      "certificates": "Zertifikate",
+      "achievements": "Erfolge"
+    },
+    "interview": {
+      "intro": "Claude stellt kurze Fragen, um Lücken in deinem Profil zu füllen: Ergebnisse mit Zahlen, Verantwortung, Tools, was du als Nächstes willst. Eine Frage nach der anderen; du kannst alles überspringen. Gespeichert wird erst, wenn du die Zusammenfassung bestätigst.",
+      "goals": "Wonach suchst du? (optional)",
+      "goalsPlaceholder": "z. B. Head of Product in Zürich oder remote",
+      "start": "Interview starten",
+      "summaryTitle": "Zusammenfassung",
+      "summaryHint": "Diese Fakten stammen nur aus deinen Antworten. Bearbeite oder entferne etwas, bevor du speicherst.",
+      "keep": "Diesen Fakt behalten",
+      "noFacts": "Keine neuen Fakten aus diesem Interview.",
+      "confirm": "{{count}} Fakten speichern",
+      "restart": "Interview neu starten",
+      "progress": "Frage {{count}}",
+      "answer": "Deine Antwort",
+      "answerPlaceholder": "Antwort eintippen oder das Mikrofon nutzen…",
+      "send": "Antwort senden",
+      "finish": "Beenden und zusammenfassen"
+    },
+    "style": {
+      "intro": "Füge 3–10 Texte ein, die du selbst geschrieben hast (alte Anschreiben, E-Mails). Jobhunter lernt deinen Ton, damit Anschreiben nach dir klingen.",
+      "language": "Sprache der Beispiele",
+      "paste": "Text einfügen",
+      "pasteHint": "Mindestens ein paar Sätze. Entferne Privates, das nicht gespeichert werden soll.",
+      "add": "Beispiel hinzufügen",
+      "analyze": "{{count}} Beispiele analysieren",
+      "result": "Dein Stil",
+      "tone": "Ton",
+      "formality": "Förmlichkeit",
+      "avoid": "Vermeiden",
+      "rules": "Aus deinen Änderungen gelernte Regeln"
+    },
+    "facts": {
+      "hint": "Fakten sind das einzige Material, das Jobhunter in Lebensläufen, Anschreiben und Formularantworten verwenden darf. Fakten aus deinem Profil ändern sich, wenn du das Profil bearbeitest.",
+      "add": "Fakt hinzufügen",
+      "addPlaceholder": "z. B. Spricht Spanisch auf Niveau C1",
+      "none": "Noch keine Fakten.",
+      "source": {
+        "cv": "Profil",
+        "interview": "Interview",
+        "manual": "Von dir hinzugefügt",
+        "linkedin_pdf": "LinkedIn-PDF"
+      }
+    },
+    "preferences": {
+      "title": "Angaben für Bewerbungen",
+      "hint": "Für häufige Formularfragen. Lass Felder leer, wenn du lieber pro Bewerbung antwortest."
+    },
+    "overview": {
+      "empty": "Dein Profil ist leer",
+      "present": "heute"
+    }
+  },
+  "onboarding": {
+    "steps": "Einrichtungsschritte",
+    "step": {
+      "welcome": "Sprache",
+      "claude": "Claude",
+      "cv": "Lebenslauf",
+      "interview": "Interview",
+      "style": "Stil",
+      "search": "Suche",
+      "email": "E-Mail"
+    },
+    "title": {
+      "welcome": "Willkommen bei Jobhunter",
+      "claude": "Claude verbinden",
+      "cv": "Lebenslauf hochladen",
+      "interview": "Lücken füllen",
+      "style": "Dein Schreibstil",
+      "search": "Wonach suchst du?",
+      "email": "Posteingang verbinden"
+    },
+    "welcomeText": "Jobhunter läuft auf deinem Computer oder Server. Es findet Stellen, verfolgt deine Bewerbungen in Gmail und bereitet passende Bewerbungen aus Fakten vor, die du bestätigst. Deine Daten bleiben bei dir.",
+    "cvDone": "Profil mit {{count}} Fakten gespeichert. Du kannst einen weiteren Lebenslauf hochladen oder weitermachen.",
+    "finish": "Einrichtung abschließen",
+    "skipAll": "Einrichtung vorerst überspringen"
+  },
+  "voice": {
+    "browserUnsupported": "Spracheingabe wird in diesem Browser nicht unterstützt.",
+    "micDenied": "Der Zugriff auf das Mikrofon wurde verweigert.",
+    "stop": "Aufnahme beenden",
+    "transcribing": "Wird transkribiert…",
+    "record": "Per Sprache antworten",
+    "localNote": "Wird auf diesem Gerät transkribiert.",
+    "browserNote": "Nutzt die Spracherkennung deines Browsers."
   }
 }

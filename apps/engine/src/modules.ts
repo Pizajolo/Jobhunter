@@ -5,6 +5,7 @@ import { registerSummaryRoutes } from './server/routes/summary.js';
 import { registerNotificationRoutes } from './notify.js';
 import { registerAgentRoutes } from './agent/routes.js';
 import { registerDiagnosticsRoutes } from './server/routes/diagnostics.js';
+import { registerProfileRoutes } from './profile/routes.js';
 
 export const featureRoutes: RouteRegistrar[] = [
   registerCoreRoutes,
@@ -12,4 +13,5 @@ export const featureRoutes: RouteRegistrar[] = [
   registerNotificationRoutes,
   registerAgentRoutes,
   registerDiagnosticsRoutes,
+  registerProfileRoutes,
 ];

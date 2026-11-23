@@ -182,5 +182,162 @@
     "status": "Status",
     "cost": "Est. cost",
     "when": "When"
+  },
+  "profile": {
+    "subtitle": "Version {{version}} · {{facts}} confirmed facts",
+    "tabs": {
+      "overview": "Profile",
+      "facts": "Facts",
+      "interview": "Interview",
+      "style": "Writing style",
+      "templates": "CV templates"
+    },
+    "upload": {
+      "title": "Upload a CV",
+      "choose": "Choose a file",
+      "formats": "PDF or DOCX, up to 20 MB. Text is read on this machine.",
+      "linkedin": "This is a LinkedIn profile PDF export",
+      "submit": "Read CV",
+      "extracting": "Reading {{file}}…",
+      "failed": "Could not read this file."
+    },
+    "review": {
+      "intro": "Check every item Jobhunter extracted. Confirm, edit or delete it. Only what you keep becomes part of your profile.",
+      "original": "Extracted text",
+      "basics": "Contact and summary",
+      "confirmed": "Confirmed",
+      "deleted": "Deleted",
+      "confirm": "Confirm",
+      "doneEditing": "Done",
+      "restore": "Restore",
+      "save": "Save to profile",
+      "confirmAll": "Confirm all remaining",
+      "discard": "Discard import",
+      "remaining": "{{count}} items left to review"
+    },
+    "fields": {
+      "name": "Name",
+      "label": "Title",
+      "email": "Email",
+      "phone": "Phone",
+      "url": "Website",
+      "summary": "Summary",
+      "position": "Position",
+      "location": "Location",
+      "startDate": "Start",
+      "endDate": "End",
+      "highlights": "Highlights (one per line)",
+      "studyType": "Degree",
+      "area": "Field",
+      "institution": "Institution",
+      "score": "Grade",
+      "level": "Level",
+      "keywords": "Keywords (comma separated)",
+      "language": "Language",
+      "fluency": "Fluency",
+      "description": "Description",
+      "issuer": "Issuer",
+      "date": "Date",
+      "text": "Text",
+      "metric": "Metric",
+      "workAuthorization": "Work authorization",
+      "salaryExpectation": "Salary expectation",
+      "noticePeriod": "Notice period",
+      "motivation": "General motivation",
+      "willingToRelocate": "Willing to relocate"
+    },
+    "sections": {
+      "work": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "projects": "Projects",
+      "certificates": "Certificates",
+      "achievements": "Achievements"
+    },
+    "interview": {
+      "intro": "Claude asks short questions to fill gaps in your profile: results with numbers, responsibilities, tools, what you want next. One question at a time; skip anything. Nothing is saved until you confirm the summary.",
+      "goals": "What are you looking for? (optional)",
+      "goalsPlaceholder": "e.g. Head of Product in Zurich or remote",
+      "start": "Start interview",
+      "summaryTitle": "Summary",
+      "summaryHint": "These facts come only from your answers. Edit or untick anything before saving.",
+      "keep": "Keep this fact",
+      "noFacts": "No new facts from this interview.",
+      "confirm": "Save {{count}} facts",
+      "restart": "Restart interview",
+      "progress": "Question {{count}}",
+      "answer": "Your answer",
+      "answerPlaceholder": "Type your answer, or use the microphone…",
+      "send": "Send answer",
+      "finish": "Finish and summarise"
+    },
+    "style": {
+      "intro": "Paste 3–10 texts you wrote yourself (old cover letters, emails). Jobhunter learns your tone so letters sound like you.",
+      "language": "Language of the samples",
+      "paste": "Paste a text",
+      "pasteHint": "At least a few sentences. Remove anything private you don't want stored.",
+      "add": "Add sample",
+      "analyze": "Analyse {{count}} samples",
+      "result": "Your style",
+      "tone": "Tone",
+      "formality": "Formality",
+      "avoid": "Avoid",
+      "rules": "Rules learned from your edits"
+    },
+    "facts": {
+      "hint": "Facts are the only material Jobhunter may use in CVs, letters and form answers. Facts from your profile update when you edit the profile.",
+      "add": "Add fact",
+      "addPlaceholder": "e.g. Speaks Spanish at C1 level",
+      "none": "No facts yet.",
+      "source": {
+        "cv": "Profile",
+        "interview": "Interview",
+        "manual": "Added by you",
+        "linkedin_pdf": "LinkedIn PDF"
+      }
+    },
+    "preferences": {
+      "title": "Application preferences",
+      "hint": "Used for common form questions. Leave empty if you prefer to answer per application."
+    },
+    "overview": {
+      "empty": "Your profile is empty",
+      "present": "present"
+    }
+  },
+  "onboarding": {
+    "steps": "Setup steps",
+    "step": {
+      "welcome": "Language",
+      "claude": "Claude",
+      "cv": "CV",
+      "interview": "Interview",
+      "style": "Style",
+      "search": "Search",
+      "email": "Email"
+    },
+    "title": {
+      "welcome": "Welcome to Jobhunter",
+      "claude": "Connect Claude",
+      "cv": "Upload your CV",
+      "interview": "Fill the gaps",
+      "style": "Your writing style",
+      "search": "What are you looking for?",
+      "email": "Connect your inbox"
+    },
+    "welcomeText": "Jobhunter runs on your computer or server. It finds jobs, tracks your applications in Gmail and prepares tailored applications from facts you confirm. Your data stays with you.",
+    "cvDone": "Profile saved with {{count}} facts. You can upload another CV or continue.",
+    "finish": "Finish setup",
+    "skipAll": "Skip setup for now"
+  },
+  "voice": {
+    "browserUnsupported": "Voice input is not supported in this browser.",
+    "micDenied": "Microphone access was denied.",
+    "stop": "Stop recording",
+    "transcribing": "Transcribing…",
+    "record": "Answer by voice",
+    "localNote": "Transcribed on this machine.",
+    "browserNote": "Uses your browser's speech recognition."
   }
 }

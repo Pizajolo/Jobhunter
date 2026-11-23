@@ -392,3 +392,15 @@ export const pushSubscriptions = sqliteTable('push_subscriptions', {
   keys: json<{ p256dh: string; auth: string }>('keys').notNull(),
   createdAt: createdAt(),
 });
+
+export const profileImports = sqliteTable('profile_imports', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  kind: text('kind').notNull(), // cv | linkedin_pdf
+  filename: text('filename').notNull(),
+  filePath: text('file_path'),
+  text: text('text').notNull(),
+  extracted: json<unknown>('extracted'),
+  status: text('status').notNull().default('extracting'), // extracting | review | applied | discarded | failed
+  error: text('error'),
+  createdAt: createdAt(),
+});

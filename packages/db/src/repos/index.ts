@@ -1,2 +1,3 @@
 export * from './settings.js';
 export * from './events.js';
+export * from './profile.js';

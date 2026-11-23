@@ -182,5 +182,162 @@
     "status": "État",
     "cost": "Coût est.",
     "when": "Quand"
+  },
+  "profile": {
+    "subtitle": "Version {{version}} · {{facts}} faits confirmés",
+    "tabs": {
+      "overview": "Profil",
+      "facts": "Faits",
+      "interview": "Entretien",
+      "style": "Style d’écriture",
+      "templates": "Modèles de CV"
+    },
+    "upload": {
+      "title": "Importer un CV",
+      "choose": "Choisir un fichier",
+      "formats": "PDF ou DOCX, jusqu’à 20 Mo. Le texte est lu sur cet appareil.",
+      "linkedin": "C’est un export PDF de profil LinkedIn",
+      "submit": "Lire le CV",
+      "extracting": "Lecture de {{file}}…",
+      "failed": "Impossible de lire ce fichier."
+    },
+    "review": {
+      "intro": "Vérifie chaque élément extrait par Jobhunter. Confirme-le, modifie-le ou supprime-le. Seul ce que tu gardes rejoint ton profil.",
+      "original": "Texte extrait",
+      "basics": "Contact et résumé",
+      "confirmed": "Confirmé",
+      "deleted": "Supprimé",
+      "confirm": "Confirmer",
+      "doneEditing": "Terminé",
+      "restore": "Restaurer",
+      "save": "Enregistrer dans le profil",
+      "confirmAll": "Confirmer tout le reste",
+      "discard": "Abandonner l’import",
+      "remaining": "Encore {{count}} éléments à vérifier"
+    },
+    "fields": {
+      "name": "Nom",
+      "label": "Titre",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "url": "Site web",
+      "summary": "Résumé",
+      "position": "Poste",
+      "location": "Lieu",
+      "startDate": "Début",
+      "endDate": "Fin",
+      "highlights": "Points forts (un par ligne)",
+      "studyType": "Diplôme",
+      "area": "Domaine",
+      "institution": "Établissement",
+      "score": "Mention",
+      "level": "Niveau",
+      "keywords": "Mots-clés (séparés par des virgules)",
+      "language": "Langue",
+      "fluency": "Niveau",
+      "description": "Description",
+      "issuer": "Émetteur",
+      "date": "Date",
+      "text": "Texte",
+      "metric": "Indicateur",
+      "workAuthorization": "Autorisation de travail",
+      "salaryExpectation": "Prétentions salariales",
+      "noticePeriod": "Préavis",
+      "motivation": "Motivation générale",
+      "willingToRelocate": "Prêt à déménager"
+    },
+    "sections": {
+      "work": "Expérience",
+      "education": "Formation",
+      "skills": "Compétences",
+      "languages": "Langues",
+      "projects": "Projets",
+      "certificates": "Certificats",
+      "achievements": "Réalisations"
+    },
+    "interview": {
+      "intro": "Claude pose de courtes questions pour compléter ton profil : résultats chiffrés, responsabilités, outils, ce que tu veux ensuite. Une question à la fois ; tu peux tout passer. Rien n’est enregistré avant que tu confirmes le résumé.",
+      "goals": "Que recherches-tu ? (facultatif)",
+      "goalsPlaceholder": "p. ex. Head of Product à Zurich ou en télétravail",
+      "start": "Commencer l’entretien",
+      "summaryTitle": "Résumé",
+      "summaryHint": "Ces faits viennent uniquement de tes réponses. Modifie ou décoche ce que tu veux avant d’enregistrer.",
+      "keep": "Garder ce fait",
+      "noFacts": "Aucun nouveau fait issu de cet entretien.",
+      "confirm": "Enregistrer {{count}} faits",
+      "restart": "Recommencer l’entretien",
+      "progress": "Question {{count}}",
+      "answer": "Ta réponse",
+      "answerPlaceholder": "Tape ta réponse ou utilise le micro…",
+      "send": "Envoyer la réponse",
+      "finish": "Terminer et résumer"
+    },
+    "style": {
+      "intro": "Colle 3 à 10 textes que tu as écrits (anciennes lettres de motivation, e-mails). Jobhunter apprend ton ton pour que les lettres te ressemblent.",
+      "language": "Langue des exemples",
+      "paste": "Coller un texte",
+      "pasteHint": "Au moins quelques phrases. Retire ce qui est privé et que tu ne veux pas stocker.",
+      "add": "Ajouter l’exemple",
+      "analyze": "Analyser {{count}} exemples",
+      "result": "Ton style",
+      "tone": "Ton",
+      "formality": "Formalité",
+      "avoid": "À éviter",
+      "rules": "Règles apprises de tes modifications"
+    },
+    "facts": {
+      "hint": "Les faits sont le seul matériau que Jobhunter peut utiliser dans les CV, lettres et réponses aux formulaires. Les faits du profil se mettent à jour quand tu modifies le profil.",
+      "add": "Ajouter un fait",
+      "addPlaceholder": "p. ex. Parle espagnol niveau C1",
+      "none": "Pas encore de faits.",
+      "source": {
+        "cv": "Profil",
+        "interview": "Entretien",
+        "manual": "Ajouté par toi",
+        "linkedin_pdf": "PDF LinkedIn"
+      }
+    },
+    "preferences": {
+      "title": "Préférences de candidature",
+      "hint": "Utilisées pour les questions fréquentes des formulaires. Laisse vide si tu préfères répondre à chaque candidature."
+    },
+    "overview": {
+      "empty": "Ton profil est vide",
+      "present": "aujourd’hui"
+    }
+  },
+  "onboarding": {
+    "steps": "Étapes de configuration",
+    "step": {
+      "welcome": "Langue",
+      "claude": "Claude",
+      "cv": "CV",
+      "interview": "Entretien",
+      "style": "Style",
+      "search": "Recherche",
+      "email": "E-mail"
+    },
+    "title": {
+      "welcome": "Bienvenue dans Jobhunter",
+      "claude": "Connecter Claude",
+      "cv": "Importe ton CV",
+      "interview": "Combler les trous",
+      "style": "Ton style d’écriture",
+      "search": "Que recherches-tu ?",
+      "email": "Connecter ta boîte de réception"
+    },
+    "welcomeText": "Jobhunter tourne sur ton ordinateur ou ton serveur. Il trouve des offres, suit tes candidatures dans Gmail et prépare des candidatures sur mesure à partir de faits que tu confirmes. Tes données restent chez toi.",
+    "cvDone": "Profil enregistré avec {{count}} faits. Tu peux importer un autre CV ou continuer.",
+    "finish": "Terminer la configuration",
+    "skipAll": "Passer la configuration pour l’instant"
+  },
+  "voice": {
+    "browserUnsupported": "La saisie vocale n’est pas prise en charge par ce navigateur.",
+    "micDenied": "L’accès au micro a été refusé.",
+    "stop": "Arrêter l’enregistrement",
+    "transcribing": "Transcription…",
+    "record": "Répondre à voix haute",
+    "localNote": "Transcrit sur cet appareil.",
+    "browserNote": "Utilise la reconnaissance vocale du navigateur."
   }
 }

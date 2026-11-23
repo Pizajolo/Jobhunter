@@ -1,0 +1,135 @@
+{
+  "description": "Synthetic CV (fixtures/cv/alex-example.pdf) extracted to a profile",
+  "input": {
+    "text": "Alex Example\nZurich, Switzerland \u00b7 alex@example.com \u00b7 +41 00 000 00 00 \u00b7 linkedin.com/in/alex-example-fake\nSummary\nProduct manager with 8 years of experience building B2B data platforms.\nExperience\nSenior Product Manager, Fictional Data AG, Zurich \u2014 03/2021 \u2013 present\nLed a team of 6 engineers to launch a data pipeline product used by 40 enterprise customers.\nGrew annual recurring revenue from CHF 1.2M to CHF 3.5M in two years.\nProduct Manager, Sample Analytics GmbH, Berlin \u2014 01/2017 \u2013 02/2021\nIntroduced quarterly roadmap planning across 3 teams.\nReduced customer onboarding time from 6 weeks to 2 weeks.\nEducation\nMSc Computer Science, Example Technical University, 2014 \u2013 2016\nSkills\nProduct discovery, SQL, Python, Roadmapping, Stakeholder management\nLanguages\nEnglish (fluent), German (native), Portuguese (B1)",
+    "kind": "cv"
+  },
+  "output": {
+    "basics": {
+      "name": "Alex Example",
+      "label": "Product Manager",
+      "email": "alex@example.com",
+      "phone": "+41 00 000 00 00",
+      "url": null,
+      "summary": "Product manager with 8 years of experience building B2B data platforms.",
+      "city": "Zurich",
+      "countryCode": "CH",
+      "profiles": [
+        {
+          "network": "LinkedIn",
+          "url": "linkedin.com/in/alex-example-fake"
+        }
+      ]
+    },
+    "work": [
+      {
+        "employer": "Fictional Data AG",
+        "position": "Senior Product Manager",
+        "location": "Zurich",
+        "startDate": "2021-03",
+        "endDate": null,
+        "summary": null,
+        "highlights": [
+          "Led a team of 6 engineers to launch a data pipeline product used by 40 enterprise customers.",
+          "Grew annual recurring revenue from CHF 1.2M to CHF 3.5M in two years."
+        ]
+      },
+      {
+        "employer": "Sample Analytics GmbH",
+        "position": "Product Manager",
+        "location": "Berlin",
+        "startDate": "2017-01",
+        "endDate": "2021-02",
+        "summary": null,
+        "highlights": [
+          "Introduced quarterly roadmap planning across 3 teams.",
+          "Reduced customer onboarding time from 6 weeks to 2 weeks."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Example Technical University",
+        "studyType": "MSc",
+        "area": "Computer Science",
+        "location": null,
+        "startDate": "2014",
+        "endDate": "2016",
+        "score": null,
+        "highlights": []
+      }
+    ],
+    "skills": [
+      {
+        "name": "Product discovery",
+        "level": null,
+        "keywords": []
+      },
+      {
+        "name": "SQL",
+        "level": null,
+        "keywords": []
+      },
+      {
+        "name": "Python",
+        "level": null,
+        "keywords": []
+      },
+      {
+        "name": "Roadmapping",
+        "level": null,
+        "keywords": []
+      },
+      {
+        "name": "Stakeholder management",
+        "level": null,
+        "keywords": []
+      }
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "fluency": "fluent"
+      },
+      {
+        "language": "German",
+        "fluency": "native"
+      },
+      {
+        "language": "Portuguese",
+        "fluency": "B1"
+      }
+    ],
+    "projects": [],
+    "certificates": [],
+    "achievements": [],
+    "interests": [],
+    "detectedLanguage": "en"
+  },
+  "assert": [
+    {
+      "path": "work",
+      "minLength": 2
+    },
+    {
+      "path": "work.0.employer",
+      "equals": "Fictional Data AG"
+    },
+    {
+      "path": "work.0.endDate",
+      "equals": null
+    },
+    {
+      "path": "education.0.institution",
+      "equals": "Example Technical University"
+    },
+    {
+      "path": "languages",
+      "minLength": 3
+    },
+    {
+      "path": "detectedLanguage",
+      "equals": "en"
+    }
+  ]
+}

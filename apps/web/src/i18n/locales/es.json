@@ -182,5 +182,162 @@
     "status": "Estado",
     "cost": "Coste est.",
     "when": "Cuándo"
+  },
+  "profile": {
+    "subtitle": "Versión {{version}} · {{facts}} datos confirmados",
+    "tabs": {
+      "overview": "Perfil",
+      "facts": "Datos",
+      "interview": "Entrevista",
+      "style": "Estilo de escritura",
+      "templates": "Plantillas de CV"
+    },
+    "upload": {
+      "title": "Subir un CV",
+      "choose": "Elegir archivo",
+      "formats": "PDF o DOCX, hasta 20 MB. El texto se lee en este equipo.",
+      "linkedin": "Es una exportación en PDF del perfil de LinkedIn",
+      "submit": "Leer CV",
+      "extracting": "Leyendo {{file}}…",
+      "failed": "No se pudo leer este archivo."
+    },
+    "review": {
+      "intro": "Revisa cada elemento que Jobhunter extrajo. Confírmalo, edítalo o elimínalo. Solo lo que conserves pasa a tu perfil.",
+      "original": "Texto extraído",
+      "basics": "Contacto y resumen",
+      "confirmed": "Confirmado",
+      "deleted": "Eliminado",
+      "confirm": "Confirmar",
+      "doneEditing": "Listo",
+      "restore": "Restaurar",
+      "save": "Guardar en el perfil",
+      "confirmAll": "Confirmar todos los restantes",
+      "discard": "Descartar importación",
+      "remaining": "Quedan {{count}} elementos por revisar"
+    },
+    "fields": {
+      "name": "Nombre",
+      "label": "Título",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "url": "Sitio web",
+      "summary": "Resumen",
+      "position": "Puesto",
+      "location": "Ubicación",
+      "startDate": "Inicio",
+      "endDate": "Fin",
+      "highlights": "Logros (uno por línea)",
+      "studyType": "Titulación",
+      "area": "Área",
+      "institution": "Institución",
+      "score": "Nota",
+      "level": "Nivel",
+      "keywords": "Palabras clave (separadas por comas)",
+      "language": "Idioma",
+      "fluency": "Nivel",
+      "description": "Descripción",
+      "issuer": "Emisor",
+      "date": "Fecha",
+      "text": "Texto",
+      "metric": "Métrica",
+      "workAuthorization": "Permiso de trabajo",
+      "salaryExpectation": "Expectativa salarial",
+      "noticePeriod": "Preaviso",
+      "motivation": "Motivación general",
+      "willingToRelocate": "Dispuesto a mudarme"
+    },
+    "sections": {
+      "work": "Experiencia",
+      "education": "Formación",
+      "skills": "Habilidades",
+      "languages": "Idiomas",
+      "projects": "Proyectos",
+      "certificates": "Certificados",
+      "achievements": "Logros"
+    },
+    "interview": {
+      "intro": "Claude hace preguntas cortas para completar tu perfil: resultados con cifras, responsabilidades, herramientas, qué buscas ahora. Una pregunta cada vez; puedes saltar cualquiera. No se guarda nada hasta que confirmes el resumen.",
+      "goals": "¿Qué buscas? (opcional)",
+      "goalsPlaceholder": "p. ej., Head of Product en Zúrich o en remoto",
+      "start": "Empezar entrevista",
+      "summaryTitle": "Resumen",
+      "summaryHint": "Estos datos salen solo de tus respuestas. Edita o desmarca lo que quieras antes de guardar.",
+      "keep": "Conservar este dato",
+      "noFacts": "Esta entrevista no aportó datos nuevos.",
+      "confirm": "Guardar {{count}} datos",
+      "restart": "Reiniciar entrevista",
+      "progress": "Pregunta {{count}}",
+      "answer": "Tu respuesta",
+      "answerPlaceholder": "Escribe tu respuesta o usa el micrófono…",
+      "send": "Enviar respuesta",
+      "finish": "Terminar y resumir"
+    },
+    "style": {
+      "intro": "Pega 3–10 textos escritos por ti (cartas de presentación antiguas, correos). Jobhunter aprende tu tono para que las cartas suenen como tú.",
+      "language": "Idioma de los textos",
+      "paste": "Pegar un texto",
+      "pasteHint": "Al menos unas frases. Quita lo privado que no quieras guardar.",
+      "add": "Añadir texto",
+      "analyze": "Analizar {{count}} textos",
+      "result": "Tu estilo",
+      "tone": "Tono",
+      "formality": "Formalidad",
+      "avoid": "Evitar",
+      "rules": "Reglas aprendidas de tus ediciones"
+    },
+    "facts": {
+      "hint": "Los datos son el único material que Jobhunter puede usar en CVs, cartas y respuestas de formularios. Los datos del perfil se actualizan cuando editas el perfil.",
+      "add": "Añadir dato",
+      "addPlaceholder": "p. ej., Habla español a nivel C1",
+      "none": "Aún no hay datos.",
+      "source": {
+        "cv": "Perfil",
+        "interview": "Entrevista",
+        "manual": "Añadido por ti",
+        "linkedin_pdf": "PDF de LinkedIn"
+      }
+    },
+    "preferences": {
+      "title": "Preferencias para candidaturas",
+      "hint": "Se usan en preguntas habituales de formularios. Déjalo vacío si prefieres responder en cada candidatura."
+    },
+    "overview": {
+      "empty": "Tu perfil está vacío",
+      "present": "actualidad"
+    }
+  },
+  "onboarding": {
+    "steps": "Pasos de configuración",
+    "step": {
+      "welcome": "Idioma",
+      "claude": "Claude",
+      "cv": "CV",
+      "interview": "Entrevista",
+      "style": "Estilo",
+      "search": "Búsqueda",
+      "email": "Correo"
+    },
+    "title": {
+      "welcome": "Bienvenido a Jobhunter",
+      "claude": "Conectar Claude",
+      "cv": "Sube tu CV",
+      "interview": "Completar huecos",
+      "style": "Tu estilo de escritura",
+      "search": "¿Qué buscas?",
+      "email": "Conectar tu bandeja de entrada"
+    },
+    "welcomeText": "Jobhunter funciona en tu ordenador o servidor. Encuentra ofertas, sigue tus candidaturas en Gmail y prepara candidaturas a medida con datos que tú confirmas. Tus datos se quedan contigo.",
+    "cvDone": "Perfil guardado con {{count}} datos. Puedes subir otro CV o continuar.",
+    "finish": "Terminar configuración",
+    "skipAll": "Saltar la configuración por ahora"
+  },
+  "voice": {
+    "browserUnsupported": "Este navegador no admite entrada de voz.",
+    "micDenied": "Se denegó el acceso al micrófono.",
+    "stop": "Detener grabación",
+    "transcribing": "Transcribiendo…",
+    "record": "Responder por voz",
+    "localNote": "Se transcribe en este equipo.",
+    "browserNote": "Usa el reconocimiento de voz del navegador."
   }
 }

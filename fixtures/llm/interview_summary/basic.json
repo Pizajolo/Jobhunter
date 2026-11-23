@@ -1,0 +1,63 @@
+{
+  "description": "Summary facts only use the user's answers",
+  "input": {
+    "profileSummary": "Alex Example \u2014 Product Manager\n- Senior Product Manager at Fictional Data AG (2021-03 \u2013 present): 2 highlights\n- Product Manager at Sample Analytics GmbH (2017-01 \u2013 2021-02): 2 highlights",
+    "facts": [
+      {
+        "id": "f_1",
+        "text": "Senior Product Manager at Fictional Data AG, Zurich (2021-03 \u2013 present)"
+      }
+    ],
+    "history": [
+      {
+        "question": "At Fictional Data AG, what was your exact responsibility for the pipeline launch?",
+        "answer": "I owned the roadmap and pricing, and ran discovery with 15 customers before launch.",
+        "topic": "responsibility"
+      },
+      {
+        "question": "Why did you move from Berlin to Zurich?",
+        "answer": null,
+        "topic": "motivation"
+      },
+      {
+        "question": "What notice period do you have?",
+        "answer": "3 months",
+        "topic": "preference"
+      }
+    ],
+    "goals": "Head of Product roles in Zurich or remote"
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "summary": "Alex owned roadmap and pricing for the pipeline launch at Fictional Data AG and has a three-month notice period.",
+    "facts": [
+      {
+        "text": "At Fictional Data AG, owned the roadmap and pricing for the data pipeline launch",
+        "category": "responsibility",
+        "basedOnQuestion": 0
+      },
+      {
+        "text": "At Fictional Data AG, ran discovery with 15 customers before launch",
+        "category": "achievement",
+        "basedOnQuestion": 0
+      },
+      {
+        "text": "Notice period: 3 months",
+        "category": "preference",
+        "basedOnQuestion": 2
+      }
+    ]
+  },
+  "assert": [
+    {
+      "path": "facts",
+      "minLength": 2
+    },
+    {
+      "path": "facts",
+      "notIncludes": "Berlin"
+    }
+  ]
+}

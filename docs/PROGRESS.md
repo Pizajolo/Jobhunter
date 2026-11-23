@@ -6,7 +6,7 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 |---|---|
 | M0 Skeleton | done |
 | M1 Claude + agent layer | done |
-| M2 Profile | not started |
+| M2 Profile | done |
 | M3 Scanning | not started |
 | M4 Documents | not started |
 | M5 Email | not started |
@@ -42,3 +42,17 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 **Known issues / not verified**
 - Live model calls were not made in this environment (no account); run `pnpm test:prompts --live` locally.
 - The structured-output JSON Schema conversion drops numeric/length constraints (Zod still enforces them after the answer).
+
+## M2 Profile
+
+**Done**
+- CV upload (PDF via `unpdf`, DOCX via `mammoth`, LinkedIn PDF export flag) → `profile_extract` task → side-by-side review (extracted text left, every item to confirm / edit / delete right). Nothing is saved before review; a second import merges without duplicating roles.
+- Deterministic guard against invented content: every employer / institution and every number in extracted highlights must appear in the CV text (separator-insensitive), otherwise the task retries and then fails.
+- Master profile with versions (`profile_versions` + diff), atomic facts derived deterministically from the confirmed profile (stable IDs), manual facts, interview facts. Only confirmed, non-deleted facts are available to writers.
+- CV interview: one question at a time, skippable, ends after the gaps are covered (max 15); the summary task may only use the user's answers (numbers are checked against the cited answer) and facts are saved only after the user confirms the summary.
+- Writing style: samples per language → `style_analyze` (examples must be quoted verbatim) → style profile; learned rules editable; `{{style_profile}}` text for writing prompts.
+- UI: onboarding wizard (language, Claude, CV, interview, style; search and email steps come with M3/M5), profile page (overview, application preferences, facts, interview, style), voice input component (wired up fully in M8).
+- Cassettes for all four tasks; engine tests for upload → review → facts, interview, style.
+
+**Known issues**
+- Scanned (image-only) PDFs produce little text; the user is told to upload a DOCX or text PDF (no OCR in v1).

@@ -1,0 +1,41 @@
+{
+  "description": "Style from two short English samples",
+  "input": {
+    "language": "en",
+    "samples": [
+      "Dear hiring team,\n\nI read your posting for a product lead with interest. Over the last four years I have built data products from the first prototype to paying customers. I like short feedback loops and clear priorities.\n\nI would be glad to tell you more in a call.\n\nKind regards,\nAlex",
+      "Hi Maria,\n\nthanks for the quick reply. Tuesday works for me. I'll bring the numbers from the last quarter so we can look at them together.\n\nBest,\nAlex"
+    ]
+  },
+  "output": {
+    "tone": "friendly, calm and direct",
+    "formality": "polite but not stiff; first names in emails, 'Dear hiring team' in letters",
+    "sentenceLength": "short to medium sentences, one idea each",
+    "typicalPhrases": [
+      "I would be glad to",
+      "I like short feedback loops",
+      "Kind regards",
+      "thanks for the quick reply"
+    ],
+    "avoid": [
+      "exclamation marks",
+      "buzzwords such as 'passionate' or 'synergy'",
+      "long paragraphs"
+    ],
+    "description": "Alex writes short, plain sentences and gets to the point quickly. Claims are concrete rather than enthusiastic. Letters open with a direct reason for writing and close with a simple offer to talk.",
+    "examples": [
+      "I like short feedback loops and clear priorities.",
+      "I would be glad to tell you more in a call."
+    ]
+  },
+  "assert": [
+    {
+      "path": "examples",
+      "minLength": 1
+    },
+    {
+      "path": "avoid",
+      "minLength": 1
+    }
+  ]
+}

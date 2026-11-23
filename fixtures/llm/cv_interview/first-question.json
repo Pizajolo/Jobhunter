@@ -1,0 +1,37 @@
+{
+  "description": "First interview question targets a missing metric",
+  "input": {
+    "profileSummary": "Alex Example \u2014 Product Manager\n- Senior Product Manager at Fictional Data AG (2021-03 \u2013 present): 2 highlights\n- Product Manager at Sample Analytics GmbH (2017-01 \u2013 2021-02): 2 highlights",
+    "facts": [
+      {
+        "id": "f_1",
+        "text": "Senior Product Manager at Fictional Data AG, Zurich (2021-03 \u2013 present)"
+      }
+    ],
+    "history": [],
+    "goals": "Head of Product roles in Zurich or remote"
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "done": false,
+    "question": "At Sample Analytics GmbH, how many customers or users did the quarterly roadmap planning affect, and what changed as a result?",
+    "topic": "achievements:Sample Analytics GmbH",
+    "why": "Concrete outcomes make the Sample Analytics role stronger in applications."
+  },
+  "assert": [
+    {
+      "path": "done",
+      "equals": false
+    },
+    {
+      "path": "question",
+      "minLength": 10
+    },
+    {
+      "path": "question",
+      "notIncludes": "\n"
+    }
+  ]
+}

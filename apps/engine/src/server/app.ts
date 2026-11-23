@@ -15,7 +15,7 @@ export type RouteRegistrar = (app: FastifyInstance, ctx: AppContext) => void | P
 export async function buildApp(ctx: AppContext): Promise<FastifyInstance> {
   const app: FastifyInstance = Fastify({
     // pino's Logger is a FastifyBaseLogger at runtime; the generic only differs in optional typing
-    loggerInstance: ctx.log.child({ mod: 'http' }, { level: ctx.config.mode === 'dev' ? 'info' : 'warn' }) as FastifyBaseLogger,
+    loggerInstance: ctx.log.child({ mod: 'http' }, { level: ctx.log.level === 'silent' ? 'silent' : ctx.config.mode === 'dev' ? 'info' : 'warn' }) as FastifyBaseLogger,
     bodyLimit: 25 * 1024 * 1024,
     trustProxy: ctx.config.mode === 'server',
   });
