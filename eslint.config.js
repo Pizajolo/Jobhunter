@@ -10,6 +10,7 @@ export default tseslint.config(
       '**/dist/**',
       '**/dist-electron/**',
       '**/release/**',
+      'apps/desktop/stage/**',
       '**/node_modules/**',
       '**/coverage/**',
       'fixtures/**',

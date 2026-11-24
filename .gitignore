@@ -17,3 +17,5 @@ playwright-report/
 *.db-*
 .DS_Store
 .vite/
+docker/.env
+.sandbox-ca.crt

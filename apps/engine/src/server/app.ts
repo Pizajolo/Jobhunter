@@ -8,6 +8,7 @@ import { join } from 'node:path';
 import type { AppContext } from '../context.js';
 import { HttpError, sendError } from './http.js';
 import { scrubSecrets } from '../logger.js';
+import { registerAuth } from './auth.js';
 
 export type RouteRegistrar = (app: FastifyInstance, ctx: AppContext) => void | Promise<void>;
 
@@ -34,6 +35,9 @@ export async function buildApp(ctx: AppContext): Promise<FastifyInstance> {
     return reply.status(500).send({ error: scrubSecrets(e.message ?? 'Internal error') });
   });
 
+  registerAuth(app, ctx);
+
+  // The auth hook (server mode) also guards the WebSocket upgrade request.
   app.get('/api/ws', { websocket: true }, (socket) => {
     const off = ctx.bus.onWs((m) => {
       if (socket.readyState === 1) socket.send(JSON.stringify(m));

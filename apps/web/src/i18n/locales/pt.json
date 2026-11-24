@@ -761,5 +761,22 @@
       "policy": "Condições de envio automático não cumpridas",
       "unexpected": "Aconteceu algo inesperado"
     }
+  },
+  "login": {
+    "title": "Iniciar sessão",
+    "setupTitle": "Escolher palavra-passe",
+    "setupHint": "Este servidor ainda não tem palavra-passe. Introduz o código de configuração do registo do servidor (docker compose logs jobhunter) e escolhe uma palavra-passe.",
+    "setupCode": "Código de configuração",
+    "password": "Palavra-passe",
+    "passwordHint": "Pelo menos 12 caracteres.",
+    "confirm": "Repetir palavra-passe",
+    "mismatch": "As palavras-passe não coincidem.",
+    "setPassword": "Definir palavra-passe e entrar",
+    "signIn": "Entrar",
+    "changeTitle": "Palavra-passe de acesso",
+    "current": "Palavra-passe atual",
+    "newPassword": "Nova palavra-passe",
+    "change": "Alterar palavra-passe",
+    "signOut": "Terminar sessão"
   }
 }

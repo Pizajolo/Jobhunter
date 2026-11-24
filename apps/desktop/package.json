@@ -1,0 +1,19 @@
+{
+  "name": "@jobhunter/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Jobhunter desktop app",
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dist": "node scripts/build.mjs && node scripts/package.mjs",
+    "start": "node scripts/build.mjs && electron .",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0",
+    "esbuild": "^0.28.2"
+  }
+}

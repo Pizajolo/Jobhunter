@@ -761,5 +761,22 @@
       "policy": "Auto-submit conditions not met",
       "unexpected": "Something unexpected happened"
     }
+  },
+  "login": {
+    "title": "Sign in",
+    "setupTitle": "Choose a password",
+    "setupHint": "This server has no password yet. Enter the setup code from the server log (docker compose logs jobhunter) and choose a password.",
+    "setupCode": "Setup code",
+    "password": "Password",
+    "passwordHint": "At least 12 characters.",
+    "confirm": "Repeat password",
+    "mismatch": "The passwords don't match.",
+    "setPassword": "Set password and sign in",
+    "signIn": "Sign in",
+    "changeTitle": "Sign-in password",
+    "current": "Current password",
+    "newPassword": "New password",
+    "change": "Change password",
+    "signOut": "Sign out"
   }
 }

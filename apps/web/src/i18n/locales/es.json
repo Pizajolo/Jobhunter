@@ -761,5 +761,22 @@
       "policy": "No se cumplen las condiciones de envío automático",
       "unexpected": "Ocurrió algo inesperado"
     }
+  },
+  "login": {
+    "title": "Iniciar sesión",
+    "setupTitle": "Elegir contraseña",
+    "setupHint": "Este servidor aún no tiene contraseña. Introduce el código de configuración del registro del servidor (docker compose logs jobhunter) y elige una contraseña.",
+    "setupCode": "Código de configuración",
+    "password": "Contraseña",
+    "passwordHint": "Al menos 12 caracteres.",
+    "confirm": "Repetir contraseña",
+    "mismatch": "Las contraseñas no coinciden.",
+    "setPassword": "Fijar contraseña y entrar",
+    "signIn": "Entrar",
+    "changeTitle": "Contraseña de acceso",
+    "current": "Contraseña actual",
+    "newPassword": "Nueva contraseña",
+    "change": "Cambiar contraseña",
+    "signOut": "Cerrar sesión"
   }
 }

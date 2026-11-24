@@ -55,7 +55,6 @@ if (missing.size) {
 for (const [from, to] of [
   ['../../packages/db/migrations', 'migrations'],
   ['prompts', 'prompts'],
-  ['../../packages/mcp-docs/templates', 'templates'],
 ]) {
   const src = join(root, from);
   if (existsSync(src)) cpSync(src, join(dist, to), { recursive: true });

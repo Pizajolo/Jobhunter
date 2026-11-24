@@ -51,7 +51,7 @@ export class AgentSdkBackend implements LlmBackend {
           ...(req.maxBudgetUsd ? { maxBudgetUsd: req.maxBudgetUsd } : {}),
           outputFormat: { type: 'json_schema', schema: req.jsonSchema },
           env,
-          pathToClaudeCodeExecutable: claudeExecutable(env),
+          ...(process.env.JOBHUNTER_CLAUDE_PATH ? { pathToClaudeCodeExecutable: claudeExecutable(env) } : {}),
         },
       });
       for await (const msg of q as AsyncIterable<SDKMessage>) {

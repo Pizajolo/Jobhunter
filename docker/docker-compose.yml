@@ -1,0 +1,23 @@
+# Jobhunter server mode. See docs/SERVER.md.
+#   cp docker/.env.example docker/.env   # set JOBHUNTER_MASTER_KEY
+#   docker compose -f docker/docker-compose.yml up -d
+services:
+  jobhunter:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: jobhunter:latest
+    container_name: jobhunter
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      TZ: ${TZ:-Europe/Zurich}
+    # Bound to localhost only. Expose it through Tailscale or a reverse proxy with TLS (docs/SERVER.md).
+    ports:
+      - "127.0.0.1:4317:4317"
+    volumes:
+      - jobhunter-data:/data
+    shm_size: "1gb"
+
+volumes:
+  jobhunter-data:

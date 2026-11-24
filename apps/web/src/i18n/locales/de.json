@@ -761,5 +761,22 @@
       "policy": "Bedingungen für automatisches Absenden nicht erfüllt",
       "unexpected": "Etwas Unerwartetes ist passiert"
     }
+  },
+  "login": {
+    "title": "Anmelden",
+    "setupTitle": "Passwort festlegen",
+    "setupHint": "Dieser Server hat noch kein Passwort. Gib den Setup-Code aus dem Server-Log ein (docker compose logs jobhunter) und wähle ein Passwort.",
+    "setupCode": "Setup-Code",
+    "password": "Passwort",
+    "passwordHint": "Mindestens 12 Zeichen.",
+    "confirm": "Passwort wiederholen",
+    "mismatch": "Die Passwörter stimmen nicht überein.",
+    "setPassword": "Passwort festlegen und anmelden",
+    "signIn": "Anmelden",
+    "changeTitle": "Anmeldepasswort",
+    "current": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "change": "Passwort ändern",
+    "signOut": "Abmelden"
   }
 }

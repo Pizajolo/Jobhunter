@@ -28,8 +28,7 @@ export async function startEngine(config: EngineConfig, log: Logger): Promise<Ru
   const url = `http://${config.host}:${port}`;
   await startServices(ctx);
   log.info({ url, mode: config.mode, dataDir: config.dataDir }, 'Jobhunter engine started');
-  // Signal readiness to a parent process (Electron) when spawned as a child.
-  process.send?.({ type: 'ready', url });
+  connectParent(ctx, url);
   const stop = async () => {
     await stopServices(ctx);
     await app.close();
@@ -41,4 +40,24 @@ export async function startEngine(config: EngineConfig, log: Logger): Promise<Ru
   process.once('SIGINT', onSignal);
   process.once('SIGTERM', onSignal);
   return { ctx, url, stop };
+}
+
+interface ParentPort {
+  postMessage(m: unknown): void;
+  on(event: 'message', fn: (e: { data: { type?: string } }) => void): void;
+}
+
+/**
+ * When the desktop shell (Electron utilityProcess) started us: report readiness, forward
+ * notifications to OS notifications, and run a catch-up check when the laptop wakes up.
+ */
+function connectParent(ctx: AppContext, url: string): void {
+  const port = (process as unknown as { parentPort?: ParentPort }).parentPort;
+  const send = (m: unknown) => (port ? port.postMessage(m) : process.send?.(m));
+  if (!port && !process.send) return;
+  send({ type: 'ready', url });
+  ctx.bus.on<{ title: string; body: string; urgent?: boolean; link?: string | null }>('notification', (n) => send({ type: 'notification', title: n.title, body: n.body, urgent: n.urgent ?? false, link: n.link ?? null }));
+  port?.on('message', (e) => {
+    if (e.data.type === 'resume') ctx.bus.emit('system:resume', null);
+  });
 }

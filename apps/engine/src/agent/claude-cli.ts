@@ -15,15 +15,24 @@ const require = createRequire(import.meta.url);
  */
 export function claudeExecutable(env: NodeJS.ProcessEnv = process.env): string {
   if (env.JOBHUNTER_CLAUDE_PATH) return env.JOBHUNTER_CLAUDE_PATH;
-  const platform = process.platform === 'win32' ? 'win32' : process.platform;
+  const platform = process.platform;
   const candidates = [`@anthropic-ai/claude-agent-sdk-${platform}-${process.arch}`, `@anthropic-ai/claude-agent-sdk-${platform}-${process.arch}-musl`];
+  // The platform package is an optional dependency of the SDK, so resolve it from the SDK's location.
+  let fromSdk: NodeJS.Require = require;
+  try {
+    fromSdk = createRequire(require.resolve('@anthropic-ai/claude-agent-sdk'));
+  } catch {
+    /* SDK not resolvable: fall back to this module's resolution */
+  }
   for (const pkg of candidates) {
-    try {
-      const dir = dirname(require.resolve(`${pkg}/package.json`));
-      const bin = join(dir, process.platform === 'win32' ? 'claude.exe' : 'claude');
-      if (existsSync(bin)) return bin;
-    } catch {
-      /* not installed for this platform */
+    for (const r of [fromSdk, require]) {
+      try {
+        const dir = dirname(r.resolve(`${pkg}/package.json`));
+        const bin = join(dir, platform === 'win32' ? 'claude.exe' : 'claude');
+        if (existsSync(bin)) return bin;
+      } catch {
+        /* not installed for this platform */
+      }
     }
   }
   return 'claude';

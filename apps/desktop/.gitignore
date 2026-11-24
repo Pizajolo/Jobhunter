@@ -1,0 +1,4 @@
+stage/
+release/
+dist-electron/
+electron-builder.generated.json

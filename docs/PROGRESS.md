@@ -119,3 +119,22 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 **Known issues**
 - Real ATS forms vary (custom widgets such as React selects or date pickers); unknown widgets are left for the user. Tested only against local mock forms.
 - The apply browser opens as its own Chromium window on desktop (embedding into the Electron window is planned in M7).
+
+## M7 Packaging
+
+**Done**
+- Server mode login (spec §2.7): one-time setup code in the log (or `JOBHUNTER_SETUP_CODE`), one password stored as an argon2id hash, `HttpOnly` + `SameSite=Strict` session cookie (`Secure` over HTTPS or with an https `JOBHUNTER_PUBLIC_URL`), double-submit CSRF token on every state-changing request (including the password change), 10 attempts per 15 minutes, `JOBHUNTER_RESET_PASSWORD=1` for a forgotten password. Sign-in page, plus a password change and sign-out in Settings → General.
+- Docker: `docker/Dockerfile` (Playwright Noble base with Chromium, fonts, tini, non-root user, `/data` volume, healthcheck, bundled Claude Code binary on `PATH` for `claude auth login`), `docker/docker-compose.yml` (published on 127.0.0.1 only), `docker/.env.example` (master key for the encrypted secrets file).
+- Desktop: Electron 45 shell (`apps/desktop`). It runs the engine in a utility process on a free localhost port, keeps running in the tray (Open, Scan now, Start at login, Quit), shows OS notifications, catches up after sleep via `powerMonitor`, opens outside links in the default browser and downloads Chromium on first start. `scripts/package.mjs` stages a flat npm app, rebuilds the native modules for Electron and runs electron-builder (dmg/zip, NSIS, AppImage/deb). No asar, because the engine spawns bundled binaries.
+- Release workflow: tags `v*` build the installers on macOS, Windows and Linux, push a multi-arch image to GHCR and create a draft release. CI now also builds the Docker image and smoke-tests it (health, 401 without login, `claude --version`, setup code in the log).
+- `docs/SERVER.md` (setup, Claude login, SSH tunnel / Tailscale / Caddy, backups, variables), `docs/PACKAGING.md`.
+
+**Verified here**
+- Server package (`pnpm deploy` output + bundle) started with plain Node in server mode: health OK, API refuses without login, setup code → password → session works, UI served.
+- Linux unpacked Electron build started under Xvfb: engine starts in the utility process, SQLite (rebuilt for Electron) opens, the bundled Claude Code binary reports the login, and a Harvard CV preview PDF renders through Chromium.
+- 142 unit tests, 32 prompt cases, 8 e2e tests (desktop, phone, apply), lint and typecheck pass.
+
+**Known issues / not verified**
+- The Docker image could **not be built in this sandbox** (its proxy blocks apt). CI builds and smoke-tests it; check the first CI run.
+- macOS and Windows installers were not built here; the release workflow builds them. They are unsigned (signing certificates are paid), see `docs/PACKAGING.md`.
+- The apply browser still opens as its own Chromium window instead of inside the app window. Playwright needs its own browser process with the persistent profile; embedding it in Electron would mean switching to Electron's CDP. The separate window is the accepted fallback.

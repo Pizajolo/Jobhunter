@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { TASK_NAMES, TASK_TIER, UI_LANGUAGES, type Settings } from '@jobhunter/shared';
-import { Button, Card, Field, Input, Select } from '../../components/ui';
+import { Button, Card, ErrorText, Field, Input, Select } from '../../components/ui';
 import { ClaudeAccount } from '../../components/ClaudeAccount';
 import { api } from '../../lib/api';
 import { formatUsd } from '../../lib/format';
@@ -49,7 +49,50 @@ export function GeneralSection({ s, save }: SectionProps) {
           </Select>
         </Field>
       </div>
+      <ServerAccount />
     </Card>
+  );
+}
+
+/** Server mode only: change the sign-in password and sign out. */
+function ServerAccount() {
+  const { t } = useTranslation();
+  const status = useQuery({ queryKey: ['auth'], queryFn: () => api.get<{ required: boolean }>('/api/auth/status') });
+  const [current, setCurrent] = useState('');
+  const [next, setNext] = useState('');
+  const change = useMutation({
+    mutationFn: () => api.post('/api/auth/password', { current, password: next }),
+    onSuccess: () => window.location.assign('/login'),
+  });
+  const logout = useMutation({ mutationFn: () => api.post('/api/auth/logout', {}), onSuccess: () => window.location.assign('/login') });
+  if (!status.data?.required) return null;
+  return (
+    <form
+      className="mt-5 flex flex-col gap-3 border-t border-line pt-4"
+      onSubmit={(e) => {
+        e.preventDefault();
+        change.mutate();
+      }}
+    >
+      <h3 className="m-0 text-[13px] font-semibold">{t('login.changeTitle')}</h3>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Field id="pw-current" label={t('login.current')}>
+          <Input id="pw-current" type="password" autoComplete="current-password" value={current} onChange={(e) => setCurrent(e.target.value)} />
+        </Field>
+        <Field id="pw-new" label={t('login.newPassword')} hint={t('login.passwordHint')}>
+          <Input id="pw-new" type="password" autoComplete="new-password" value={next} onChange={(e) => setNext(e.target.value)} />
+        </Field>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <Button type="submit" busy={change.isPending} disabled={!current || next.length < 12}>
+          {t('login.change')}
+        </Button>
+        <Button type="button" variant="ghost" busy={logout.isPending} onClick={() => logout.mutate()}>
+          {t('login.signOut')}
+        </Button>
+      </div>
+      <ErrorText error={change.error ?? logout.error} />
+    </form>
   );
 }
 

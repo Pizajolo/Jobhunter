@@ -761,5 +761,22 @@
       "policy": "Conditions d’envoi automatique non remplies",
       "unexpected": "Un imprévu s’est produit"
     }
+  },
+  "login": {
+    "title": "Connexion",
+    "setupTitle": "Choisir un mot de passe",
+    "setupHint": "Ce serveur n’a pas encore de mot de passe. Saisis le code de configuration du journal du serveur (docker compose logs jobhunter) et choisis un mot de passe.",
+    "setupCode": "Code de configuration",
+    "password": "Mot de passe",
+    "passwordHint": "Au moins 12 caractères.",
+    "confirm": "Répéter le mot de passe",
+    "mismatch": "Les mots de passe ne correspondent pas.",
+    "setPassword": "Définir le mot de passe et se connecter",
+    "signIn": "Se connecter",
+    "changeTitle": "Mot de passe de connexion",
+    "current": "Mot de passe actuel",
+    "newPassword": "Nouveau mot de passe",
+    "change": "Changer le mot de passe",
+    "signOut": "Se déconnecter"
   }
 }

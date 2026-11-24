@@ -30,6 +30,7 @@
     "@jobhunter/mcp-jobs": "workspace:*",
     "@jobhunter/shared": "workspace:*",
     "@napi-rs/keyring": "^2.1.2",
+    "@node-rs/argon2": "^2.2.2",
     "better-sqlite3": "^13.2.0",
     "cheerio": "^1.2.0",
     "croner": "^11.0.1",
