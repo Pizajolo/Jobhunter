@@ -706,5 +706,60 @@
     "alerts": "Alertas de emprego",
     "recruiters": "Recrutadores",
     "unlinked": "Sem candidatura associada"
+  },
+  "apply": {
+    "settings": {
+      "title": "Candidatar",
+      "level": "O que o agente pode fazer",
+      "minScore": "Enviar automaticamente a partir de (%)",
+      "dailyCap": "No máximo por dia",
+      "autoApprove": "Aprovar pacotes automaticamente",
+      "autoApproveHint": "Salta a tua aprovação do CV e da carta. Não recomendado.",
+      "excluded": "Nunca candidatar automaticamente em",
+      "always": "sempre",
+      "addDomain": "Adicionar site",
+      "responsibility": "És responsável por tudo o que é enviado em teu nome. O agente para sempre em CAPTCHAs, logins, códigos de dois fatores, campos de pagamento e perguntas desconhecidas."
+    },
+    "levels": {
+      "off": {
+        "title": "Desligado",
+        "desc": "O Jobhunter só prepara os documentos; candidatas-te tu."
+      },
+      "prepare": {
+        "title": "Preparar",
+        "desc": "O agente preenche o formulário e para antes de enviar. Tu revês e envias."
+      },
+      "submit": {
+        "title": "Enviar automaticamente",
+        "desc": "Só quando a compatibilidade é alta, o pacote está aprovado, o site não está excluído, o limite diário não foi atingido e nada inesperado aparece. Caso contrário, só prepara."
+      }
+    },
+    "runs": {
+      "title": "Formulário de candidatura",
+      "status": {
+        "running": "A preencher…",
+        "prepared": "Preparado, à tua espera",
+        "submitted": "Enviado",
+        "handover": "Precisa de ti",
+        "failed": "Falhou"
+      },
+      "screenshot": "Captura do formulário de candidatura",
+      "markApplied": "Já enviei",
+      "openForm": "Abrir o formulário",
+      "preparedHint": "No computador, o formulário preenchido fica aberto na janela do navegador do Jobhunter. No modo servidor, abre o formulário no teu dispositivo e usa as respostas do pacote."
+    },
+    "stop": {
+      "captcha": "CAPTCHA, resolve-o tu",
+      "login": "É preciso iniciar sessão; o Jobhunter nunca escreve palavras-passe",
+      "two_factor": "É preciso um código de dois fatores",
+      "payment": "Campo de pagamento na página",
+      "error_page": "A página não abriu ou a vaga já não existe",
+      "excluded_site": "Site excluído da candidatura automática",
+      "unknown_fields": "Alguns campos obrigatórios precisam da tua resposta",
+      "no_form": "Nenhum formulário encontrado",
+      "not_approved": "Aprova primeiro o pacote",
+      "policy": "Condições de envio automático não cumpridas",
+      "unexpected": "Aconteceu algo inesperado"
+    }
   }
 }

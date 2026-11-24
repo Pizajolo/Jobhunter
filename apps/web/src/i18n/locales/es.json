@@ -706,5 +706,60 @@
     "alerts": "Alertas de empleo",
     "recruiters": "Reclutadores",
     "unlinked": "Sin candidatura asociada"
+  },
+  "apply": {
+    "settings": {
+      "title": "Aplicar",
+      "level": "Qué puede hacer el agente",
+      "minScore": "Enviar automáticamente desde encaje (%)",
+      "dailyCap": "Como máximo al día",
+      "autoApprove": "Aprobar paquetes automáticamente",
+      "autoApproveHint": "Omite tu aprobación del CV y la carta. No recomendado.",
+      "excluded": "Nunca aplicar automáticamente en",
+      "always": "siempre",
+      "addDomain": "Añadir sitio",
+      "responsibility": "Eres responsable de todo lo que se envía en tu nombre. El agente siempre se detiene ante CAPTCHAs, inicios de sesión, códigos de dos factores, campos de pago y preguntas desconocidas."
+    },
+    "levels": {
+      "off": {
+        "title": "Desactivado",
+        "desc": "Jobhunter solo prepara los documentos; aplicas tú."
+      },
+      "prepare": {
+        "title": "Preparar",
+        "desc": "El agente rellena el formulario y se detiene antes de enviarlo. Tú revisas y envías."
+      },
+      "submit": {
+        "title": "Enviar automáticamente",
+        "desc": "Solo con encaje alto, paquete aprobado, sitio no excluido, límite diario no alcanzado y sin nada inesperado. Si no, solo prepara."
+      }
+    },
+    "runs": {
+      "title": "Formulario de candidatura",
+      "status": {
+        "running": "Rellenando…",
+        "prepared": "Preparado, te espera",
+        "submitted": "Enviado",
+        "handover": "Te necesita",
+        "failed": "Falló"
+      },
+      "screenshot": "Captura del formulario",
+      "markApplied": "Ya lo envié",
+      "openForm": "Abrir el formulario",
+      "preparedHint": "En el escritorio, el formulario rellenado queda abierto en la ventana del navegador de Jobhunter. En modo servidor, abre el formulario en tu dispositivo y usa las respuestas del paquete."
+    },
+    "stop": {
+      "captcha": "CAPTCHA, resuélvelo tú",
+      "login": "Hace falta iniciar sesión; Jobhunter nunca escribe contraseñas",
+      "two_factor": "Hace falta un código de dos factores",
+      "payment": "Campo de pago en la página",
+      "error_page": "La página no cargó o la oferta ya no existe",
+      "excluded_site": "Sitio excluido de la aplicación automática",
+      "unknown_fields": "Algunos campos obligatorios necesitan tu respuesta",
+      "no_form": "No se encontró formulario",
+      "not_approved": "Aprueba primero el paquete",
+      "policy": "No se cumplen las condiciones de envío automático",
+      "unexpected": "Ocurrió algo inesperado"
+    }
   }
 }

@@ -706,5 +706,60 @@
     "alerts": "Job alerts",
     "recruiters": "Recruiters",
     "unlinked": "Not linked to an application"
+  },
+  "apply": {
+    "settings": {
+      "title": "Applying",
+      "level": "What the agent may do",
+      "minScore": "Submit automatically from match (%)",
+      "dailyCap": "At most per day",
+      "autoApprove": "Auto-approve packages",
+      "autoApproveHint": "Skip your approval of CV and letter. Not recommended.",
+      "excluded": "Never apply automatically on",
+      "always": "always",
+      "addDomain": "Add a site",
+      "responsibility": "You are responsible for everything submitted in your name. The agent always stops at CAPTCHAs, logins, two-factor prompts, payment fields and unknown questions."
+    },
+    "levels": {
+      "off": {
+        "title": "Off",
+        "desc": "Jobhunter only prepares documents; you apply yourself."
+      },
+      "prepare": {
+        "title": "Prepare",
+        "desc": "The agent fills in the form and stops before submitting. You review and submit."
+      },
+      "submit": {
+        "title": "Submit automatically",
+        "desc": "Only when the match is high enough, the package is approved, the site isn't excluded, the daily limit isn't reached and nothing unexpected appears. Otherwise it prepares."
+      }
+    },
+    "runs": {
+      "title": "Application form",
+      "status": {
+        "running": "Filling in…",
+        "prepared": "Prepared, waiting for you",
+        "submitted": "Submitted",
+        "handover": "Needs you",
+        "failed": "Failed"
+      },
+      "screenshot": "Screenshot of the application form",
+      "markApplied": "I submitted it",
+      "openForm": "Open the form",
+      "preparedHint": "On desktop the filled form stays open in Jobhunter's browser window. In server mode, open the form on your device and use the answers from the package."
+    },
+    "stop": {
+      "captcha": "CAPTCHA, please complete it yourself",
+      "login": "Login required, Jobhunter never types passwords",
+      "two_factor": "Two-factor code required",
+      "payment": "Payment field on the page",
+      "error_page": "The page couldn't be loaded or the job is gone",
+      "excluded_site": "Site excluded from automatic applying",
+      "unknown_fields": "Some required fields need your answer",
+      "no_form": "No application form found",
+      "not_approved": "Approve the package first",
+      "policy": "Auto-submit conditions not met",
+      "unexpected": "Something unexpected happened"
+    }
   }
 }

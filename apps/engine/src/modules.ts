@@ -10,6 +10,7 @@ import { registerScanRoutes } from './scan/routes.js';
 import './scheduler.js';
 import { registerDocumentRoutes } from './documents/routes.js';
 import { registerEmailRoutes } from './email/service.js';
+import { registerApplyRoutes } from './apply/service.js';
 
 export const featureRoutes: RouteRegistrar[] = [
   registerCoreRoutes,
@@ -21,4 +22,5 @@ export const featureRoutes: RouteRegistrar[] = [
   registerScanRoutes,
   registerDocumentRoutes,
   registerEmailRoutes,
+  registerApplyRoutes,
 ];

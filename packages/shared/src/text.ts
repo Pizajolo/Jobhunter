@@ -88,6 +88,7 @@ export function domainOf(urlOrEmail: string): string | null {
 
 /** "jobs.boards.greenhouse.io" -> "greenhouse.io" (good enough for matching, not a PSL). */
 export function registrableDomain(host: string): string {
+  if (/^\d{1,3}(\.\d{1,3}){3}$/u.test(host) || host === 'localhost') return host;
   const parts = host.toLowerCase().split('.');
   if (parts.length <= 2) return parts.join('.');
   const twoLevel = new Set(['co.uk', 'com.mx', 'com.br', 'co.jp', 'com.au', 'com.pt', 'org.uk', 'ac.uk']);

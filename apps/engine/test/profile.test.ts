@@ -67,7 +67,7 @@ describe('profile API', () => {
     fake.on('profile_extract', () => extract.output);
     const form = new FormData();
     form.append('kind', 'cv');
-    form.append('file', new Blob([fixture('cv/alex-example.pdf')], { type: 'application/pdf' }), 'alex.pdf');
+    form.append('file', new Blob([new Uint8Array(fixture('cv/alex-example.pdf'))], { type: 'application/pdf' }), 'alex.pdf');
     const res = await app.inject({ method: 'POST', url: '/api/profile/imports', payload: form });
     expect(res.statusCode).toBe(200);
     const { id } = res.json() as { id: number };

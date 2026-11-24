@@ -63,7 +63,7 @@ export default function JobDetail() {
   const { t, i18n } = useTranslation();
   const { id } = useParams();
   const key = `application:${id}`;
-  const q = useQuery({ queryKey: [key], queryFn: () => api.get<Detail>(`/api/applications/${id}`), refetchInterval: (qq) => (qq.state.data?.drafting ? 2500 : false) });
+  const q = useQuery({ queryKey: [key], queryFn: () => api.get<Detail>(`/api/applications/${id}`), refetchInterval: (qq) => (qq.state.data?.drafting || qq.state.data?.applyRuns.some((r) => r.status === 'running') ? 2000 : false) });
   const [tab, setTab] = useState<DocTab>('cv');
   const [editing, setEditing] = useState(false);
   const [instruction, setInstruction] = useState('');
@@ -86,6 +86,7 @@ export default function JobDetail() {
   });
   const approve = useMutation({ mutationFn: () => api.post(`/api/applications/${id}/approve`), onSuccess: refresh });
   const apply = useMutation({ mutationFn: () => api.post<{ runId: number }>(`/api/applications/${id}/apply`), onSuccess: refresh });
+  const markApplied = useMutation({ mutationFn: () => api.post(`/api/applications/${id}/mark-applied`), onSuccess: refresh });
   const saveNotes = useMutation({ mutationFn: (n: string) => api.patch(`/api/applications/${id}/notes`, { notes: n }) });
 
   if (q.isPending) return <Spinner />;
@@ -277,6 +278,32 @@ export default function JobDetail() {
               </div>
             ) : null}
           </Card>
+
+          {d.applyRuns.length ? (
+            <Card title={t('apply.runs.title')}>
+              {d.applyRuns.slice(0, 3).map((r) => (
+                <div key={r.id} className="flex flex-col gap-2 text-sm">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge kind={r.status === 'submitted' ? 'ok' : r.status === 'running' ? 'info' : 'warn'}>{t(`apply.runs.status.${r.status}`)}</Badge>
+                    {r.stopReason ? <span className="text-ink-2">{t(`apply.stop.${r.stopReason}`)}</span> : null}
+                    <span className="text-[12.5px] text-ink-3">{formatDateTime(r.createdAt, i18n.language)}</span>
+                  </div>
+                  {r.screenshotPath ? <img src={`/api/apply-runs/${r.id}/screenshot`} alt={t('apply.runs.screenshot')} className="max-h-80 w-full rounded border border-line object-contain object-top" /> : null}
+                  {(r.status === 'prepared' || r.status === 'handover') && application.status !== 'applied' ? (
+                    <div className="flex flex-wrap gap-2">
+                      <Button variant="primary" busy={markApplied.isPending} onClick={() => markApplied.mutate()}>
+                        {t('apply.runs.markApplied')}
+                      </Button>
+                      <a href={job.applyUrl ?? job.url} target="_blank" rel="noreferrer" className="inline-flex h-10 items-center rounded-lg border border-line-strong bg-surface px-4 text-sm font-medium text-ink no-underline">
+                        {t('apply.runs.openForm')}
+                      </a>
+                    </div>
+                  ) : null}
+                  {r.status === 'prepared' ? <p className="m-0 text-[12.5px] text-ink-3">{t('apply.runs.preparedHint')}</p> : null}
+                </div>
+              ))}
+            </Card>
+          ) : null}
 
           <Card title={t('detail.posting')}>
             <details>

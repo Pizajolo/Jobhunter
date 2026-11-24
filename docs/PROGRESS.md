@@ -10,7 +10,7 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 | M3 Scanning | done |
 | M4 Documents | done |
 | M5 Email | done |
-| M6 Applying | not started |
+| M6 Applying | done |
 | M7 Packaging | not started |
 | M8 Extras + polish | not started |
 
@@ -104,3 +104,18 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 - The ≥90% accuracy target has **not been measured with a live model** here; the recorded answers were written for the synthetic set. Run `pnpm eval:email --live` locally (and `--record` to keep the results).
 - The IMAP adapter has no automated test (no local IMAP server in CI); the Gmail adapter is tested against a fake API.
 - Gmail API sign-in in server mode needs an SSH tunnel or the IMAP option (loopback redirect).
+
+## M6 Applying
+
+**Done**
+- `packages/mcp-browser`: persistent Chromium profile per user (portal logins survive; visible on desktop, headless in server mode), form reader (labels from `<label for>`, wrapping labels, ARIA, legends; radio groups; multi-step safe tagging), deterministic field mapping from the approved package and profile (name, email, phone, LinkedIn, current company, CV/letter uploads, cover-letter text, approved answers by topic), multi-step navigation (Next / Save and Continue) that stops at the final submit.
+- Safety stops: CAPTCHA (reCAPTCHA, hCaptcha, Turnstile, challenge pages), login walls (password fields, never typed), two-factor prompts, payment fields, error/expired pages, unknown required fields and consent boxes (always the user's decision).
+- `form_fill` task maps leftover fields onto the **approved answers only** (free text must be an approved answer verbatim; options must follow from one); everything else stays empty and flagged.
+- Auto-apply levels: off / prepare (default) / submit. `canAutoSubmit()` (pure, unit-tested) requires level submit, score ≥ threshold, approved package (or auto-approve), site not excluded (linkedin.com always), under the daily cap, no blocker and no unknown required field; otherwise it falls back to prepare.
+- After submitting: confirmation detected, screenshot, status Applied, sender domains and ATS reference ids stored for email matching, audit event with screenshot. Prepared or stopped runs hand over with a screenshot, a notification and an "I submitted it" button.
+- Mock forms (`fixtures/forms`): Greenhouse-, Lever-, Ashby- and Workday-like (multi-step), CAPTCHA, login wall, unknown required field, posting page with an Apply link. Tests in real headless Chromium for the filler and for the full engine flow; Playwright UI e2e drafts, approves and prepares an application against the mock Greenhouse form.
+- Settings: auto-apply level, minimum score, daily cap, auto-approve, excluded sites (LinkedIn locked).
+
+**Known issues**
+- Real ATS forms vary (custom widgets such as React selects or date pickers); unknown widgets are left for the user. Tested only against local mock forms.
+- The apply browser opens as its own Chromium window on desktop (embedding into the Electron window is planned in M7).

@@ -706,5 +706,60 @@
     "alerts": "Alertes emploi",
     "recruiters": "Recruteurs",
     "unlinked": "Non liés à une candidature"
+  },
+  "apply": {
+    "settings": {
+      "title": "Candidature",
+      "level": "Ce que l’agent peut faire",
+      "minScore": "Envoi automatique à partir de (%)",
+      "dailyCap": "Au maximum par jour",
+      "autoApprove": "Valider les dossiers automatiquement",
+      "autoApproveHint": "Saute ta validation du CV et de la lettre. Déconseillé.",
+      "excluded": "Ne jamais postuler automatiquement sur",
+      "always": "toujours",
+      "addDomain": "Ajouter un site",
+      "responsibility": "Tu es responsable de tout ce qui est envoyé en ton nom. L’agent s’arrête toujours devant les CAPTCHA, connexions, codes à deux facteurs, champs de paiement et questions inconnues."
+    },
+    "levels": {
+      "off": {
+        "title": "Désactivé",
+        "desc": "Jobhunter prépare seulement les documents ; tu postules toi-même."
+      },
+      "prepare": {
+        "title": "Préparer",
+        "desc": "L’agent remplit le formulaire et s’arrête avant l’envoi. Tu vérifies et tu envoies."
+      },
+      "submit": {
+        "title": "Envoyer automatiquement",
+        "desc": "Seulement si la correspondance est élevée, le dossier validé, le site non exclu, la limite quotidienne non atteinte et sans imprévu. Sinon, il prépare."
+      }
+    },
+    "runs": {
+      "title": "Formulaire de candidature",
+      "status": {
+        "running": "Remplissage…",
+        "prepared": "Préparé, en attente de toi",
+        "submitted": "Envoyée",
+        "handover": "A besoin de toi",
+        "failed": "Échec"
+      },
+      "screenshot": "Capture du formulaire",
+      "markApplied": "Je l’ai envoyée",
+      "openForm": "Ouvrir le formulaire",
+      "preparedHint": "Sur ordinateur, le formulaire rempli reste ouvert dans la fenêtre du navigateur de Jobhunter. En mode serveur, ouvre le formulaire sur ton appareil et utilise les réponses du dossier."
+    },
+    "stop": {
+      "captcha": "CAPTCHA, à résoudre toi-même",
+      "login": "Connexion requise ; Jobhunter ne tape jamais de mot de passe",
+      "two_factor": "Code à deux facteurs requis",
+      "payment": "Champ de paiement sur la page",
+      "error_page": "La page n’a pas pu être chargée ou l’offre n’existe plus",
+      "excluded_site": "Site exclu de la candidature automatique",
+      "unknown_fields": "Certains champs obligatoires attendent ta réponse",
+      "no_form": "Aucun formulaire trouvé",
+      "not_approved": "Valide d’abord le dossier",
+      "policy": "Conditions d’envoi automatique non remplies",
+      "unexpected": "Un imprévu s’est produit"
+    }
   }
 }

@@ -706,5 +706,60 @@
     "alerts": "Job-Alerts",
     "recruiters": "Recruiter",
     "unlinked": "Keiner Bewerbung zugeordnet"
+  },
+  "apply": {
+    "settings": {
+      "title": "Bewerben",
+      "level": "Was der Agent tun darf",
+      "minScore": "Automatisch absenden ab Passung (%)",
+      "dailyCap": "Höchstens pro Tag",
+      "autoApprove": "Unterlagen automatisch freigeben",
+      "autoApproveHint": "Überspringt deine Freigabe von Lebenslauf und Anschreiben. Nicht empfohlen.",
+      "excluded": "Nie automatisch bewerben auf",
+      "always": "immer",
+      "addDomain": "Website hinzufügen",
+      "responsibility": "Du bist für alles verantwortlich, was in deinem Namen abgeschickt wird. Der Agent stoppt immer bei CAPTCHAs, Logins, Zwei-Faktor-Abfragen, Zahlungsfeldern und unbekannten Fragen."
+    },
+    "levels": {
+      "off": {
+        "title": "Aus",
+        "desc": "Jobhunter bereitet nur die Unterlagen vor; du bewirbst dich selbst."
+      },
+      "prepare": {
+        "title": "Vorbereiten",
+        "desc": "Der Agent füllt das Formular aus und stoppt vor dem Absenden. Du prüfst und sendest ab."
+      },
+      "submit": {
+        "title": "Automatisch absenden",
+        "desc": "Nur bei hoher Passung, freigegebenen Unterlagen, nicht ausgeschlossener Website, nicht erreichtem Tageslimit und ohne Unerwartetes. Sonst wird nur vorbereitet."
+      }
+    },
+    "runs": {
+      "title": "Bewerbungsformular",
+      "status": {
+        "running": "Wird ausgefüllt…",
+        "prepared": "Vorbereitet, wartet auf dich",
+        "submitted": "Abgeschickt",
+        "handover": "Braucht dich",
+        "failed": "Fehlgeschlagen"
+      },
+      "screenshot": "Screenshot des Bewerbungsformulars",
+      "markApplied": "Ich habe es abgeschickt",
+      "openForm": "Formular öffnen",
+      "preparedHint": "Am Desktop bleibt das ausgefüllte Formular im Browserfenster von Jobhunter offen. Im Servermodus öffnest du das Formular auf deinem Gerät und nutzt die Antworten aus den Unterlagen."
+    },
+    "stop": {
+      "captcha": "CAPTCHA, bitte selbst lösen",
+      "login": "Login nötig, Jobhunter tippt nie Passwörter",
+      "two_factor": "Zwei-Faktor-Code nötig",
+      "payment": "Zahlungsfeld auf der Seite",
+      "error_page": "Seite nicht erreichbar oder Stelle nicht mehr verfügbar",
+      "excluded_site": "Website vom automatischen Bewerben ausgeschlossen",
+      "unknown_fields": "Einige Pflichtfelder brauchen deine Antwort",
+      "no_form": "Kein Bewerbungsformular gefunden",
+      "not_approved": "Bitte zuerst die Unterlagen freigeben",
+      "policy": "Bedingungen für automatisches Absenden nicht erfüllt",
+      "unexpected": "Etwas Unerwartetes ist passiert"
+    }
   }
 }

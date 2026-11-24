@@ -3,6 +3,7 @@ import type { SectionProps } from './sections';
 import { CompaniesSection, ScanSection, SearchSection, SourcesSection } from './scanning';
 import { CvSection } from './documents';
 import { EmailSection } from './email';
+import { ApplySection } from './apply';
 
 /** Settings sections added by later features (email, scanning, applying, data…), in display order. */
-export const extraSections: ComponentType<SectionProps>[] = [ScanSection, SearchSection, CompaniesSection, SourcesSection, CvSection, EmailSection];
+export const extraSections: ComponentType<SectionProps>[] = [ScanSection, SearchSection, CompaniesSection, SourcesSection, CvSection, EmailSection, ApplySection];

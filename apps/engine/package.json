@@ -24,6 +24,7 @@
     "@fastify/websocket": "^11.3.7",
     "@googleapis/gmail": "^22.1.0",
     "@jobhunter/db": "workspace:*",
+    "@jobhunter/mcp-browser": "workspace:*",
     "@jobhunter/mcp-docs": "workspace:*",
     "@jobhunter/mcp-email": "workspace:*",
     "@jobhunter/mcp-jobs": "workspace:*",

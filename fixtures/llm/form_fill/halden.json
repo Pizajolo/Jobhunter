@@ -1,0 +1,76 @@
+{
+  "description": "Maps a yes/no select from an approved answer; leaves consent and date of birth to the user",
+  "input": {
+    "company": "Halden Group",
+    "title": "Strategy Consultant",
+    "fields": [
+      {
+        "id": "f3",
+        "label": "Date of birth",
+        "kind": "date",
+        "options": [],
+        "required": true
+      },
+      {
+        "id": "f4",
+        "label": "I agree to the processing of my data",
+        "kind": "checkbox",
+        "options": [],
+        "required": true
+      },
+      {
+        "id": "f5",
+        "label": "Do you have the right to work in Switzerland?",
+        "kind": "select",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "required": true
+      }
+    ],
+    "answers": [
+      {
+        "index": 3,
+        "question": "Are you authorized to work in this country?",
+        "answer": "Yes, Swiss C permit"
+      }
+    ]
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "mappings": [
+      {
+        "fieldId": "f3",
+        "answerIndex": null,
+        "value": null
+      },
+      {
+        "fieldId": "f4",
+        "answerIndex": null,
+        "value": null
+      },
+      {
+        "fieldId": "f5",
+        "answerIndex": 3,
+        "value": "Yes"
+      }
+    ]
+  },
+  "assert": [
+    {
+      "path": "mappings.0.value",
+      "equals": null
+    },
+    {
+      "path": "mappings.1.value",
+      "equals": null
+    },
+    {
+      "path": "mappings.2.value",
+      "equals": "Yes"
+    }
+  ]
+}

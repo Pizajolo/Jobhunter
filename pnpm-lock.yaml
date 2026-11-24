@@ -65,6 +65,9 @@ importers:
       '@jobhunter/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@jobhunter/mcp-browser':
+        specifier: workspace:*
+        version: link:../../packages/mcp-browser
       '@jobhunter/mcp-docs':
         specifier: workspace:*
         version: link:../../packages/mcp-docs
@@ -221,6 +224,15 @@ importers:
       drizzle-kit:
         specifier: ^0.31.11
         version: 0.31.11
+
+  packages/mcp-browser:
+    dependencies:
+      '@jobhunter/shared':
+        specifier: workspace:*
+        version: link:../shared
+      playwright:
+        specifier: 1.63.0
+        version: 1.63.0
 
   packages/mcp-docs:
     dependencies:
