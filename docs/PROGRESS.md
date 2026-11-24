@@ -7,7 +7,7 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 | M0 Skeleton | done |
 | M1 Claude + agent layer | done |
 | M2 Profile | done |
-| M3 Scanning | not started |
+| M3 Scanning | done |
 | M4 Documents | not started |
 | M5 Email | not started |
 | M6 Applying | not started |
@@ -56,3 +56,21 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 
 **Known issues**
 - Scanned (image-only) PDFs produce little text; the user is told to upload a DOCX or text PDF (no OCR in v1).
+
+## M3 Scanning
+
+**Done**
+- `packages/mcp-jobs`: `JobSource` interface and adapters for Greenhouse, Lever (incl. EU), Ashby (with compensation), SmartRecruiters (with bounded detail calls), Workable, Recruitee, Personio (XML), Workday (public CXS JSON, HTML fallback), generic careers pages (model extraction, same-site pagination, bounded detail pages), RSS/Atom feeds and the Arbeitnow board API. Endpoint formats checked against the live public APIs on 2026-11-23; fixtures are synthetic.
+- ATS detection from careers URLs, from ATS widgets embedded in company pages, and by probing public APIs with slug guesses when only a name is given.
+- Normalisation (titles, companies, locations, canonical URLs, content hash) and dedup (same ATS id or URL, or same company + similar title + similar location) — the second scan never creates duplicate cards (tested).
+- Polite fetcher: honest user agent, robots.txt, one request per domain every 5 s, 60 pages per domain per day, ETag/Last-Modified, 6 h cache. Generic page extractions are cached by content hash.
+- Matching: deterministic prefilter (exclusions, excluded companies, remote policy, locations, salary floor, posting language, role family) then batched `match_score`; matches above the threshold appear in Found; optional auto-shortlist; one summary notification per scan; failing sources are logged with last success/error time.
+- Scheduler: wall-clock daily/weekly/interval jobs with catch-up after sleep (checks every minute and on resume).
+- Search profile form + chat thread that proposes changes as diffs; global chat that answers questions from a pipeline snapshot and proposes search-profile, company or settings changes (applied only on confirmation).
+- Pipeline board: six columns, drag and drop with mouse, touch and keyboard (arrow keys jump between columns), search, filters, manual "Add job", "Scan now".
+- Settings: scan schedule and thresholds, search profile, companies (with discovery suggestions UI), job boards and feeds. `docs/ADDING_A_SOURCE.md`.
+- End-to-end tests (Playwright) against a demo engine with synthetic data and recorded model answers (`pnpm --filter @jobhunter/engine demo`): board, search, keyboard move, chat proposal, all screens render, phone layout.
+
+**Known issues**
+- Workday tenants vary; the JSON path is tested against a fixture of the public format only.
+- The first scheduled scan after a fresh install happens at the next scan time; use "Scan now" right after onboarding.

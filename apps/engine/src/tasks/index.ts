@@ -1,5 +1,6 @@
 import type { TaskDef } from '../agent/types.js';
 import { connectionTestTask } from './connection-test.js';
+import { chatTask, jobExtractTask, matchScoreTask, searchProfileChatTask } from './scan.js';
 import { cvInterviewTask, interviewSummaryTask, profileExtractTask, styleAnalyzeTask } from './profile.js';
 
 /** Every task definition, for the prompt harness and diagnostics. */
@@ -10,4 +11,8 @@ export const TASKS: Record<string, TaskDef<any, any>> = {
   cv_interview: cvInterviewTask,
   interview_summary: interviewSummaryTask,
   style_analyze: styleAnalyzeTask,
+  job_extract: jobExtractTask,
+  match_score: matchScoreTask,
+  chat: chatTask,
+  search_profile_chat: searchProfileChatTask,
 };

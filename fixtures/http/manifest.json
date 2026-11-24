@@ -1,0 +1,19 @@
+{
+  "GET https://boards-api.greenhouse.io/v1/boards/lumenrobotics/jobs?content=true": "greenhouse/lumenrobotics.json",
+  "GET https://api.lever.co/v0/postings/fjordmobility?mode=json": "lever/fjordmobility.json",
+  "GET https://api.ashbyhq.com/posting-api/job-board/tejoanalytics?includeCompensation=true": "ashby/tejoanalytics.json",
+  "GET https://api.smartrecruiters.com/v1/companies/QuarryHealth/postings?limit=100&offset=0": "smartrecruiters/list.json",
+  "GET https://api.smartrecruiters.com/v1/companies/QuarryHealth/postings/744000000000001": "smartrecruiters/detail-1.json",
+  "GET https://apply.workable.com/api/v1/widget/accounts/orbitfreight?details=true": "workable/orbitfreight.json",
+  "GET https://cobaltenergy.recruitee.com/api/offers/": "recruitee/cobaltenergy.json",
+  "GET https://alpenforge.jobs.personio.de/xml": "personio/alpenforge.xml",
+  "POST https://meridian.wd3.myworkdayjobs.com/wday/cxs/meridian/External/jobs": "workday/list.json",
+  "GET https://meridian.wd3.myworkdayjobs.com/wday/cxs/meridian/External/job/Zurich/Founding-Product-Manager_R-100": "workday/detail.json",
+  "GET https://remote-board.example/remote-jobs.rss": "rss/feed.xml",
+  "GET https://www.arbeitnow.com/api/job-board-api": "arbeitnow/page1.json",
+  "GET https://halden-group.example/careers": "generic/careers.html",
+  "GET https://halden-group.example/careers?page=2": "generic/careers-2.html",
+  "GET https://halden-group.example/careers/strategy-consultant": "generic/job-1.html",
+  "GET https://halden-group.example/careers/data-analyst": "generic/job-2.html",
+  "GET https://halden-group.example/careers/head-of-product": "generic/job-3.html"
+}

@@ -142,6 +142,56 @@
       "monthly": "Monthly budget (USD)",
       "none": "No limit",
       "spent": "Estimated spend this month: {{amount}}"
+    },
+    "scan": {
+      "title": "Scanning",
+      "enabled": "Daily scan",
+      "enabledHint": "Runs while the app is running; missed scans are caught up after sleep.",
+      "time": "Scan time",
+      "threshold": "Show matches from (%)",
+      "thresholdHint": "Jobs below this score stay off the board.",
+      "autoShortlist": "Auto-shortlist from (%)",
+      "autoShortlistHint": "Empty = off. Shortlisted jobs get drafts prepared.",
+      "off": "Off",
+      "etiquette": "Polite scanning: robots.txt is respected, at most one request every {{seconds}} s and {{pages}} pages per site per day."
+    },
+    "search": {
+      "title": "Search profile"
+    },
+    "companies": {
+      "title": "Target companies",
+      "name": "Company name",
+      "url": "Careers page URL (optional)",
+      "add": "Add company",
+      "hint": "Jobhunter detects Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Recruitee, Personio and Workday automatically; other careers pages are read with a small model.",
+      "noSource": "No job source found",
+      "discovered": "Discovered",
+      "failing": "Failing",
+      "lastOk_one": "{{count}} posting",
+      "lastOk_other": "{{count}} postings",
+      "resume": "Resume",
+      "pause": "Pause"
+    },
+    "discovery": {
+      "enabled": "Discover new companies weekly",
+      "hint": "Claude suggests companies that fit your search profile. Each suggestion needs your approval.",
+      "autoAdd": "Add discovered companies automatically",
+      "runNow": "Discover now",
+      "suggestions_one": "{{count}} suggestion",
+      "suggestions_other": "{{count}} suggestions",
+      "accept": "Watch",
+      "reject": "Not interested"
+    },
+    "sources": {
+      "title": "Job boards and feeds",
+      "hint": "RSS feeds, the Arbeitnow API, or any careers page. LinkedIn jobs come only from LinkedIn job-alert emails.",
+      "kind": "Type",
+      "name": "Name",
+      "keywords": "Keywords",
+      "url": "URL",
+      "disabled": "Disabled",
+      "disable": "Disable",
+      "enable": "Enable"
     }
   },
   "tasks": {
@@ -339,5 +389,109 @@
     "record": "Answer by voice",
     "localNote": "Transcribed on this machine.",
     "browserNote": "Uses your browser's speech recognition."
+  },
+  "board": {
+    "subtitle_one": "{{count}} role tracked",
+    "subtitle_other": "{{count}} roles tracked",
+    "search": "Search roles, companies…",
+    "filters": "Filters",
+    "addJob": "Add job",
+    "scanning": "Scanning…",
+    "scanNow": "Scan now",
+    "minScore": "Match",
+    "any": "Any",
+    "source": "Source",
+    "remote": "Work model",
+    "lastScan": "Last scan {{when}}",
+    "noScanYet": "No scan yet",
+    "awaitingApproval_one": "{{count}} package awaiting approval",
+    "awaitingApproval_other": "{{count}} packages awaiting approval",
+    "emailsToReview_one": "{{count}} email needs review",
+    "emailsToReview_other": "{{count}} emails need review",
+    "empty": {
+      "title": "No jobs yet",
+      "body": "Add companies or job sources, then run a scan. New matches above your threshold appear in Found.",
+      "addCompanies": "Add companies and sources"
+    },
+    "dragInstructions": "To move a card, focus its handle and press space or enter, use the arrow keys to choose a column, then press space or enter again. Press escape to cancel.",
+    "move": "Move {{title}} at {{company}}",
+    "columns": {
+      "found": "Found",
+      "shortlisted": "Shortlisted",
+      "ready": "Ready to apply",
+      "applied": "Applied",
+      "interview": "Interview & offer",
+      "closed": "Closed"
+    },
+    "addFields": {
+      "title": "Job title",
+      "company": "Company",
+      "url": "Posting URL",
+      "location": "Location",
+      "description": "Description (paste the posting)"
+    },
+    "tag": {
+      "new": "New today",
+      "found_one": "Found {{count}} day ago",
+      "found_other": "Found {{count}} days ago",
+      "drafting": "Drafting CV + letter…",
+      "awaiting_approval": "Awaiting your approval",
+      "waiting_one": "Waiting · {{count}} day",
+      "waiting_other": "Waiting · {{count}} days",
+      "interview": "Interview",
+      "assessment": "Assessment",
+      "offer": "Offer",
+      "rejected": "Rejected",
+      "no_response": "No response",
+      "withdrawn": "Withdrawn",
+      "shortlisted": "Shortlisted",
+      "dismissed": "Dismissed"
+    }
+  },
+  "remote": {
+    "remote": "Remote",
+    "hybrid": "Hybrid",
+    "onsite": "On-site",
+    "unknown": ""
+  },
+  "sources": {
+    "greenhouse": "Greenhouse",
+    "lever": "Lever",
+    "ashby": "Ashby",
+    "smartrecruiters": "SmartRecruiters",
+    "workable": "Workable",
+    "recruitee": "Recruitee",
+    "personio": "Personio",
+    "workday": "Workday",
+    "generic": "Careers page",
+    "rss": "RSS feed",
+    "arbeitnow": "Arbeitnow",
+    "email_alert": "Job alert email"
+  },
+  "search": {
+    "fields": {
+      "roles": "Target roles",
+      "seniority": "Seniority",
+      "locations": "Locations",
+      "industries": "Industries",
+      "mustHave": "Must-have keywords",
+      "niceToHave": "Nice-to-have keywords",
+      "exclusions": "Exclude keywords",
+      "excludedCompanies": "Exclude companies",
+      "languages": "Posting languages",
+      "remotePolicy": "Remote",
+      "minSalary": "Minimum salary (per year)",
+      "currency": "Currency"
+    },
+    "remote": {
+      "any": "Any",
+      "remote_only": "Remote only",
+      "hybrid_ok": "Remote or hybrid",
+      "onsite_ok": "On-site is fine"
+    },
+    "hint": "Separate entries with commas. Changes are saved when you leave a field.",
+    "chatTitle": "Or tell Jobhunter what you're looking for",
+    "chatPlaceholder": "e.g. Senior product roles in Zurich or remote, at least CHF 140k, no agencies",
+    "rescore": "Re-score open jobs"
   }
 }

@@ -142,6 +142,56 @@
       "monthly": "Monatsbudget (USD)",
       "none": "Kein Limit",
       "spent": "Geschätzte Kosten diesen Monat: {{amount}}"
+    },
+    "scan": {
+      "title": "Scannen",
+      "enabled": "Täglicher Scan",
+      "enabledHint": "Läuft, solange die App läuft; verpasste Scans werden nach dem Ruhezustand nachgeholt.",
+      "time": "Uhrzeit",
+      "threshold": "Treffer anzeigen ab (%)",
+      "thresholdHint": "Stellen darunter bleiben vom Board fern.",
+      "autoShortlist": "Automatisch vormerken ab (%)",
+      "autoShortlistHint": "Leer = aus. Für vorgemerkte Stellen werden Entwürfe vorbereitet.",
+      "off": "Aus",
+      "etiquette": "Rücksichtsvolles Scannen: robots.txt wird beachtet, höchstens eine Anfrage alle {{seconds}} s und {{pages}} Seiten pro Website und Tag."
+    },
+    "search": {
+      "title": "Suchprofil"
+    },
+    "companies": {
+      "title": "Zielfirmen",
+      "name": "Firmenname",
+      "url": "URL der Karriereseite (optional)",
+      "add": "Firma hinzufügen",
+      "hint": "Jobhunter erkennt Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Recruitee, Personio und Workday automatisch; andere Karriereseiten liest ein kleines Modell.",
+      "noSource": "Keine Jobquelle gefunden",
+      "discovered": "Entdeckt",
+      "failing": "Fehler",
+      "lastOk_one": "{{count}} Anzeige",
+      "lastOk_other": "{{count}} Anzeigen",
+      "resume": "Fortsetzen",
+      "pause": "Pausieren"
+    },
+    "discovery": {
+      "enabled": "Wöchentlich neue Firmen entdecken",
+      "hint": "Claude schlägt Firmen vor, die zu deinem Suchprofil passen. Jeder Vorschlag braucht deine Zustimmung.",
+      "autoAdd": "Entdeckte Firmen automatisch hinzufügen",
+      "runNow": "Jetzt entdecken",
+      "suggestions_one": "{{count}} Vorschlag",
+      "suggestions_other": "{{count}} Vorschläge",
+      "accept": "Beobachten",
+      "reject": "Kein Interesse"
+    },
+    "sources": {
+      "title": "Jobbörsen und Feeds",
+      "hint": "RSS-Feeds, die Arbeitnow-API oder beliebige Karriereseiten. LinkedIn-Stellen kommen nur über LinkedIn-Job-Alert-E-Mails.",
+      "kind": "Typ",
+      "name": "Name",
+      "keywords": "Stichworte",
+      "url": "URL",
+      "disabled": "Deaktiviert",
+      "disable": "Deaktivieren",
+      "enable": "Aktivieren"
     }
   },
   "tasks": {
@@ -339,5 +389,109 @@
     "record": "Per Sprache antworten",
     "localNote": "Wird auf diesem Gerät transkribiert.",
     "browserNote": "Nutzt die Spracherkennung deines Browsers."
+  },
+  "board": {
+    "subtitle_one": "{{count}} Stelle im Blick",
+    "subtitle_other": "{{count}} Stellen im Blick",
+    "search": "Stellen, Firmen suchen…",
+    "filters": "Filter",
+    "addJob": "Stelle hinzufügen",
+    "scanning": "Scannt…",
+    "scanNow": "Jetzt scannen",
+    "minScore": "Passung",
+    "any": "Alle",
+    "source": "Quelle",
+    "remote": "Arbeitsmodell",
+    "lastScan": "Letzter Scan {{when}}",
+    "noScanYet": "Noch kein Scan",
+    "awaitingApproval_one": "{{count}} Paket wartet auf Freigabe",
+    "awaitingApproval_other": "{{count}} Pakete warten auf Freigabe",
+    "emailsToReview_one": "{{count}} E-Mail muss geprüft werden",
+    "emailsToReview_other": "{{count}} E-Mails müssen geprüft werden",
+    "empty": {
+      "title": "Noch keine Stellen",
+      "body": "Füge Firmen oder Jobquellen hinzu und starte einen Scan. Neue Treffer über deiner Schwelle erscheinen unter „Gefunden“.",
+      "addCompanies": "Firmen und Quellen hinzufügen"
+    },
+    "dragInstructions": "Um eine Karte zu verschieben, fokussiere den Griff und drücke Leertaste oder Enter, wähle mit den Pfeiltasten eine Spalte und drücke erneut Leertaste oder Enter. Escape bricht ab.",
+    "move": "{{title}} bei {{company}} verschieben",
+    "columns": {
+      "found": "Gefunden",
+      "shortlisted": "Vorgemerkt",
+      "ready": "Bereit zur Bewerbung",
+      "applied": "Beworben",
+      "interview": "Interview & Angebot",
+      "closed": "Abgeschlossen"
+    },
+    "addFields": {
+      "title": "Stellentitel",
+      "company": "Firma",
+      "url": "Link zur Anzeige",
+      "location": "Ort",
+      "description": "Beschreibung (Anzeige einfügen)"
+    },
+    "tag": {
+      "new": "Heute neu",
+      "found_one": "Vor {{count}} Tag gefunden",
+      "found_other": "Vor {{count}} Tagen gefunden",
+      "drafting": "Lebenslauf + Anschreiben in Arbeit…",
+      "awaiting_approval": "Wartet auf deine Freigabe",
+      "waiting_one": "Wartet · {{count}} Tag",
+      "waiting_other": "Wartet · {{count}} Tage",
+      "interview": "Interview",
+      "assessment": "Assessment",
+      "offer": "Angebot",
+      "rejected": "Absage",
+      "no_response": "Keine Antwort",
+      "withdrawn": "Zurückgezogen",
+      "shortlisted": "Vorgemerkt",
+      "dismissed": "Verworfen"
+    }
+  },
+  "remote": {
+    "remote": "Remote",
+    "hybrid": "Hybrid",
+    "onsite": "Vor Ort",
+    "unknown": ""
+  },
+  "sources": {
+    "greenhouse": "Greenhouse",
+    "lever": "Lever",
+    "ashby": "Ashby",
+    "smartrecruiters": "SmartRecruiters",
+    "workable": "Workable",
+    "recruitee": "Recruitee",
+    "personio": "Personio",
+    "workday": "Workday",
+    "generic": "Karriereseite",
+    "rss": "RSS-Feed",
+    "arbeitnow": "Arbeitnow",
+    "email_alert": "Job-Alert-E-Mail"
+  },
+  "search": {
+    "fields": {
+      "roles": "Zielrollen",
+      "seniority": "Erfahrungsstufe",
+      "locations": "Orte",
+      "industries": "Branchen",
+      "mustHave": "Pflicht-Stichworte",
+      "niceToHave": "Wünschenswerte Stichworte",
+      "exclusions": "Stichworte ausschließen",
+      "excludedCompanies": "Firmen ausschließen",
+      "languages": "Sprachen der Anzeigen",
+      "remotePolicy": "Remote",
+      "minSalary": "Mindestgehalt (pro Jahr)",
+      "currency": "Währung"
+    },
+    "remote": {
+      "any": "Egal",
+      "remote_only": "Nur remote",
+      "hybrid_ok": "Remote oder hybrid",
+      "onsite_ok": "Vor Ort ist okay"
+    },
+    "hint": "Einträge mit Kommas trennen. Änderungen werden beim Verlassen eines Felds gespeichert.",
+    "chatTitle": "Oder sag Jobhunter, was du suchst",
+    "chatPlaceholder": "z. B. Senior-Produktrollen in Zürich oder remote, mindestens CHF 140k, keine Agenturen",
+    "rescore": "Offene Stellen neu bewerten"
   }
 }

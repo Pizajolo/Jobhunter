@@ -1,0 +1,48 @@
+[
+  {
+    "id": "a1b2c3d4-0000-4000-8000-000000000001",
+    "text": "Product Manager, Autonomy",
+    "hostedUrl": "https://jobs.lever.co/fjordmobility/a1b2c3d4-0000-4000-8000-000000000001",
+    "applyUrl": "https://jobs.lever.co/fjordmobility/a1b2c3d4-0000-4000-8000-000000000001/apply",
+    "createdAt": 1795000000000,
+    "workplaceType": "remote",
+    "country": "DE",
+    "categories": {
+      "commitment": "Full-time",
+      "location": "Remote (EU)",
+      "team": "Product",
+      "allLocations": [
+        "Remote (EU)"
+      ]
+    },
+    "descriptionPlain": "Fjord Mobility builds driver assistance software.",
+    "lists": [
+      {
+        "text": "Requirements",
+        "content": "<li>5+ years in product management</li><li>Experience with ML products</li>"
+      }
+    ],
+    "additionalPlain": "We offer flexible hours.",
+    "salaryRange": {
+      "min": 90000,
+      "max": 120000,
+      "currency": "EUR",
+      "interval": "per-year-salary"
+    }
+  },
+  {
+    "id": "a1b2c3d4-0000-4000-8000-000000000002",
+    "text": "Backend Engineer",
+    "hostedUrl": "https://jobs.lever.co/fjordmobility/a1b2c3d4-0000-4000-8000-000000000002",
+    "createdAt": 1794000000000,
+    "workplaceType": "onsite",
+    "categories": {
+      "commitment": "Full-time",
+      "location": "Oslo",
+      "team": "Engineering"
+    },
+    "descriptionPlain": "Build our APIs.",
+    "lists": [],
+    "additionalPlain": ""
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "apiVersion": "1",
+  "jobs": [
+    {
+      "id": "5f9e0000-0000-4000-8000-00000000000a",
+      "title": "Head of Product",
+      "department": "Product",
+      "team": "Product",
+      "employmentType": "FullTime",
+      "location": "Lisbon",
+      "secondaryLocations": [
+        {
+          "location": "Porto"
+        }
+      ],
+      "isRemote": false,
+      "workplaceType": "OnSite",
+      "publishedAt": "2026-11-22T09:00:00.000+00:00",
+      "isListed": true,
+      "jobUrl": "https://jobs.ashbyhq.com/tejoanalytics/5f9e0000-0000-4000-8000-00000000000a",
+      "applyUrl": "https://jobs.ashbyhq.com/tejoanalytics/5f9e0000-0000-4000-8000-00000000000a/application",
+      "descriptionPlain": "Lead product for our analytics suite. Portuguese is a plus.",
+      "compensation": {
+        "compensationTierSummary": "€80K – €100K",
+        "summaryComponents": [
+          {
+            "compensationType": "Salary",
+            "interval": "1 YEAR",
+            "currencyCode": "EUR",
+            "minValue": 80000,
+            "maxValue": 100000
+          }
+        ]
+      }
+    },
+    {
+      "id": "5f9e0000-0000-4000-8000-00000000000b",
+      "title": "Unlisted role",
+      "isListed": false,
+      "jobUrl": "https://jobs.ashbyhq.com/tejoanalytics/x",
+      "location": "Lisbon"
+    }
+  ]
+}

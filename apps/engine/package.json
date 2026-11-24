@@ -12,7 +12,8 @@
     "build": "node scripts/build.mjs",
     "typecheck": "tsc -p tsconfig.json",
     "test:prompts": "tsx scripts/test-prompts.ts",
-    "eval:email": "tsx scripts/eval-email.ts"
+    "eval:email": "tsx scripts/eval-email.ts",
+    "demo": "tsx scripts/demo-server.ts"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.3.331",
@@ -22,14 +23,18 @@
     "@fastify/static": "^10.1.12",
     "@fastify/websocket": "^11.3.7",
     "@jobhunter/db": "workspace:*",
+    "@jobhunter/mcp-jobs": "workspace:*",
     "@jobhunter/shared": "workspace:*",
     "@napi-rs/keyring": "^2.1.2",
     "better-sqlite3": "^13.2.0",
+    "cheerio": "^1.2.0",
     "croner": "^11.0.1",
     "drizzle-orm": "^0.45.4",
+    "fast-xml-parser": "^5.12.1",
     "fastify": "^5.12.8",
     "mammoth": "^1.13.0",
     "pino": "^10.4.0",
+    "robots-parser": "^3.1.1",
     "unpdf": "^2.2.2",
     "zod": "^4.6.7"
   },

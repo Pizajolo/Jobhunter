@@ -1,0 +1,80 @@
+{
+  "description": "Onboarding: free text becomes a structured search profile",
+  "input": {
+    "message": "I'm looking for senior product roles in Zurich or remote in Europe, at least 140k CHF, ideally climate or energy, no agencies.",
+    "history": [],
+    "today": "2026-11-24",
+    "context": "Candidate profile:\nAlex Example \u2014 Product Manager",
+    "searchProfile": {
+      "roles": [],
+      "seniority": [],
+      "locations": [],
+      "remotePolicy": "any",
+      "minSalary": null,
+      "industries": [],
+      "mustHave": [],
+      "niceToHave": [],
+      "exclusions": [],
+      "excludedCompanies": [],
+      "languages": []
+    }
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "reply": "Got it. I've set senior product roles in Zurich or remote (Europe), a 140,000 CHF floor, climate and energy as preferred industries, and excluded agencies. Anything about company size?",
+    "proposal": {
+      "kind": "search_profile",
+      "summary": "Senior product roles, Zurich or remote EU, \u2265 CHF 140k",
+      "searchProfile": {
+        "roles": [
+          "Product Manager",
+          "Head of Product",
+          "Product Lead"
+        ],
+        "seniority": [
+          "senior"
+        ],
+        "locations": [
+          "Zurich",
+          "Remote (Europe)"
+        ],
+        "remotePolicy": "hybrid_ok",
+        "minSalary": {
+          "amount": 140000,
+          "currency": "CHF"
+        },
+        "industries": [
+          "climate",
+          "energy"
+        ],
+        "mustHave": [],
+        "niceToHave": [],
+        "exclusions": [
+          "agency"
+        ],
+        "excludedCompanies": [],
+        "languages": []
+      }
+    }
+  },
+  "assert": [
+    {
+      "path": "proposal.kind",
+      "equals": "search_profile"
+    },
+    {
+      "path": "proposal.searchProfile.minSalary.amount",
+      "equals": 140000
+    },
+    {
+      "path": "proposal.searchProfile.minSalary.currency",
+      "equals": "CHF"
+    },
+    {
+      "path": "proposal.searchProfile.locations",
+      "includes": "Zurich"
+    }
+  ]
+}

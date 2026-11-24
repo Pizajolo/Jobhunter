@@ -404,3 +404,11 @@ export const profileImports = sqliteTable('profile_imports', {
   error: text('error'),
   createdAt: createdAt(),
 });
+
+/** Cache of model extractions of careers pages, keyed by URL + content hash (spec §5.3). */
+export const pageExtractions = sqliteTable('page_extractions', {
+  url: text('url').notNull(),
+  contentHash: text('content_hash').notNull(),
+  result: json<unknown>('result').notNull(),
+  createdAt: createdAt(),
+}, (t) => [primaryKey({ columns: [t.url, t.contentHash] })]);

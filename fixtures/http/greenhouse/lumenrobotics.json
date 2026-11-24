@@ -1,0 +1,46 @@
+{
+  "jobs": [
+    {
+      "id": 4001,
+      "internal_job_id": 9001,
+      "title": "Senior Product Manager, AI Platform",
+      "absolute_url": "https://job-boards.greenhouse.io/lumenrobotics/jobs/4001?gh_src=abc",
+      "location": {
+        "name": "Zurich, Switzerland"
+      },
+      "content": "&lt;p&gt;Lumen Robotics builds robot fleets.&lt;/p&gt;&lt;h3&gt;What you will do&lt;/h3&gt;&lt;ul&gt;&lt;li&gt;Own the AI platform roadmap&lt;/li&gt;&lt;li&gt;Work with 4 engineering teams&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Hybrid in Zurich.&lt;/p&gt;",
+      "updated_at": "2026-11-20T10:00:00-05:00",
+      "first_published": "2026-11-19T10:00:00-05:00",
+      "language": "en",
+      "company_name": "Lumen Robotics",
+      "departments": [
+        {
+          "id": 1,
+          "name": "Product",
+          "child_ids": [],
+          "parent_id": null
+        }
+      ],
+      "requisition_id": "LR-2291"
+    },
+    {
+      "id": 4002,
+      "internal_job_id": 9002,
+      "title": "Office Manager (80-100%)",
+      "absolute_url": "https://job-boards.greenhouse.io/lumenrobotics/jobs/4002",
+      "location": {
+        "name": "Zurich"
+      },
+      "content": "&lt;p&gt;Run our Zurich office.&lt;/p&gt;",
+      "updated_at": "2026-11-01T10:00:00-05:00",
+      "first_published": "2026-11-01T10:00:00-05:00",
+      "language": "de",
+      "company_name": "Lumen Robotics",
+      "departments": [],
+      "requisition_id": null
+    }
+  ],
+  "meta": {
+    "total": 2
+  }
+}

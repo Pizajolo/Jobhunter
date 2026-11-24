@@ -1,0 +1,61 @@
+{
+  "description": "Careers page with two postings, pagination and a blog link to ignore",
+  "input": {
+    "url": "https://halden-group.example/careers",
+    "text": "Join Halden Group\nStrategy Consultant\nZurich\nData Analyst\nRemote\nNext page\nOur values\nBlog: How we work",
+    "links": [
+      {
+        "text": "Home",
+        "href": "https://halden-group.example/"
+      },
+      {
+        "text": "Strategy Consultant",
+        "href": "https://halden-group.example/careers/strategy-consultant"
+      },
+      {
+        "text": "Data Analyst",
+        "href": "https://halden-group.example/careers/data-analyst"
+      },
+      {
+        "text": "Next page",
+        "href": "https://halden-group.example/careers?page=2"
+      },
+      {
+        "text": "Blog: How we work",
+        "href": "https://halden-group.example/blog/how-we-work"
+      }
+    ]
+  },
+  "output": {
+    "jobs": [
+      {
+        "title": "Strategy Consultant",
+        "location": "Zurich",
+        "url": "https://halden-group.example/careers/strategy-consultant",
+        "description": null
+      },
+      {
+        "title": "Data Analyst",
+        "location": "Remote",
+        "url": "https://halden-group.example/careers/data-analyst",
+        "description": null
+      }
+    ],
+    "nextPageUrl": "https://halden-group.example/careers?page=2"
+  },
+  "assert": [
+    {
+      "path": "jobs",
+      "minLength": 2,
+      "maxLength": 2
+    },
+    {
+      "path": "nextPageUrl",
+      "equals": "https://halden-group.example/careers?page=2"
+    },
+    {
+      "path": "jobs",
+      "notIncludes": "Blog"
+    }
+  ]
+}

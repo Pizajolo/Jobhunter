@@ -1,0 +1,13 @@
+{
+  "name": "@jobhunter/e2e",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test --trace off",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

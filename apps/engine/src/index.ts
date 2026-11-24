@@ -15,6 +15,12 @@ export interface RunningEngine {
 
 export async function startEngine(config: EngineConfig, log: Logger): Promise<RunningEngine> {
   const ctx = await createContext(config, log);
+  if (process.env.JOBHUNTER_FAKE_LLM === '1') {
+    const { createCassetteBackend } = await import('./dev/fake-llm.js');
+    const { setBackendOverride } = await import('./agent/runner.js');
+    setBackendOverride(ctx, createCassetteBackend(process.env.JOBHUNTER_FIXTURES_DIR ?? `${process.cwd()}/fixtures`));
+    log.warn('JOBHUNTER_FAKE_LLM=1: using recorded answers, no real model calls');
+  }
   const app = await buildApp(ctx);
   await app.listen({ host: config.host, port: config.port });
   const addr = app.server.address();

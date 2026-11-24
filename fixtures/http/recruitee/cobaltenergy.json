@@ -1,0 +1,28 @@
+{
+  "offers": [
+    {
+      "id": 77,
+      "slug": "venture-builder",
+      "title": "Venture Builder",
+      "description": "<p>Build new energy ventures.</p>",
+      "requirements": "<ul><li>Founder experience</li></ul>",
+      "location": "Zug, Switzerland",
+      "city": "Zug",
+      "country": "Switzerland",
+      "remote": false,
+      "hybrid": true,
+      "careers_url": "https://cobaltenergy.recruitee.com/o/venture-builder",
+      "careers_apply_url": "https://cobaltenergy.recruitee.com/o/venture-builder/c/new",
+      "published_at": "2026-11-23 08:00:00 UTC",
+      "employment_type_code": "fulltime",
+      "department": "Ventures",
+      "company_name": "Cobalt Energy",
+      "salary": {
+        "min": "130000",
+        "max": "150000",
+        "currency": "CHF",
+        "period": "year"
+      }
+    }
+  ]
+}

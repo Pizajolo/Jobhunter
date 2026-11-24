@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "slug": "product-manager-berlin-1",
+      "company_name": "Sample Analytics GmbH",
+      "title": "Product Manager (m/w/d)",
+      "description": "<p>Produktmanagement für unsere Datenplattform.</p>",
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/sample-analytics/product-manager-berlin-1",
+      "tags": [
+        "Product Management"
+      ],
+      "job_types": [
+        "Full Time"
+      ],
+      "location": "Berlin",
+      "created_at": 1795400000
+    },
+    {
+      "slug": "koch-hamburg-2",
+      "company_name": "Restaurant Beispiel",
+      "title": "Koch (m/w/d)",
+      "description": "<p>Küche.</p>",
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/restaurant/koch-hamburg-2",
+      "tags": [
+        "Gastronomie"
+      ],
+      "job_types": [
+        "Full Time"
+      ],
+      "location": "Hamburg",
+      "created_at": 1795300000
+    }
+  ],
+  "links": {
+    "next": null
+  },
+  "meta": {}
+}

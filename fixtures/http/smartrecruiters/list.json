@@ -1,0 +1,30 @@
+{
+  "offset": 0,
+  "limit": 100,
+  "totalFound": 1,
+  "content": [
+    {
+      "id": "744000000000001",
+      "name": "Strategy Manager, Digital",
+      "releasedDate": "2026-11-20T08:00:00.000Z",
+      "company": {
+        "identifier": "QuarryHealth",
+        "name": "Quarry Health AG"
+      },
+      "location": {
+        "city": "Basel",
+        "region": "BS",
+        "country": "ch",
+        "remote": false,
+        "hybrid": true,
+        "fullLocation": "Basel, BS, Switzerland"
+      },
+      "department": {
+        "label": "Strategy"
+      },
+      "typeOfEmployment": {
+        "label": "Full-time"
+      }
+    }
+  ]
+}

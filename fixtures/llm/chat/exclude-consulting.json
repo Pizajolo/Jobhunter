@@ -1,0 +1,65 @@
+{
+  "description": "Exclude consulting roles via a confirmed search-profile change",
+  "input": {
+    "message": "stop showing me consulting roles",
+    "history": [],
+    "today": "2026-11-24",
+    "context": "Applications: none",
+    "searchProfile": {
+      "roles": [
+        "Product Manager"
+      ],
+      "seniority": [],
+      "locations": [],
+      "remotePolicy": "any",
+      "minSalary": null,
+      "industries": [],
+      "mustHave": [],
+      "niceToHave": [],
+      "exclusions": [],
+      "excludedCompanies": [],
+      "languages": []
+    }
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "reply": "I'll add \"consulting\" to your exclusions, so postings with it in the title are filtered out.",
+    "proposal": {
+      "kind": "search_profile",
+      "summary": "Exclude consulting roles",
+      "searchProfile": {
+        "roles": [
+          "Product Manager"
+        ],
+        "seniority": [],
+        "locations": [],
+        "remotePolicy": "any",
+        "minSalary": null,
+        "industries": [],
+        "mustHave": [],
+        "niceToHave": [],
+        "exclusions": [
+          "consulting"
+        ],
+        "excludedCompanies": [],
+        "languages": []
+      }
+    }
+  },
+  "assert": [
+    {
+      "path": "proposal.kind",
+      "equals": "search_profile"
+    },
+    {
+      "path": "proposal.searchProfile.exclusions",
+      "includes": "consulting"
+    },
+    {
+      "path": "proposal.searchProfile.roles",
+      "includes": "Product Manager"
+    }
+  ]
+}

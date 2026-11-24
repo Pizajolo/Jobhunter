@@ -1,0 +1,20 @@
+{
+  "postingUrl": "https://jobs.smartrecruiters.com/QuarryHealth/744000000000001-strategy-manager-digital",
+  "applyUrl": "https://jobs.smartrecruiters.com/oneclick-ui/company/QuarryHealth/publication/abc",
+  "jobAd": {
+    "sections": {
+      "companyDescription": {
+        "title": "Company",
+        "text": "<p>Quarry Health runs clinics.</p>"
+      },
+      "jobDescription": {
+        "title": "Job",
+        "text": "<ul><li>Drive the digital strategy</li></ul>"
+      },
+      "qualifications": {
+        "title": "You",
+        "text": "<p>German and English.</p>"
+      }
+    }
+  }
+}

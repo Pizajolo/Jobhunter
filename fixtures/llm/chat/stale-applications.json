@@ -1,0 +1,45 @@
+{
+  "description": "Question about stale applications: answer only, no change",
+  "input": {
+    "message": "Which applications are older than 3 weeks?",
+    "history": [],
+    "today": "2026-11-24",
+    "context": "Applications (most recent first, 3 shown):\n- #3 Fjord Mobility \u2014 Product Manager, Autonomy (Remote (EU)) \u00b7 status applied since 2026-11-17 \u00b7 applied 2026-11-17\n- #2 Northpeak Capital \u2014 Venture Partner (Zurich) \u00b7 status applied since 2026-11-12 \u00b7 applied 2026-11-12\n- #1 Sable Insurance \u2014 AI Transformation Manager (Lisbon) \u00b7 status applied since 2026-10-28 \u00b7 applied 2026-10-28",
+    "searchProfile": {
+      "roles": [],
+      "seniority": [],
+      "locations": [],
+      "remotePolicy": "any",
+      "minSalary": null,
+      "industries": [],
+      "mustHave": [],
+      "niceToHave": [],
+      "exclusions": [],
+      "excludedCompanies": [],
+      "languages": []
+    }
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "reply": "One application is older than 3 weeks: Sable Insurance \u2014 AI Transformation Manager, applied on 28 Oct 2026 with no reply yet.",
+    "proposal": {
+      "kind": "none"
+    }
+  },
+  "assert": [
+    {
+      "path": "proposal.kind",
+      "equals": "none"
+    },
+    {
+      "path": "reply",
+      "includes": "Sable"
+    },
+    {
+      "path": "reply",
+      "notIncludes": "Fjord"
+    }
+  ]
+}

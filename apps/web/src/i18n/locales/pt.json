@@ -142,6 +142,56 @@
       "monthly": "Orçamento mensal (USD)",
       "none": "Sem limite",
       "spent": "Custo estimado este mês: {{amount}}"
+    },
+    "scan": {
+      "title": "Pesquisa de vagas",
+      "enabled": "Pesquisa diária",
+      "enabledHint": "Corre enquanto a app está aberta; pesquisas perdidas são recuperadas depois da suspensão.",
+      "time": "Hora da pesquisa",
+      "threshold": "Mostrar a partir de (%)",
+      "thresholdHint": "Vagas abaixo deste valor não aparecem no quadro.",
+      "autoShortlist": "Selecionar automaticamente a partir de (%)",
+      "autoShortlistHint": "Vazio = desligado. Para vagas selecionadas são preparados rascunhos.",
+      "off": "Desligado",
+      "etiquette": "Pesquisa respeitosa: o robots.txt é respeitado, no máximo um pedido a cada {{seconds}} s e {{pages}} páginas por site por dia."
+    },
+    "search": {
+      "title": "Perfil de pesquisa"
+    },
+    "companies": {
+      "title": "Empresas-alvo",
+      "name": "Nome da empresa",
+      "url": "URL da página de carreiras (opcional)",
+      "add": "Adicionar empresa",
+      "hint": "O Jobhunter deteta automaticamente Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Recruitee, Personio e Workday; outras páginas de carreiras são lidas por um modelo pequeno.",
+      "noSource": "Nenhuma fonte de vagas encontrada",
+      "discovered": "Descoberta",
+      "failing": "Com erros",
+      "lastOk_one": "{{count}} anúncio",
+      "lastOk_other": "{{count}} anúncios",
+      "resume": "Retomar",
+      "pause": "Pausar"
+    },
+    "discovery": {
+      "enabled": "Descobrir novas empresas semanalmente",
+      "hint": "O Claude sugere empresas que encaixam no teu perfil de pesquisa. Cada sugestão precisa da tua aprovação.",
+      "autoAdd": "Adicionar empresas descobertas automaticamente",
+      "runNow": "Descobrir agora",
+      "suggestions_one": "{{count}} sugestão",
+      "suggestions_other": "{{count}} sugestões",
+      "accept": "Acompanhar",
+      "reject": "Não me interessa"
+    },
+    "sources": {
+      "title": "Portais de emprego e feeds",
+      "hint": "Feeds RSS, a API da Arbeitnow ou qualquer página de carreiras. Vagas do LinkedIn só chegam pelos emails de alerta do LinkedIn.",
+      "kind": "Tipo",
+      "name": "Nome",
+      "keywords": "Palavras-chave",
+      "url": "URL",
+      "disabled": "Desativada",
+      "disable": "Desativar",
+      "enable": "Ativar"
     }
   },
   "tasks": {
@@ -339,5 +389,109 @@
     "record": "Responder por voz",
     "localNote": "Transcrito neste computador.",
     "browserNote": "Usa o reconhecimento de voz do navegador."
+  },
+  "board": {
+    "subtitle_one": "{{count}} vaga acompanhada",
+    "subtitle_other": "{{count}} vagas acompanhadas",
+    "search": "Pesquisar vagas, empresas…",
+    "filters": "Filtros",
+    "addJob": "Adicionar vaga",
+    "scanning": "A pesquisar…",
+    "scanNow": "Pesquisar agora",
+    "minScore": "Compatibilidade",
+    "any": "Qualquer",
+    "source": "Fonte",
+    "remote": "Modelo de trabalho",
+    "lastScan": "Última pesquisa {{when}}",
+    "noScanYet": "Ainda sem pesquisa",
+    "awaitingApproval_one": "{{count}} pacote à espera de aprovação",
+    "awaitingApproval_other": "{{count}} pacotes à espera de aprovação",
+    "emailsToReview_one": "{{count}} email para rever",
+    "emailsToReview_other": "{{count}} emails para rever",
+    "empty": {
+      "title": "Ainda não há vagas",
+      "body": "Adiciona empresas ou fontes de vagas e faz uma pesquisa. Novas vagas acima do teu limiar aparecem em Encontradas.",
+      "addCompanies": "Adicionar empresas e fontes"
+    },
+    "dragInstructions": "Para mover um cartão, foca a pega e carrega em espaço ou enter, usa as setas para escolher a coluna e carrega de novo em espaço ou enter. Escape cancela.",
+    "move": "Mover {{title}} na {{company}}",
+    "columns": {
+      "found": "Encontradas",
+      "shortlisted": "Selecionadas",
+      "ready": "Prontas a candidatar",
+      "applied": "Candidatadas",
+      "interview": "Entrevista e proposta",
+      "closed": "Fechadas"
+    },
+    "addFields": {
+      "title": "Título da vaga",
+      "company": "Empresa",
+      "url": "Link do anúncio",
+      "location": "Local",
+      "description": "Descrição (cola o anúncio)"
+    },
+    "tag": {
+      "new": "Nova hoje",
+      "found_one": "Encontrada há {{count}} dia",
+      "found_other": "Encontrada há {{count}} dias",
+      "drafting": "A redigir CV + carta…",
+      "awaiting_approval": "À espera da tua aprovação",
+      "waiting_one": "À espera · {{count}} dia",
+      "waiting_other": "À espera · {{count}} dias",
+      "interview": "Entrevista",
+      "assessment": "Avaliação",
+      "offer": "Proposta",
+      "rejected": "Rejeitada",
+      "no_response": "Sem resposta",
+      "withdrawn": "Retirada",
+      "shortlisted": "Selecionada",
+      "dismissed": "Descartada"
+    }
+  },
+  "remote": {
+    "remote": "Remoto",
+    "hybrid": "Híbrido",
+    "onsite": "Presencial",
+    "unknown": ""
+  },
+  "sources": {
+    "greenhouse": "Greenhouse",
+    "lever": "Lever",
+    "ashby": "Ashby",
+    "smartrecruiters": "SmartRecruiters",
+    "workable": "Workable",
+    "recruitee": "Recruitee",
+    "personio": "Personio",
+    "workday": "Workday",
+    "generic": "Página de carreiras",
+    "rss": "Feed RSS",
+    "arbeitnow": "Arbeitnow",
+    "email_alert": "Email de alerta de emprego"
+  },
+  "search": {
+    "fields": {
+      "roles": "Funções-alvo",
+      "seniority": "Senioridade",
+      "locations": "Locais",
+      "industries": "Setores",
+      "mustHave": "Palavras-chave obrigatórias",
+      "niceToHave": "Palavras-chave desejáveis",
+      "exclusions": "Excluir palavras-chave",
+      "excludedCompanies": "Excluir empresas",
+      "languages": "Idiomas dos anúncios",
+      "remotePolicy": "Remoto",
+      "minSalary": "Salário mínimo (por ano)",
+      "currency": "Moeda"
+    },
+    "remote": {
+      "any": "Qualquer",
+      "remote_only": "Só remoto",
+      "hybrid_ok": "Remoto ou híbrido",
+      "onsite_ok": "Presencial também"
+    },
+    "hint": "Separa as entradas com vírgulas. As alterações são guardadas quando sais de um campo.",
+    "chatTitle": "Ou diz ao Jobhunter o que procuras",
+    "chatPlaceholder": "ex.: funções sénior de produto em Zurique ou remoto, pelo menos CHF 140k, sem agências",
+    "rescore": "Reavaliar vagas abertas"
   }
 }

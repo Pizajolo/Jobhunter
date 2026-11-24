@@ -1,0 +1,101 @@
+{
+  "description": "Strong product fit vs. unrelated engineering role",
+  "input": {
+    "candidate": {
+      "summary": "Alex Example \u2014 Product Manager\n- Senior Product Manager at Fictional Data AG (2021-03 \u2013 present)",
+      "facts": [
+        "Senior Product Manager at Fictional Data AG, Zurich (2021-03 \u2013 present)",
+        "At Fictional Data AG (Senior Product Manager): Led a team of 6 engineers to launch a data pipeline product used by 40 enterprise customers.",
+        "Skill: SQL",
+        "Language: German (native)"
+      ]
+    },
+    "search": {
+      "roles": [
+        "Product Manager",
+        "Head of Product"
+      ],
+      "seniority": [
+        "senior"
+      ],
+      "locations": [
+        "Zurich",
+        "Remote"
+      ],
+      "remotePolicy": "any",
+      "minSalary": null,
+      "industries": [],
+      "mustHave": [
+        "B2B"
+      ],
+      "niceToHave": [],
+      "exclusions": [],
+      "excludedCompanies": [],
+      "languages": []
+    },
+    "jobs": [
+      {
+        "key": "1",
+        "title": "Senior Product Manager, Data Platform",
+        "company": "Lumen Robotics",
+        "location": "Zurich",
+        "remote": "hybrid",
+        "salary": null,
+        "description": "Own the roadmap of our B2B data platform. 5+ years of product management. German is a plus."
+      },
+      {
+        "key": "2",
+        "title": "Senior Backend Engineer (Go)",
+        "company": "Fjord Mobility",
+        "location": "Oslo",
+        "remote": "onsite",
+        "salary": "EUR 90,000\u2013110,000 per year",
+        "description": "Write Go services. Norwegian required."
+      }
+    ]
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "results": [
+      {
+        "key": "1",
+        "score": 88,
+        "reasons": [
+          "Launched a B2B data pipeline product used by 40 enterprise customers, matching the data platform focus",
+          "Senior PM experience in Zurich matches seniority and location",
+          "Native German covers the language plus"
+        ],
+        "gaps": [
+          "No explicit experience with robotics customers"
+        ]
+      },
+      {
+        "key": "2",
+        "score": 12,
+        "reasons": [],
+        "gaps": [
+          "Hands-on Go engineering",
+          "Norwegian",
+          "Onsite in Oslo, outside target locations"
+        ]
+      }
+    ]
+  },
+  "assert": [
+    {
+      "path": "results.0.score",
+      "gte": 75
+    },
+    {
+      "path": "results.1.score",
+      "lte": 40
+    },
+    {
+      "path": "results",
+      "minLength": 2,
+      "maxLength": 2
+    }
+  ]
+}
