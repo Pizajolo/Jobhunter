@@ -27,10 +27,12 @@ test.describe('pipeline board', () => {
     await page.keyboard.press('ArrowRight');
     await page.waitForTimeout(150);
     await page.keyboard.press('Space');
-    const shortlisted = page.getByRole('region', { name: 'Shortlisted', exact: true });
-    await expect(shortlisted.getByRole('link', { name: 'Venture Builder' })).toBeVisible();
+    // Shortlisting starts drafting; with the offline demo backend it may already be "Ready to apply".
+    const found = page.getByRole('region', { name: 'Found', exact: true });
+    await expect(found.getByRole('link', { name: 'Venture Builder' })).toHaveCount(0);
     await page.reload();
-    await expect(page.getByRole('region', { name: 'Shortlisted', exact: true }).getByRole('link', { name: 'Venture Builder' })).toBeVisible();
+    const moved = page.getByRole('region', { name: /^(Shortlisted|Ready to apply)$/ }).getByRole('link', { name: 'Venture Builder' });
+    await expect(moved).toBeVisible();
   });
 
   test('chat answers and proposes a confirmed change', async ({ page }) => {

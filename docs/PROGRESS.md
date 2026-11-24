@@ -8,7 +8,7 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 | M1 Claude + agent layer | done |
 | M2 Profile | done |
 | M3 Scanning | done |
-| M4 Documents | not started |
+| M4 Documents | done |
 | M5 Email | not started |
 | M6 Applying | not started |
 | M7 Packaging | not started |
@@ -74,3 +74,17 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 **Known issues**
 - Workday tenants vary; the JSON path is tested against a fixture of the public format only.
 - The first scheduled scan after a fresh install happens at the next scan time; use "Scan now" right after onboarding.
+
+## M4 Documents
+
+**Done**
+- `packages/mcp-docs`: four CV templates (Harvard Business School style, Modern, European, Compact), A4/Letter, photo/no photo, one/two pages, section labels in EN/DE/FR/ES/PT/IT, country conventions for CH, DE, PT, ES, FR, UK, US and MX (US/UK never use a photo; MX on Letter paper, never CURP or marital status). Cover letter template in the same visual family.
+- HTML → PDF with Chromium `page.pdf()` (no JavaScript, no network); tests check selectable text, standard headings, one page for Harvard, under 1 MB.
+- Tasks `cv_tailor`, `cover_letter`, `form_answers`, `style_rules`. Deterministic truthfulness: every bullet/paragraph/answer cites confirmed fact ids, numbers must appear in the cited facts (separator-insensitive, ignores "B2B"), employers/titles/dates/institutions are overwritten from the profile, missing salary/permit/notice answers become flagged gaps.
+- Application language: posting language (stored or detected), the UI language, or a fixed language.
+- Package flow: shortlisting (by the user or auto-shortlist) drafts all three documents → Ready to apply + notification; failures return the card to Shortlisted with the reason on the timeline. Versions are kept; regenerate with an instruction; edit; approve.
+- Style learning: every edit stores a before/after diff; after 3 edits the `style_rules` task proposes rules the user can accept (Profile → Writing style).
+- UI: job detail page (match reasons and gaps, status stepper, package tabs with PDF preview, editors, regenerate with instruction, apply myself / approve / apply with agent, timeline, email tracking, notes), Approvals page, CV templates tab with live preview using the user's profile, CV format settings, photo upload.
+
+**Known issues**
+- PDF fonts depend on the fonts installed on the machine (the Docker image installs Liberation/DejaVu).

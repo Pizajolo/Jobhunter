@@ -62,6 +62,9 @@ importers:
       '@jobhunter/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@jobhunter/mcp-docs':
+        specifier: workspace:*
+        version: link:../../packages/mcp-docs
       '@jobhunter/mcp-jobs':
         specifier: workspace:*
         version: link:../../packages/mcp-jobs
@@ -95,6 +98,9 @@ importers:
       pino:
         specifier: ^10.4.0
         version: 10.4.0
+      playwright:
+        specifier: 1.63.0
+        version: 1.63.0
       robots-parser:
         specifier: ^3.1.1
         version: 3.1.1
@@ -200,6 +206,19 @@ importers:
       drizzle-kit:
         specifier: ^0.31.11
         version: 0.31.11
+
+  packages/mcp-docs:
+    dependencies:
+      '@jobhunter/shared':
+        specifier: workspace:*
+        version: link:../shared
+      playwright:
+        specifier: 1.63.0
+        version: 1.63.0
+    devDependencies:
+      unpdf:
+        specifier: ^2.2.2
+        version: 2.2.2
 
   packages/mcp-jobs:
     dependencies:

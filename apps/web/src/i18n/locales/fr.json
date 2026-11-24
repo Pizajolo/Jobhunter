@@ -333,7 +333,9 @@
       "tone": "Ton",
       "formality": "Formalité",
       "avoid": "À éviter",
-      "rules": "Règles apprises de tes modifications"
+      "rules": "Règles apprises de tes modifications",
+      "proposal": "Règles de style suggérées ({{lang}}), apprises de tes modifications",
+      "acceptRules": "Ajouter ces règles"
     },
     "facts": {
       "hint": "Les faits sont le seul matériau que Jobhunter peut utiliser dans les CV, lettres et réponses aux formulaires. Les faits du profil se mettent à jour quand tu modifies le profil.",
@@ -493,5 +495,161 @@
     "chatTitle": "Ou dis à Jobhunter ce que tu cherches",
     "chatPlaceholder": "p. ex. postes produit senior à Zurich ou en télétravail, au moins CHF 140k, pas d’agences",
     "rescore": "Réévaluer les offres ouvertes"
+  },
+  "status": {
+    "found": "Trouvée",
+    "shortlisted": "Présélectionnée",
+    "drafting": "En rédaction",
+    "ready": "Prête à postuler",
+    "applied": "Candidature envoyée",
+    "interview": "Entretien",
+    "assessment": "Test",
+    "offer": "Offre",
+    "rejected": "Refusée",
+    "no_response": "Sans réponse",
+    "withdrawn": "Retirée",
+    "dismissed": "Écartée"
+  },
+  "detail": {
+    "back": "Retour au pipeline",
+    "status": "Statut de la candidature",
+    "steps": {
+      "found": "Trouvée",
+      "shortlisted": "Présélectionnée",
+      "ready": "Prête",
+      "applied": "Envoyée",
+      "interview": "Entretien",
+      "offer": "Offre"
+    },
+    "foundOn": "Trouvée le {{date}} via {{source}}",
+    "postingClosed": "offre retirée",
+    "match": "{{score}} % de correspondance",
+    "openPosting": "Ouvrir l’offre",
+    "whyMatches": "Pourquoi ça correspond",
+    "gap": "Manque : {{gap}}",
+    "package": "Dossier de candidature",
+    "documents": "Documents",
+    "tabs": {
+      "cv": "CV",
+      "cover_letter": "Lettre de motivation",
+      "form_answers": "Réponses ({{count}})"
+    },
+    "drafting": "Rédaction du CV, de la lettre et des réponses…",
+    "noPackage": "Pas encore de documents. Jobhunter rédige un CV, une lettre et des réponses sur mesure à partir de tes faits confirmés.",
+    "draft": "Rédiger la candidature",
+    "version": "Version {{v}} · {{lang}}",
+    "approved": "Validé",
+    "notApproved": "Non validé",
+    "factsUsed_one": "Utilise {{count}} fait confirmé",
+    "factsUsed_other": "Utilise {{count}} faits confirmés",
+    "openPdf": "Ouvrir le PDF",
+    "styleNote": "Rédigée dans ton style. Tes modifications apprennent tes préférences à Jobhunter.",
+    "regenerate": "Régénérer",
+    "applyMyself": "Postuler moi-même",
+    "answersCopied": "Réponses copiées",
+    "applyWithAgent": "Postuler avec l’agent",
+    "approve": "Valider le dossier",
+    "instruction": "Consigne pour la nouvelle version, p. ex. introduction plus courte",
+    "applyNote": "L’agent remplit le formulaire dans son propre navigateur et s’arrête avant l’envoi, sauf si tu as activé l’envoi automatique.",
+    "posting": "Offre",
+    "showDescription": "Afficher la description du poste",
+    "noDescription": "Pas de description.",
+    "timeline": "Historique",
+    "actor": {
+      "user": "toi",
+      "agent": "agent",
+      "email": "par e-mail",
+      "system": "Jobhunter"
+    },
+    "screenshot": "Capture d’écran",
+    "emailTracking": "Suivi des e-mails",
+    "noEmails": "Pas encore d’e-mails. Les réponses de {{domains}} seront associées à cette candidature.",
+    "appliedAgo_one": "Candidature envoyée il y a {{count}} jour.",
+    "appliedAgo_other": "Candidature envoyée il y a {{count}} jours.",
+    "notes": "Notes",
+    "notesLabel": "Notes privées pour cette candidature",
+    "notesPlaceholder": "Recommandation, fourchette salariale, contacts…"
+  },
+  "docs": {
+    "greeting": "Formule d’appel",
+    "paragraph": "Paragraphe {{n}}",
+    "closing": "Formule de politesse",
+    "summary": "Résumé",
+    "cvEditHint": "Un point par ligne. Employeurs, postes et dates viennent de ton profil.",
+    "gap": "Absent de ton profil — réponds toi-même"
+  },
+  "approvals": {
+    "subtitle": "Dossiers et formulaires préparés qui t’attendent.",
+    "packages": "Dossiers à vérifier ({{count}})",
+    "gaps_one": "{{count}} manque",
+    "gaps_other": "{{count}} manques",
+    "review": "Vérifier",
+    "noPackages": "Rien à valider.",
+    "forms": "Formulaires préparés ({{count}})",
+    "readyToSubmit": "Prêt pour ton envoi",
+    "screenshotAlt": "Formulaire prérempli pour {{company}}",
+    "noForms": "Aucun formulaire préparé."
+  },
+  "templates": {
+    "choose": "Modèle de CV",
+    "preview": "Aperçu du modèle",
+    "harvard": {
+      "name": "Harvard",
+      "desc": "Style Harvard Business School : une page, serif, formation d’abord."
+    },
+    "modern": {
+      "name": "Moderne",
+      "desc": "Une colonne épurée avec une couleur d’accent."
+    },
+    "european": {
+      "name": "Européen",
+      "desc": "Photo et informations personnelles, courant en Suisse et en Allemagne."
+    },
+    "compact": {
+      "name": "Compact",
+      "desc": "Mise en page dense sur une page."
+    },
+    "country": "Conventions du pays",
+    "countryNote": {
+      "CH": "Photo, nationalité et permis sont courants.",
+      "DE": "Photo facultative ; CV en tableau.",
+      "PT": "Photo facultative.",
+      "ES": "Photo facultative.",
+      "FR": "Une à deux pages ; photo facultative.",
+      "UK": "Ni photo ni date de naissance.",
+      "US": "Une page, format Letter, sans photo.",
+      "MX": "Format Letter ; jamais de CURP ni de situation familiale."
+    },
+    "countries": {
+      "CH": "Suisse",
+      "DE": "Allemagne",
+      "PT": "Portugal",
+      "ES": "Espagne",
+      "FR": "France",
+      "UK": "Royaume-Uni",
+      "US": "États-Unis",
+      "MX": "Mexique"
+    },
+    "paper": "Format du papier",
+    "pages": "Longueur",
+    "onePage": "Une page",
+    "twoPages": "Jusqu’à deux pages",
+    "photo": "Inclure une photo",
+    "photoHint": "Seulement là où c’est l’usage. Jamais pour les conventions US ou UK.",
+    "uploadPhoto": "Photo (JPEG ou PNG)",
+    "settingsTitle": "Format du CV",
+    "settingsHint": "Choisis le modèle dans Profil → Modèles de CV, avec un aperçu."
+  },
+  "email": {
+    "class": {
+      "application_received": "Candidature reçue",
+      "rejection": "Refus",
+      "interview_invite": "Invitation à un entretien",
+      "assessment": "Test",
+      "offer": "Offre",
+      "recruiter_outreach": "Recruteur",
+      "job_alert": "Alerte emploi",
+      "other": "Autre"
+    }
   }
 }

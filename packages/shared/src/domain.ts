@@ -248,8 +248,8 @@ export type FormAnswer = z.infer<typeof FormAnswerSchema>;
 
 /** Tailored CV content (rendered into a template). */
 export const TailoredCvSchema = z.object({
-  headline: z.string().optional(),
-  summary: z.string().optional(),
+  headline: z.string().nullish(),
+  summary: z.string().nullish(),
   summaryFactIds: z.array(z.string()).default([]),
   sections: z.array(
     z.object({
@@ -257,11 +257,11 @@ export const TailoredCvSchema = z.object({
       title: z.string(),
       items: z.array(
         z.object({
-          refId: z.string().optional(),
+          refId: z.string().nullish(),
           heading: z.string(),
-          subheading: z.string().optional(),
-          location: z.string().optional(),
-          dates: z.string().optional(),
+          subheading: z.string().nullish(),
+          location: z.string().nullish(),
+          dates: z.string().nullish(),
           bullets: z.array(z.object({ text: z.string(), factIds: z.array(z.string()).min(1) })).default([]),
         }),
       ),

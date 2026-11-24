@@ -101,7 +101,8 @@ function normalize(t: string): string {
   return t.toLowerCase().replace(/\s+/gu, ' ');
 }
 
-const NUM = /\d[\d.,'’]*\d|\d/gu;
+/** Numbers, but not digits inside words like "B2B" or "0→1" labels. */
+const NUM = /(?<![\p{L}\d])\d(?:[\d.,'’]*\d)?/gu;
 const digits = (n: string) => n.replace(/[^\d]/gu, '');
 
 /** Numbers that appear in `source`, compared without thousands/decimal separators. */

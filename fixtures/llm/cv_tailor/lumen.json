@@ -1,0 +1,230 @@
+{
+  "description": "Tailored CV citing only confirmed facts",
+  "input": {
+    "job": {
+      "title": "Senior Product Manager, AI Platform",
+      "company": "Lumen Robotics",
+      "location": "Zurich",
+      "description": "Own the roadmap of our AI platform used by robot fleets. You have 5+ years of product management, experience with B2B platforms, and ideally robotics. German is a plus."
+    },
+    "language": "en",
+    "pages": 2,
+    "entries": [
+      {
+        "refId": "w1",
+        "kind": "work",
+        "label": "Senior Product Manager at Fictional Data AG (2021-03 \u2013 present)"
+      },
+      {
+        "refId": "w2",
+        "kind": "work",
+        "label": "Product Manager at Sample Analytics GmbH (2017-01 \u2013 2021-02)"
+      },
+      {
+        "refId": "e1",
+        "kind": "education",
+        "label": "MSc Computer Science at Example Technical University (2014 \u2013 2016)"
+      }
+    ],
+    "facts": [
+      {
+        "id": "f_w1",
+        "text": "Senior Product Manager at Fictional Data AG, Zurich (2021-03 \u2013 present)",
+        "category": "work"
+      },
+      {
+        "id": "f_h1",
+        "text": "At Fictional Data AG (Senior Product Manager): Led a team of 6 engineers to launch a data pipeline product used by 40 enterprise customers.",
+        "category": "achievement"
+      },
+      {
+        "id": "f_h2",
+        "text": "At Fictional Data AG (Senior Product Manager): Grew annual recurring revenue from CHF 1.2M to CHF 3.5M in two years.",
+        "category": "achievement"
+      },
+      {
+        "id": "f_w2",
+        "text": "Product Manager at Sample Analytics GmbH, Berlin (2017-01 \u2013 2021-02)",
+        "category": "work"
+      },
+      {
+        "id": "f_h3",
+        "text": "At Sample Analytics GmbH (Product Manager): Reduced customer onboarding time from 6 weeks to 2 weeks.",
+        "category": "achievement"
+      },
+      {
+        "id": "f_e1",
+        "text": "MSc in Computer Science, Example Technical University (2014 \u2013 2016)",
+        "category": "education"
+      },
+      {
+        "id": "f_s1",
+        "text": "Skill: SQL",
+        "category": "skill"
+      },
+      {
+        "id": "f_s2",
+        "text": "Skill: Roadmapping",
+        "category": "skill"
+      },
+      {
+        "id": "f_l1",
+        "text": "Language: German (native)",
+        "category": "language"
+      },
+      {
+        "id": "f_l2",
+        "text": "Language: English (fluent)",
+        "category": "language"
+      },
+      {
+        "id": "f_p1",
+        "text": "Notice period: 3 months",
+        "category": "preference"
+      }
+    ],
+    "sectionTitles": {
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages",
+      "projects": "Projects",
+      "certificates": "Certifications",
+      "additional": "Additional Information"
+    },
+    "instruction": null
+  },
+  "vars": {
+    "language": "en",
+    "style_profile": "Plain, concrete sentences."
+  },
+  "output": {
+    "headline": null,
+    "summary": "Product manager who launched a B2B data platform used by 40 enterprise customers and grew its revenue from CHF 1.2M to CHF 3.5M.",
+    "summaryFactIds": [
+      "f_h1",
+      "f_h2"
+    ],
+    "sections": [
+      {
+        "kind": "experience",
+        "title": "Experience",
+        "items": [
+          {
+            "refId": "w1",
+            "heading": "Fictional Data AG",
+            "subheading": "Senior Product Manager",
+            "location": "Zurich",
+            "dates": "03/2021 \u2013 Present",
+            "bullets": [
+              {
+                "text": "Launched a data pipeline platform used by 40 enterprise customers, leading a team of 6 engineers.",
+                "factIds": [
+                  "f_h1"
+                ]
+              },
+              {
+                "text": "Grew annual recurring revenue from CHF 1.2M to CHF 3.5M in two years.",
+                "factIds": [
+                  "f_h2"
+                ]
+              }
+            ]
+          },
+          {
+            "refId": "w2",
+            "heading": "Sample Analytics GmbH",
+            "subheading": "Product Manager",
+            "location": "Berlin",
+            "dates": "01/2017 \u2013 02/2021",
+            "bullets": [
+              {
+                "text": "Cut customer onboarding time from 6 weeks to 2 weeks.",
+                "factIds": [
+                  "f_h3"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "education",
+        "title": "Education",
+        "items": [
+          {
+            "refId": "e1",
+            "heading": "Example Technical University",
+            "subheading": "MSc Computer Science",
+            "location": null,
+            "dates": "2014 \u2013 2016",
+            "bullets": []
+          }
+        ]
+      },
+      {
+        "kind": "skills",
+        "title": "Skills",
+        "items": [
+          {
+            "heading": "Product",
+            "bullets": [
+              {
+                "text": "Roadmapping",
+                "factIds": [
+                  "f_s2"
+                ]
+              },
+              {
+                "text": "SQL",
+                "factIds": [
+                  "f_s1"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "languages",
+        "title": "Languages",
+        "items": [
+          {
+            "heading": "Languages",
+            "bullets": [
+              {
+                "text": "German (native)",
+                "factIds": [
+                  "f_l1"
+                ]
+              },
+              {
+                "text": "English (fluent)",
+                "factIds": [
+                  "f_l2"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "gaps": [
+      "No robotics experience"
+    ]
+  },
+  "assert": [
+    {
+      "path": "sections.0.items.0.refId",
+      "equals": "w1"
+    },
+    {
+      "path": "gaps",
+      "includes": "robotics"
+    },
+    {
+      "path": "sections",
+      "notIncludes": "Kubernetes"
+    }
+  ]
+}

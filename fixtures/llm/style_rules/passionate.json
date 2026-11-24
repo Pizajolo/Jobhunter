@@ -1,0 +1,41 @@
+{
+  "description": "Edits that keep removing the same phrases become rules",
+  "input": {
+    "language": "en",
+    "existing": [],
+    "edits": [
+      {
+        "before": "I am passionate about building products and I am writing to apply for this role.",
+        "after": "I build products that customers use every day."
+      },
+      {
+        "before": "I am truly passionate about data platforms!",
+        "after": "I have spent four years on data platforms."
+      },
+      {
+        "before": "I am writing to apply for the Product Lead position.",
+        "after": "Your Product Lead role fits what I have done for the last four years."
+      }
+    ]
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "rules": [
+      "Never use the word 'passionate'.",
+      "Don't open with 'I am writing to apply'; start with the concrete reason.",
+      "No exclamation marks."
+    ]
+  },
+  "assert": [
+    {
+      "path": "rules",
+      "includes": "passionate"
+    },
+    {
+      "path": "rules",
+      "maxLength": 5
+    }
+  ]
+}

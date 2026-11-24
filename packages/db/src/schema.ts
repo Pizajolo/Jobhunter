@@ -412,3 +412,12 @@ export const pageExtractions = sqliteTable('page_extractions', {
   result: json<unknown>('result').notNull(),
   createdAt: createdAt(),
 }, (t) => [primaryKey({ columns: [t.url, t.contentHash] })]);
+
+/** Style rules learned from the user's edits, waiting for the user to accept them (spec §5.4). */
+export const styleProposals = sqliteTable('style_proposals', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  language: text('language').notNull(),
+  rules: json<string[]>('rules').notNull(),
+  status: text('status').notNull().default('pending'), // pending | accepted | rejected
+  createdAt: createdAt(),
+});

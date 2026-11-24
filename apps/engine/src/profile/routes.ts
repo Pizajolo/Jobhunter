@@ -87,6 +87,23 @@ export function registerProfileRoutes(app: FastifyInstance, ctx: AppContext): vo
     return { ok: true };
   });
 
+  // Photo for CV templates that use one (stored locally, embedded into PDFs only when enabled)
+  app.post('/api/profile/photo', async (req) => {
+    const file = await req.file();
+    if (!file) throw new HttpError(400, 'No file uploaded');
+    if (!/^image\/(jpeg|png)$/u.test(file.mimetype)) throw new HttpError(400, 'Upload a JPEG or PNG image');
+    const data = await file.toBuffer();
+    if (data.length > 3 * 1024 * 1024) throw new HttpError(400, 'The photo must be under 3 MB');
+    const { mkdirSync, writeFileSync } = await import('node:fs');
+    const { join } = await import('node:path');
+    mkdirSync(ctx.config.filesDir, { recursive: true });
+    const path = join(ctx.config.filesDir, file.mimetype === 'image/png' ? 'photo.png' : 'photo.jpg');
+    writeFileSync(path, data);
+    const p = getProfile(ctx.db).data;
+    commitProfile(ctx, { ...p, basics: { ...p.basics, photoPath: path } }, 'manual');
+    return { ok: true };
+  });
+
   // Facts
   app.post('/api/profile/facts', async (req) => {
     const body = parse(z.object({ text: z.string().min(3).max(1000), category: z.string().default('other') }), req.body);

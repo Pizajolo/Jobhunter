@@ -1,0 +1,19 @@
+{
+  "name": "@jobhunter/mcp-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@jobhunter/shared": "workspace:*",
+    "playwright": "1.63.0"
+  },
+  "devDependencies": {
+    "unpdf": "^2.2.2"
+  }
+}

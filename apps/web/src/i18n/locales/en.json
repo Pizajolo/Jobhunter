@@ -333,7 +333,9 @@
       "tone": "Tone",
       "formality": "Formality",
       "avoid": "Avoid",
-      "rules": "Rules learned from your edits"
+      "rules": "Rules learned from your edits",
+      "proposal": "Suggested style rules ({{lang}}), learned from your edits",
+      "acceptRules": "Add these rules"
     },
     "facts": {
       "hint": "Facts are the only material Jobhunter may use in CVs, letters and form answers. Facts from your profile update when you edit the profile.",
@@ -493,5 +495,161 @@
     "chatTitle": "Or tell Jobhunter what you're looking for",
     "chatPlaceholder": "e.g. Senior product roles in Zurich or remote, at least CHF 140k, no agencies",
     "rescore": "Re-score open jobs"
+  },
+  "status": {
+    "found": "Found",
+    "shortlisted": "Shortlisted",
+    "drafting": "Drafting",
+    "ready": "Ready to apply",
+    "applied": "Applied",
+    "interview": "Interview",
+    "assessment": "Assessment",
+    "offer": "Offer",
+    "rejected": "Rejected",
+    "no_response": "No response",
+    "withdrawn": "Withdrawn",
+    "dismissed": "Dismissed"
+  },
+  "detail": {
+    "back": "Back to pipeline",
+    "status": "Application status",
+    "steps": {
+      "found": "Found",
+      "shortlisted": "Shortlisted",
+      "ready": "Ready to apply",
+      "applied": "Applied",
+      "interview": "Interview",
+      "offer": "Offer"
+    },
+    "foundOn": "Found {{date}} via {{source}}",
+    "postingClosed": "posting no longer listed",
+    "match": "{{score}}% match",
+    "openPosting": "Open posting",
+    "whyMatches": "Why it matches",
+    "gap": "Gap: {{gap}}",
+    "package": "Application package",
+    "documents": "Documents",
+    "tabs": {
+      "cv": "CV",
+      "cover_letter": "Cover letter",
+      "form_answers": "Form answers ({{count}})"
+    },
+    "drafting": "Drafting CV, cover letter and answers…",
+    "noPackage": "No documents yet. Jobhunter drafts a tailored CV, cover letter and form answers from your confirmed facts.",
+    "draft": "Draft application",
+    "version": "Version {{v}} · {{lang}}",
+    "approved": "Approved",
+    "notApproved": "Not approved",
+    "factsUsed_one": "Uses {{count}} confirmed fact",
+    "factsUsed_other": "Uses {{count}} confirmed facts",
+    "openPdf": "Open PDF",
+    "styleNote": "Written in your style. Your edits teach Jobhunter your preferences.",
+    "regenerate": "Regenerate",
+    "applyMyself": "Apply myself",
+    "answersCopied": "Answers copied",
+    "applyWithAgent": "Apply with agent",
+    "approve": "Approve package",
+    "instruction": "Instruction for the new version, e.g. shorter opening",
+    "applyNote": "The agent fills in the application form in its own browser and stops before submitting, unless you enabled automatic submission.",
+    "posting": "Posting",
+    "showDescription": "Show the job description",
+    "noDescription": "No description available.",
+    "timeline": "Timeline",
+    "actor": {
+      "user": "you",
+      "agent": "agent",
+      "email": "from email",
+      "system": "Jobhunter"
+    },
+    "screenshot": "Screenshot",
+    "emailTracking": "Email tracking",
+    "noEmails": "No emails yet. Replies from {{domains}} will be matched to this application.",
+    "appliedAgo_one": "Applied {{count}} day ago.",
+    "appliedAgo_other": "Applied {{count}} days ago.",
+    "notes": "Notes",
+    "notesLabel": "Private notes for this application",
+    "notesPlaceholder": "Referral, salary range, contacts…"
+  },
+  "docs": {
+    "greeting": "Greeting",
+    "paragraph": "Paragraph {{n}}",
+    "closing": "Closing",
+    "summary": "Summary",
+    "cvEditHint": "One bullet per line. Employers, titles and dates come from your profile.",
+    "gap": "Not in your profile — answer this yourself"
+  },
+  "approvals": {
+    "subtitle": "Packages and prepared forms waiting for you.",
+    "packages": "Packages to review ({{count}})",
+    "gaps_one": "{{count}} gap",
+    "gaps_other": "{{count}} gaps",
+    "review": "Review",
+    "noPackages": "Nothing to approve.",
+    "forms": "Prepared forms ({{count}})",
+    "readyToSubmit": "Ready for you to submit",
+    "screenshotAlt": "Prefilled application form for {{company}}",
+    "noForms": "No prepared forms."
+  },
+  "templates": {
+    "choose": "CV template",
+    "preview": "Template preview",
+    "harvard": {
+      "name": "Harvard",
+      "desc": "Harvard Business School style: one page, serif, education first."
+    },
+    "modern": {
+      "name": "Modern",
+      "desc": "Clean single column with one accent colour."
+    },
+    "european": {
+      "name": "European",
+      "desc": "Photo and personal details, common in CH and DE."
+    },
+    "compact": {
+      "name": "Compact",
+      "desc": "Dense one-page layout."
+    },
+    "country": "Country conventions",
+    "countryNote": {
+      "CH": "Photo, nationality and permit are common.",
+      "DE": "Photo optional; tabular CV.",
+      "PT": "Photo optional.",
+      "ES": "Photo optional.",
+      "FR": "One to two pages; photo optional.",
+      "UK": "No photo or date of birth.",
+      "US": "One page, Letter paper, no photo.",
+      "MX": "Letter paper; never include CURP or marital status."
+    },
+    "countries": {
+      "CH": "Switzerland",
+      "DE": "Germany",
+      "PT": "Portugal",
+      "ES": "Spain",
+      "FR": "France",
+      "UK": "United Kingdom",
+      "US": "United States",
+      "MX": "Mexico"
+    },
+    "paper": "Paper size",
+    "pages": "Length",
+    "onePage": "One page",
+    "twoPages": "Up to two pages",
+    "photo": "Include a photo",
+    "photoHint": "Only where it is customary. Never used for US or UK conventions.",
+    "uploadPhoto": "Photo (JPEG or PNG)",
+    "settingsTitle": "CV format",
+    "settingsHint": "Change the template under Profile → CV templates, with a live preview."
+  },
+  "email": {
+    "class": {
+      "application_received": "Application received",
+      "rejection": "Rejection",
+      "interview_invite": "Interview invitation",
+      "assessment": "Assessment",
+      "offer": "Offer",
+      "recruiter_outreach": "Recruiter",
+      "job_alert": "Job alert",
+      "other": "Other"
+    }
   }
 }

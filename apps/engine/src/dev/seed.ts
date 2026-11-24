@@ -1,4 +1,5 @@
 import {
+  upsertFacts,
   addEvent,
   applications,
   companies,
@@ -68,6 +69,18 @@ export function seedDemo(ctx: AppContext): void {
     },
     'manual',
   );
+  // Facts with the same ids as the recorded cassettes, so offline drafting validates.
+  upsertFacts(db, [
+    { id: 'f_h1', text: 'At Fictional Data AG (Senior Product Manager): Led a team of 6 engineers to launch a data pipeline product used by 40 enterprise customers.', category: 'achievement', source: 'manual', confirmed: true },
+    { id: 'f_h2', text: 'At Fictional Data AG (Senior Product Manager): Grew annual recurring revenue from CHF 1.2M to CHF 3.5M in two years.', category: 'achievement', source: 'manual', confirmed: true },
+    { id: 'f_h3', text: 'At Sample Analytics GmbH (Product Manager): Reduced customer onboarding time from 6 weeks to 2 weeks.', category: 'achievement', source: 'manual', confirmed: true },
+    { id: 'f_w1', text: 'Senior Product Manager at Fictional Data AG, Zurich (2021-03 – present)', category: 'work', source: 'manual', confirmed: true },
+    { id: 'f_s1', text: 'Skill: SQL', category: 'skill', source: 'manual', confirmed: true },
+    { id: 'f_s2', text: 'Skill: Roadmapping', category: 'skill', source: 'manual', confirmed: true },
+    { id: 'f_l1', text: 'Language: German (native)', category: 'language', source: 'manual', confirmed: true },
+    { id: 'f_l2', text: 'Language: English (fluent)', category: 'language', source: 'manual', confirmed: true },
+    { id: 'f_p1', text: 'Notice period: 3 months', category: 'preference', source: 'manual', confirmed: true },
+  ]);
   saveSearchProfile(db, { ...EMPTY_SEARCH_PROFILE, roles: ['Product Manager', 'Head of Product', 'Venture Builder'], locations: ['Zurich', 'Zug', 'Lisbon', 'Remote'], remotePolicy: 'any' });
   for (const d of DEMO) {
     const company = db

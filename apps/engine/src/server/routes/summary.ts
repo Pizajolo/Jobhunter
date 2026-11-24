@@ -1,17 +1,20 @@
 import type { FastifyInstance } from 'fastify';
-import { applications, documents, emails, getSettings, isNull, notifications, scanRuns, desc, eq, and, sql } from '@jobhunter/db';
+import { applications, applyRuns, documents, emails, getSettings, isNull, notifications, scanRuns, desc, eq, sql } from '@jobhunter/db';
 import { modelForTask } from '@jobhunter/shared';
 import type { AppContext } from '../../context.js';
 
 export function registerSummaryRoutes(app: FastifyInstance, ctx: AppContext): void {
   app.get('/api/summary', async () => {
     const settings = getSettings(ctx.db);
-    const approvals = ctx.db
-      .select({ n: sql<number>`count(distinct ${documents.applicationId})` })
-      .from(documents)
-      .innerJoin(applications, eq(applications.id, documents.applicationId))
-      .where(and(isNull(documents.approvedAt), eq(applications.status, 'ready')))
-      .get()?.n ?? 0;
+    // Same rule as the Approvals page: ready applications whose package isn't fully approved, plus prepared forms.
+    const readyIds = ctx.db.select({ id: applications.id }).from(applications).where(eq(applications.status, 'ready')).all().map((r) => r.id);
+    const unapproved = readyIds.filter((id) => {
+      const docs = ctx.db.select().from(documents).where(eq(documents.applicationId, id)).all();
+      const latest = (type: string) => docs.filter((d) => d.type === type).sort((a, b) => b.version - a.version)[0];
+      return !latest('cv')?.approvedAt || !latest('cover_letter')?.approvedAt;
+    }).length;
+    const prepared = ctx.db.select({ n: sql<number>`count(*)` }).from(applyRuns).where(eq(applyRuns.status, 'prepared')).get()?.n ?? 0;
+    const approvals = unapproved + prepared;
     const reviewQueue =
       ctx.db.select({ n: sql<number>`count(*)` }).from(emails).where(eq(emails.reviewStatus, 'pending')).get()?.n ?? 0;
     const unread =

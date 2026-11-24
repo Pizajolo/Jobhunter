@@ -333,7 +333,9 @@
       "tone": "Ton",
       "formality": "Förmlichkeit",
       "avoid": "Vermeiden",
-      "rules": "Aus deinen Änderungen gelernte Regeln"
+      "rules": "Aus deinen Änderungen gelernte Regeln",
+      "proposal": "Vorgeschlagene Stilregeln ({{lang}}), gelernt aus deinen Änderungen",
+      "acceptRules": "Regeln übernehmen"
     },
     "facts": {
       "hint": "Fakten sind das einzige Material, das Jobhunter in Lebensläufen, Anschreiben und Formularantworten verwenden darf. Fakten aus deinem Profil ändern sich, wenn du das Profil bearbeitest.",
@@ -493,5 +495,161 @@
     "chatTitle": "Oder sag Jobhunter, was du suchst",
     "chatPlaceholder": "z. B. Senior-Produktrollen in Zürich oder remote, mindestens CHF 140k, keine Agenturen",
     "rescore": "Offene Stellen neu bewerten"
+  },
+  "status": {
+    "found": "Gefunden",
+    "shortlisted": "Vorgemerkt",
+    "drafting": "In Arbeit",
+    "ready": "Bereit zur Bewerbung",
+    "applied": "Beworben",
+    "interview": "Interview",
+    "assessment": "Assessment",
+    "offer": "Angebot",
+    "rejected": "Absage",
+    "no_response": "Keine Antwort",
+    "withdrawn": "Zurückgezogen",
+    "dismissed": "Verworfen"
+  },
+  "detail": {
+    "back": "Zurück zur Pipeline",
+    "status": "Bewerbungsstatus",
+    "steps": {
+      "found": "Gefunden",
+      "shortlisted": "Vorgemerkt",
+      "ready": "Bereit",
+      "applied": "Beworben",
+      "interview": "Interview",
+      "offer": "Angebot"
+    },
+    "foundOn": "Gefunden am {{date}} über {{source}}",
+    "postingClosed": "Anzeige nicht mehr online",
+    "match": "{{score}} % Passung",
+    "openPosting": "Anzeige öffnen",
+    "whyMatches": "Warum es passt",
+    "gap": "Lücke: {{gap}}",
+    "package": "Bewerbungsunterlagen",
+    "documents": "Dokumente",
+    "tabs": {
+      "cv": "Lebenslauf",
+      "cover_letter": "Anschreiben",
+      "form_answers": "Formularantworten ({{count}})"
+    },
+    "drafting": "Lebenslauf, Anschreiben und Antworten werden erstellt…",
+    "noPackage": "Noch keine Dokumente. Jobhunter erstellt aus deinen bestätigten Fakten einen passenden Lebenslauf, ein Anschreiben und Formularantworten.",
+    "draft": "Bewerbung entwerfen",
+    "version": "Version {{v}} · {{lang}}",
+    "approved": "Freigegeben",
+    "notApproved": "Nicht freigegeben",
+    "factsUsed_one": "Nutzt {{count}} bestätigten Fakt",
+    "factsUsed_other": "Nutzt {{count}} bestätigte Fakten",
+    "openPdf": "PDF öffnen",
+    "styleNote": "In deinem Stil geschrieben. Deine Änderungen bringen Jobhunter deine Vorlieben bei.",
+    "regenerate": "Neu erstellen",
+    "applyMyself": "Selbst bewerben",
+    "answersCopied": "Antworten kopiert",
+    "applyWithAgent": "Mit dem Agenten bewerben",
+    "approve": "Unterlagen freigeben",
+    "instruction": "Hinweis für die neue Version, z. B. kürzerer Einstieg",
+    "applyNote": "Der Agent füllt das Bewerbungsformular in seinem eigenen Browser aus und stoppt vor dem Absenden, außer du hast das automatische Absenden aktiviert.",
+    "posting": "Anzeige",
+    "showDescription": "Stellenbeschreibung anzeigen",
+    "noDescription": "Keine Beschreibung vorhanden.",
+    "timeline": "Verlauf",
+    "actor": {
+      "user": "du",
+      "agent": "Agent",
+      "email": "aus E-Mail",
+      "system": "Jobhunter"
+    },
+    "screenshot": "Screenshot",
+    "emailTracking": "E-Mail-Verfolgung",
+    "noEmails": "Noch keine E-Mails. Antworten von {{domains}} werden dieser Bewerbung zugeordnet.",
+    "appliedAgo_one": "Vor {{count}} Tag beworben.",
+    "appliedAgo_other": "Vor {{count}} Tagen beworben.",
+    "notes": "Notizen",
+    "notesLabel": "Private Notizen zu dieser Bewerbung",
+    "notesPlaceholder": "Empfehlung, Gehaltsband, Kontakte…"
+  },
+  "docs": {
+    "greeting": "Anrede",
+    "paragraph": "Absatz {{n}}",
+    "closing": "Grußformel",
+    "summary": "Profil",
+    "cvEditHint": "Ein Punkt pro Zeile. Arbeitgeber, Titel und Daten kommen aus deinem Profil.",
+    "gap": "Nicht in deinem Profil – bitte selbst beantworten"
+  },
+  "approvals": {
+    "subtitle": "Unterlagen und vorbereitete Formulare, die auf dich warten.",
+    "packages": "Zu prüfende Unterlagen ({{count}})",
+    "gaps_one": "{{count}} Lücke",
+    "gaps_other": "{{count}} Lücken",
+    "review": "Prüfen",
+    "noPackages": "Nichts freizugeben.",
+    "forms": "Vorbereitete Formulare ({{count}})",
+    "readyToSubmit": "Bereit zum Absenden durch dich",
+    "screenshotAlt": "Vorausgefülltes Bewerbungsformular von {{company}}",
+    "noForms": "Keine vorbereiteten Formulare."
+  },
+  "templates": {
+    "choose": "Lebenslauf-Vorlage",
+    "preview": "Vorschau der Vorlage",
+    "harvard": {
+      "name": "Harvard",
+      "desc": "Stil der Harvard Business School: eine Seite, Serifenschrift, Ausbildung zuerst."
+    },
+    "modern": {
+      "name": "Modern",
+      "desc": "Klar, einspaltig, eine Akzentfarbe."
+    },
+    "european": {
+      "name": "Europäisch",
+      "desc": "Foto und persönliche Angaben, üblich in CH und DE."
+    },
+    "compact": {
+      "name": "Kompakt",
+      "desc": "Dichtes einseitiges Layout."
+    },
+    "country": "Landesübliches Format",
+    "countryNote": {
+      "CH": "Foto, Nationalität und Bewilligung sind üblich.",
+      "DE": "Foto optional; tabellarischer Lebenslauf.",
+      "PT": "Foto optional.",
+      "ES": "Foto optional.",
+      "FR": "Ein bis zwei Seiten; Foto optional.",
+      "UK": "Kein Foto, kein Geburtsdatum.",
+      "US": "Eine Seite, Letter-Format, kein Foto.",
+      "MX": "Letter-Format; niemals CURP oder Familienstand angeben."
+    },
+    "countries": {
+      "CH": "Schweiz",
+      "DE": "Deutschland",
+      "PT": "Portugal",
+      "ES": "Spanien",
+      "FR": "Frankreich",
+      "UK": "Vereinigtes Königreich",
+      "US": "USA",
+      "MX": "Mexiko"
+    },
+    "paper": "Papierformat",
+    "pages": "Länge",
+    "onePage": "Eine Seite",
+    "twoPages": "Bis zu zwei Seiten",
+    "photo": "Foto einfügen",
+    "photoHint": "Nur wo üblich. Nie bei US- oder UK-Konventionen.",
+    "uploadPhoto": "Foto (JPEG oder PNG)",
+    "settingsTitle": "Lebenslauf-Format",
+    "settingsHint": "Die Vorlage wählst du unter Profil → Lebenslauf-Vorlagen mit Live-Vorschau."
+  },
+  "email": {
+    "class": {
+      "application_received": "Bewerbung eingegangen",
+      "rejection": "Absage",
+      "interview_invite": "Einladung zum Interview",
+      "assessment": "Assessment",
+      "offer": "Angebot",
+      "recruiter_outreach": "Recruiter",
+      "job_alert": "Job-Alert",
+      "other": "Sonstiges"
+    }
   }
 }

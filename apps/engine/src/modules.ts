@@ -8,6 +8,7 @@ import { registerDiagnosticsRoutes } from './server/routes/diagnostics.js';
 import { registerProfileRoutes } from './profile/routes.js';
 import { registerScanRoutes } from './scan/routes.js';
 import './scheduler.js';
+import { registerDocumentRoutes } from './documents/routes.js';
 
 export const featureRoutes: RouteRegistrar[] = [
   registerCoreRoutes,
@@ -17,4 +18,5 @@ export const featureRoutes: RouteRegistrar[] = [
   registerDiagnosticsRoutes,
   registerProfileRoutes,
   registerScanRoutes,
+  registerDocumentRoutes,
 ];
