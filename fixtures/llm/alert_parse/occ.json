@@ -1,0 +1,33 @@
+{
+  "description": "Board alert without a known layout",
+  "input": {
+    "from": "alertas@occ.com.mx",
+    "subject": "Nuevas vacantes para Gerente de Producto",
+    "text": "Nuevas vacantes que coinciden con tu b\u00fasqueda:\n\nGerente de Producto Digital - Banco Ejemplo - CDMX\nProduct Owner - Retail Ejemplo - Guadalajara"
+  },
+  "vars": {
+    "language": "es"
+  },
+  "output": {
+    "jobs": [
+      {
+        "title": "Gerente de Producto Digital",
+        "company": "Banco Ejemplo",
+        "location": "CDMX",
+        "url": null
+      },
+      {
+        "title": "Product Owner",
+        "company": "Retail Ejemplo",
+        "location": "Guadalajara",
+        "url": null
+      }
+    ]
+  },
+  "assert": [
+    {
+      "path": "jobs",
+      "minLength": 2
+    }
+  ]
+}

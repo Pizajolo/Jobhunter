@@ -1,0 +1,62 @@
+{
+  "description": "Rejection after an interview and an ATS newsletter in one batch",
+  "input": {
+    "applications": [
+      {
+        "company": "Vantage Ledger",
+        "title": "Blockchain Product Lead"
+      }
+    ],
+    "emails": [
+      {
+        "key": "1",
+        "from": "Vantage Ledger <people@vantageledger.example>",
+        "subject": "Update on your interview with Vantage Ledger",
+        "date": "2026-11-20T09:00:00Z",
+        "text": "Hi Alex,\n\nThank you for taking the time to interview with us last week for the Blockchain Product Lead role. After careful consideration, we have decided not to proceed with your application at this time.\n\nKind regards"
+      },
+      {
+        "key": "2",
+        "from": "Greenhouse <newsletter@greenhouse.io>",
+        "subject": "5 interview tips from hiring managers",
+        "date": "2026-11-20T10:00:00Z",
+        "text": "Our latest blog post: five interview tips from hiring managers.\n\nUnsubscribe from these emails"
+      }
+    ]
+  },
+  "vars": {
+    "language": "en"
+  },
+  "output": {
+    "results": [
+      {
+        "key": "1",
+        "classification": "rejection",
+        "company": "Vantage Ledger",
+        "role": "Blockchain Product Lead",
+        "confidence": 0.96,
+        "keySentence": "After careful consideration, we have decided not to proceed with your application at this time.",
+        "referenceIds": []
+      },
+      {
+        "key": "2",
+        "classification": "other",
+        "company": null,
+        "role": null,
+        "confidence": 0.9,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    ]
+  },
+  "assert": [
+    {
+      "path": "results.0.classification",
+      "equals": "rejection"
+    },
+    {
+      "path": "results.1.classification",
+      "equals": "other"
+    }
+  ]
+}

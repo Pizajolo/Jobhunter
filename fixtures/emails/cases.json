@@ -1,0 +1,1027 @@
+{
+  "applications": [
+    {
+      "id": 1,
+      "company": "Lumen Robotics",
+      "title": "Senior Product Manager, AI Platform",
+      "status": "applied",
+      "senderDomains": [
+        "lumen-robotics.example",
+        "greenhouse.io"
+      ],
+      "atsRefIds": [
+        "LR-2291"
+      ],
+      "companyDomain": "lumen-robotics.example"
+    },
+    {
+      "id": 2,
+      "company": "Fjord Mobility",
+      "title": "Product Manager, Autonomy",
+      "status": "applied",
+      "senderDomains": [
+        "hire.lever.co"
+      ],
+      "atsRefIds": [],
+      "companyDomain": "fjordmobility.example"
+    },
+    {
+      "id": 3,
+      "company": "Northpeak Capital",
+      "title": "Venture Partner, Deep Tech",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "northpeak.example"
+    },
+    {
+      "id": 4,
+      "company": "Sable Insurance",
+      "title": "AI Transformation Manager",
+      "status": "applied",
+      "senderDomains": [
+        "myworkday.com"
+      ],
+      "atsRefIds": [
+        "R-5512"
+      ],
+      "companyDomain": "sable-insurance.example"
+    },
+    {
+      "id": 5,
+      "company": "Meridian Works",
+      "title": "Founding Product Manager",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "meridianworks.example"
+    },
+    {
+      "id": 6,
+      "company": "Alpenforge AG",
+      "title": "Director of Engineering",
+      "status": "applied",
+      "senderDomains": [
+        "personio.de"
+      ],
+      "atsRefIds": [],
+      "companyDomain": "alpenforge.example"
+    },
+    {
+      "id": 7,
+      "company": "Quarry Health",
+      "title": "Strategy Manager, Digital",
+      "status": "applied",
+      "senderDomains": [
+        "smartrecruiters.com"
+      ],
+      "atsRefIds": [],
+      "companyDomain": "quarryhealth.example"
+    },
+    {
+      "id": 8,
+      "company": "Tejo Analytics",
+      "title": "Head of Product",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "tejo-analytics.example"
+    },
+    {
+      "id": 9,
+      "company": "Cobalt Energy",
+      "title": "Venture Builder",
+      "status": "applied",
+      "senderDomains": [
+        "recruitee.com"
+      ],
+      "atsRefIds": [],
+      "companyDomain": "cobaltenergy.example"
+    },
+    {
+      "id": 10,
+      "company": "Vantage Ledger",
+      "title": "Blockchain Product Lead",
+      "status": "interview",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "vantageledger.example"
+    },
+    {
+      "id": 11,
+      "company": "Kestrel Data",
+      "title": "Solutions Architect",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "kestreldata.example"
+    },
+    {
+      "id": 12,
+      "company": "Halden Group",
+      "title": "Strategy Consultant",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "halden-group.example"
+    },
+    {
+      "id": 13,
+      "company": "Brightline Pay",
+      "title": "Product Lead, Payments Infrastructure",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "brightlinepay.example"
+    },
+    {
+      "id": 14,
+      "company": "Brightline Pay",
+      "title": "Product Manager, Risk",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "brightlinepay.example"
+    },
+    {
+      "id": 15,
+      "company": "Orbit Freight",
+      "title": "AI Solutions Lead",
+      "status": "applied",
+      "senderDomains": [
+        "workablemail.com"
+      ],
+      "atsRefIds": [],
+      "companyDomain": "orbitfreight.example"
+    },
+    {
+      "id": 16,
+      "company": "Sierra Azul",
+      "title": "Gerente de Producto",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "sierra-azul.example"
+    },
+    {
+      "id": 17,
+      "company": "Ribeira Tech",
+      "title": "Product Owner",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "ribeiratech.example"
+    },
+    {
+      "id": 18,
+      "company": "Lago Digitale",
+      "title": "Product Manager",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "lagodigitale.example"
+    },
+    {
+      "id": 19,
+      "company": "Maison Verte",
+      "title": "Chef de produit",
+      "status": "applied",
+      "senderDomains": [],
+      "atsRefIds": [],
+      "companyDomain": "maisonverte.example"
+    }
+  ],
+  "cases": [
+    {
+      "file": "en-received-greenhouse.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 1
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Lumen Robotics",
+        "role": "Senior Product Manager, AI Platform",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": [
+          "LR-2291"
+        ]
+      }
+    },
+    {
+      "file": "en-received-lever.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 2
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Fjord Mobility",
+        "role": "Product Manager, Autonomy",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-received-workday.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 4
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Sable Insurance",
+        "role": "AI Transformation Manager",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": [
+          "R-5512"
+        ]
+      }
+    },
+    {
+      "file": "en-rejection-plain.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 3
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Northpeak Capital",
+        "role": "Venture Partner, Deep Tech",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-rejection-after-interview.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 10
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Vantage Ledger",
+        "role": "Blockchain Product Lead",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-rejection-ats.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 11
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Kestrel Data",
+        "role": "Solutions Architect",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-interview.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 5
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Meridian Works",
+        "role": "Founding Product Manager",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-interview-ambiguous.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 13
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Brightline Pay",
+        "role": null,
+        "confidence": 0.9,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-assessment.eml",
+      "expected": {
+        "classification": "assessment",
+        "applicationId": 15
+      },
+      "recorded": {
+        "classification": "assessment",
+        "company": "Orbit Freight",
+        "role": "AI Solutions Lead",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-offer.eml",
+      "expected": {
+        "classification": "offer",
+        "applicationId": 5
+      },
+      "recorded": {
+        "classification": "offer",
+        "company": "Meridian Works",
+        "role": "Founding Product Manager",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-recruiter.eml",
+      "expected": {
+        "classification": "recruiter_outreach",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "recruiter_outreach",
+        "company": null,
+        "role": "Head of Product",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-linkedin-alert.eml",
+      "expected": {
+        "classification": "job_alert",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "job_alert",
+        "company": null,
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-newsletter-ats.eml",
+      "expected": {
+        "classification": "other",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "other",
+        "company": null,
+        "role": null,
+        "confidence": 0.9,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "en-personal.eml",
+      "expected": {
+        "classification": "other",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "other",
+        "company": null,
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-received.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 6
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Alpenforge AG",
+        "role": "Director of Engineering",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-received-2.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 9
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Cobalt Energy",
+        "role": "Venture Builder",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-rejection.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 7
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Quarry Health",
+        "role": "Strategy Manager, Digital",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-rejection-2.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 6
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Alpenforge AG",
+        "role": "Director of Engineering",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-rejection-3.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 1
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Lumen Robotics",
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-interview.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 9
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Cobalt Energy",
+        "role": "Venture Builder",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-interview-2.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 6
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Alpenforge AG",
+        "role": "Director of Engineering",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-assessment.eml",
+      "expected": {
+        "classification": "assessment",
+        "applicationId": 7
+      },
+      "recorded": {
+        "classification": "assessment",
+        "company": "Quarry Health",
+        "role": "Strategy Manager, Digital",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-offer.eml",
+      "expected": {
+        "classification": "offer",
+        "applicationId": 9
+      },
+      "recorded": {
+        "classification": "offer",
+        "company": "Cobalt Energy",
+        "role": "Venture Builder",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-recruiter.eml",
+      "expected": {
+        "classification": "recruiter_outreach",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "recruiter_outreach",
+        "company": null,
+        "role": "Chief Product Officer",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "de-newsletter.eml",
+      "expected": {
+        "classification": "other",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "other",
+        "company": null,
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-received.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 19
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Maison Verte",
+        "role": "Chef de produit",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-rejection.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 19
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Maison Verte",
+        "role": "Chef de produit",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-rejection-2.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 1
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Lumen Robotics",
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-interview.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 19
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Maison Verte",
+        "role": "Chef de produit",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-interview-2.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 2
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Fjord Mobility",
+        "role": "Product Manager, Autonomy",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-assessment.eml",
+      "expected": {
+        "classification": "assessment",
+        "applicationId": 19
+      },
+      "recorded": {
+        "classification": "assessment",
+        "company": "Maison Verte",
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-offer.eml",
+      "expected": {
+        "classification": "offer",
+        "applicationId": 19
+      },
+      "recorded": {
+        "classification": "offer",
+        "company": "Maison Verte",
+        "role": "Chef de produit",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "fr-other.eml",
+      "expected": {
+        "classification": "other",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "other",
+        "company": null,
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-received.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 16
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Sierra Azul",
+        "role": "Gerente de Producto",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-received-2.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 8
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Tejo Analytics",
+        "role": "Head of Product",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-rejection.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 16
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Sierra Azul",
+        "role": "Gerente de Producto",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-rejection-2.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 8
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Tejo Analytics",
+        "role": "Head of Product",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-interview.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 16
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Sierra Azul",
+        "role": "Gerente de Producto",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-assessment.eml",
+      "expected": {
+        "classification": "assessment",
+        "applicationId": 16
+      },
+      "recorded": {
+        "classification": "assessment",
+        "company": "Sierra Azul",
+        "role": "Gerente de Producto",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-offer.eml",
+      "expected": {
+        "classification": "offer",
+        "applicationId": 16
+      },
+      "recorded": {
+        "classification": "offer",
+        "company": "Sierra Azul",
+        "role": "Gerente de Producto",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "es-alert.eml",
+      "expected": {
+        "classification": "job_alert",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "job_alert",
+        "company": null,
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "pt-received.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 17
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Ribeira Tech",
+        "role": "Product Owner",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "pt-rejection.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 17
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Ribeira Tech",
+        "role": "Product Owner",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "pt-rejection-2.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 8
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Tejo Analytics",
+        "role": "Head of Product",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "pt-interview.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 17
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Ribeira Tech",
+        "role": "Product Owner",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "pt-interview-2.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 4
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Sable Insurance",
+        "role": "AI Transformation Manager",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": [
+          "R-5512"
+        ]
+      }
+    },
+    {
+      "file": "pt-assessment.eml",
+      "expected": {
+        "classification": "assessment",
+        "applicationId": 17
+      },
+      "recorded": {
+        "classification": "assessment",
+        "company": "Ribeira Tech",
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "pt-offer.eml",
+      "expected": {
+        "classification": "offer",
+        "applicationId": 17
+      },
+      "recorded": {
+        "classification": "offer",
+        "company": "Ribeira Tech",
+        "role": "Product Owner",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "pt-recruiter.eml",
+      "expected": {
+        "classification": "recruiter_outreach",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "recruiter_outreach",
+        "company": null,
+        "role": "Head of Product",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "it-received.eml",
+      "expected": {
+        "classification": "application_received",
+        "applicationId": 18
+      },
+      "recorded": {
+        "classification": "application_received",
+        "company": "Lago Digitale",
+        "role": "Product Manager",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "it-rejection.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 18
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Lago Digitale",
+        "role": "Product Manager",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "it-rejection-2.eml",
+      "expected": {
+        "classification": "rejection",
+        "applicationId": 12
+      },
+      "recorded": {
+        "classification": "rejection",
+        "company": "Halden Group",
+        "role": "Strategy Consultant",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "it-interview.eml",
+      "expected": {
+        "classification": "interview_invite",
+        "applicationId": 18
+      },
+      "recorded": {
+        "classification": "interview_invite",
+        "company": "Lago Digitale",
+        "role": "Product Manager",
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "it-assessment.eml",
+      "expected": {
+        "classification": "assessment",
+        "applicationId": 18
+      },
+      "recorded": {
+        "classification": "assessment",
+        "company": "Lago Digitale",
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    },
+    {
+      "file": "it-other.eml",
+      "expected": {
+        "classification": "other",
+        "applicationId": null
+      },
+      "recorded": {
+        "classification": "other",
+        "company": null,
+        "role": null,
+        "confidence": 0.94,
+        "keySentence": null,
+        "referenceIds": []
+      }
+    }
+  ]
+}

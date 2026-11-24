@@ -1,0 +1,30 @@
+From: LinkedIn Job Alerts <jobalerts-noreply@linkedin.com>
+To: Alex Example <alex@example.com>
+Subject: =?utf-8?q?=E2=80=9Cproduct_manager=E2=80=9D=3A?= 2 new jobs in Zurich
+Date: Thu, 12 Nov 2026 09:11:00 +0000
+Message-ID: <case-11@fixtures.jobhunter.example>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============2275361456916290836=="
+
+--===============2275361456916290836==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
+
+WW91ciBqb2IgYWxlcnQgZm9yIHByb2R1Y3QgbWFuYWdlciBpbiBadXJpY2gKClNlbmlvciBQcm9k
+dWN0IE1hbmFnZXIKQXVyb3JhIExhYnMgwrcgWnVyaWNoIChIeWJyaWQpCgpQcm9kdWN0IExlYWQK
+R2xhY2llciBCYW5rIMK3IFp1cmljaAo=
+
+--===============2275361456916290836==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><table><tr><td><a href=3D"https://www.linkedin.com/comm/jobs/view=
+/4100000001/?trk=3Dalert">Senior Product Manager</a><div>Aurora Labs =C2=B7 Z=
+urich (Hybrid)</div></td></tr><tr><td><a href=3D"https://www.linkedin.com/com=
+m/jobs/view/4100000002/">Product Lead</a><div>Glacier Bank =C2=B7 Zurich</div=
+></td></tr></table><a href=3D"https://www.linkedin.com/comm/jobs/search">See =
+all jobs</a></body></html>
+
+--===============2275361456916290836==--

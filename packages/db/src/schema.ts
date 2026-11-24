@@ -421,3 +421,10 @@ export const styleProposals = sqliteTable('style_proposals', {
   status: text('status').notNull().default('pending'), // pending | accepted | rejected
   createdAt: createdAt(),
 });
+
+/** Small key/value store for engine state (sync cursors, one-off flags). */
+export const kv = sqliteTable('kv', {
+  key: text('key').primaryKey(),
+  value: text('value').notNull(),
+  updatedAt: text('updated_at').notNull().default(now),
+});
