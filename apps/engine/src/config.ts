@@ -21,13 +21,14 @@ export interface EngineConfig {
   headlessBrowser: boolean;
 }
 
+/** Data folder shared by the desktop app, the dev engine and `main.js mcp` (so they all find the same database). */
 export function defaultDataDir(): string {
   const home = homedir();
   switch (platform()) {
     case 'darwin':
-      return join(home, 'Library', 'Application Support', 'Jobhunter');
+      return join(home, 'Library', 'Application Support', 'Jobhunter', 'data');
     case 'win32':
-      return join(process.env.APPDATA ?? join(home, 'AppData', 'Roaming'), 'Jobhunter');
+      return join(process.env.APPDATA ?? join(home, 'AppData', 'Roaming'), 'Jobhunter', 'data');
     default:
       return join(process.env.XDG_DATA_HOME ?? join(home, '.local', 'share'), APP_ID);
   }

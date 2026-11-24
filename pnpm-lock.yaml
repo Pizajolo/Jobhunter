@@ -89,9 +89,15 @@ importers:
       '@jobhunter/mcp-jobs':
         specifier: workspace:*
         version: link:../../packages/mcp-jobs
+      '@jobhunter/mcp-pipeline':
+        specifier: workspace:*
+        version: link:../../packages/mcp-pipeline
       '@jobhunter/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      '@modelcontextprotocol/sdk':
+        specifier: 1.32.2
+        version: 1.32.2(zod@4.6.7)
       '@napi-rs/keyring':
         specifier: ^2.1.2
         version: 2.1.2
@@ -313,6 +319,21 @@ importers:
       robots-parser:
         specifier: ^3.1.1
         version: 3.1.1
+      zod:
+        specifier: ^4.6.7
+        version: 4.6.7
+
+  packages/mcp-pipeline:
+    dependencies:
+      '@jobhunter/db':
+        specifier: workspace:*
+        version: link:../db
+      '@jobhunter/shared':
+        specifier: workspace:*
+        version: link:../shared
+      '@modelcontextprotocol/sdk':
+        specifier: 1.32.2
+        version: 1.32.2(zod@4.6.7)
       zod:
         specifier: ^4.6.7
         version: 4.6.7

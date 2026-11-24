@@ -70,7 +70,6 @@ async function startEngine(): Promise<string> {
       env: {
         ...process.env,
         JOBHUNTER_MODE: 'desktop',
-        JOBHUNTER_DATA_DIR: join(app.getPath('userData'), 'data'),
         JOBHUNTER_PORT: String(port),
         JOBHUNTER_HOST: '127.0.0.1',
         JOBHUNTER_WEB_DIST: paths.web,

@@ -90,7 +90,6 @@ packages/
   mcp-pipeline/      application/status/event/note tools
   mcp-docs/          profile + facts tools, templates/, renderer (HTML→PDF)
   mcp-browser/       Playwright session manager, form reader, fillers/*, safety detectors
-  voice/             STT (local whisper + browser), TTS helper
 fixtures/
   http/<adapter>/*.json     recorded responses
   emails/*.eml + labels.json   eval set (50+, synthetic)
@@ -214,3 +213,11 @@ Voice for the interview (local Whisper by default with a model download on first
 6. **Name:** Jobhunter. Gmail labels `Jobhunter/Rejected`, `Jobhunter/Interview`, …
 7. **Repo:** github.com/Pizajolo/Jobhunter.
 8. **CV conventions:** CH, DE, PT, ES, FR, UK, US, **MX**. Several templates, including a **Harvard Business School** style one-page résumé.
+
+### Changes during the build (2026-11-24)
+
+- **Voice lives in the web app**, not in a `packages/voice` package: local Whisper runs in the browser (transformers.js + WebAssembly, in a web worker), so audio never leaves the device and no native ML runtime (about 300 MB) ships with the desktop app. The ONNX runtime files are bundled; only the model downloads on first use. Browser Web Speech remains the opt-in alternative; read-aloud uses the system's speech synthesis.
+- **One data folder** for the desktop app, the engine and the MCP server (`~/Library/Application Support/Jobhunter/data`, `%APPDATA%\Jobhunter\data`, `~/.local/share/jobhunter`).
+- **MCP stdio**: only `mcp-pipeline` has an external stdio server (`main.js mcp`, read-only unless `--allow-writes`), since that is what is useful from other clients. The other `mcp-*` packages expose typed functions used in-process.
+- **Discovery** guards the web tools with a `PreToolUse` hook that refuses LinkedIn fetches and searches, on top of the prompt rule and the post-filter.
+

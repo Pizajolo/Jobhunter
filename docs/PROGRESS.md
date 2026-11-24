@@ -138,3 +138,25 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 - The Docker image could **not be built in this sandbox** (its proxy blocks apt). CI builds and smoke-tests it; check the first CI run.
 - macOS and Windows installers were not built here; the release workflow builds them. They are unsigned (signing certificates are paid), see `docs/PACKAGING.md`.
 - The apply browser still opens as its own Chromium window instead of inside the app window. Playwright needs its own browser process with the persistent profile; embedding it in Electron would mean switching to Electron's CDP. The separate window is the accepted fallback.
+
+## M8 Extras and polish
+
+**Done**
+- **Company discovery** (weekly on Mondays, or *Run now*): an agent with web search and fetch finds employers that fit the search profile and returns them with a reason and a careers URL. LinkedIn is blocked three times over: a `PreToolUse` hook refuses LinkedIn fetches and searches and adds LinkedIn to every search's blocked domains, the prompt forbids it, and storing drops any LinkedIn URL. Suggestions are deduplicated by name and website domain against every known, rejected or excluded company; you accept or reject them in Settings → Companies, or turn on auto-add.
+- **Voice**: local Whisper (`onnx-community/whisper-base`, 8-bit, about 80 MB) runs in a web worker in the browser. Audio never leaves the device, and the ONNX runtime ships with the app, so the model is the only download. Download progress is shown. Browser speech recognition is the opt-in alternative, with a note that it may send audio to the browser vendor. Interview questions can be read aloud. Local Whisper is now the default voice option, but nothing downloads until you press the microphone.
+- **Stats**: funnel (found → offer), reply and interview rates by source and by target role, median time to first reply (from linked emails and email-driven status changes), model cost per task and per month, period filter. Single-hue bars with the numbers as text, tables that fit a phone.
+- **Your data** (Settings): data folder and size, a zip export (consistent DB snapshot, files, profile and settings JSON; no secrets or portal logins) and *Delete everything* with a typed confirmation. That deletes all rows, files, the browser profile, logs and secrets; it keeps the server sign-in.
+- **MCP server** `packages/mcp-pipeline`: `pipeline_summary`, `list_applications`, `get_application`, plus `update_status` and `add_note` with `--allow-writes` (through the state machine as the agent). Run with `node apps/engine/dist/main.js mcp`. Tested with a real MCP client in memory and over stdio against the bundled engine.
+- Settings → General: voice and read-aloud choices, server password change and sign-out.
+- Docs: `README.md` with screenshots, `docs/PRIVACY.md`, `docs/MCP.md`; `docs/CLAUDE_ACCOUNT.md` checked (subscription, API key, compatible providers, costs). Every Section 9 document now exists.
+- The desktop app and the engine now share one default data folder.
+
+**Verified here**
+- 152 unit tests, 34 prompt cases, 14 e2e tests (desktop, phone overflow checks on six screens, apply), lint and typecheck.
+- Real local transcription in headless Chromium with a recorded speech sample as the microphone: correct transcript in 10 s, including the first model download. The only outside hosts contacted were Hugging Face (the model).
+
+**Known issues / not verified**
+- Discovery has only been run against recorded answers; the quality of live suggestions is not measured.
+- Whisper speed on older phones (server mode over a phone browser) is untested; `whisper-base` may be slow there, and browser speech recognition is the fallback.
+- The PDF preview iframe is blank in headless Chromium (no PDF viewer); real browsers and Electron show it.
+- No release tag has been pushed. Pushing `v0.1.0` runs the release workflow, which publishes the GHCR image and a draft release; that is left for the owner after the local live test.
