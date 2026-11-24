@@ -9,7 +9,7 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 | M2 Profile | done |
 | M3 Scanning | done |
 | M4 Documents | done |
-| M5 Email | not started |
+| M5 Email | done |
 | M6 Applying | not started |
 | M7 Packaging | not started |
 | M8 Extras + polish | not started |
@@ -88,3 +88,19 @@ Updated at the end of every milestone. See `PLAN.md` for the plan and decisions.
 
 **Known issues**
 - PDF fonts depend on the fonts installed on the machine (the Docker image installs Liberation/DejaVu).
+
+## M5 Email
+
+**Done**
+- `packages/mcp-email`: `EmailProvider` interface; Gmail API adapter (user's own Desktop OAuth client, loopback redirect + PKCE, only `gmail.modify`, incremental sync via `historyId` with fallback, label creation); IMAP adapter (`imapflow`, Gmail app password, UID cursor, `X-GM-LABELS`); MIME parsing, quote stripping.
+- Pipeline: multilingual prefilter (ATS senders, applied-company domains and names, job-alert senders, EN/DE/FR/IT/PT/ES keywords) → batched `email_classify` → matching (reference ids, sender domains, company, role; ambiguous matches capped below the threshold) → status change (only above `email_review_confidence` and allowed by the status machine), timeline event, Gmail label; everything else → review queue. Only subject, a 240-character snippet and a body hash are stored.
+- LinkedIn job-alert emails parsed deterministically (Jobhunter never visits LinkedIn); other alerts via `alert_parse`; both feed the scan pipeline.
+- No-response rule (daily, default 21 days; a later email still updates the status), daily digest for rejections, immediate notifications for interviews and offers, opt-in sent-mail style samples.
+- UI: email connection (IMAP app password or Gmail API) in onboarding, Settings and Inbox; Review queue (assign/ignore); Inbox grouped by application; email settings (interval, confidence, no-response days).
+- Eval: 55 synthetic emails in six languages (`fixtures/emails`), `pnpm eval:email`: replay of recorded answers gives 100% classification, 45/45 correct links, 33 automatic changes, 0 wrong, 2 sent to review. Tests include a local fake Gmail API server.
+- `docs/GMAIL_OAUTH.md`, `docs/GMAIL_IMAP.md`.
+
+**Known issues / not verified**
+- The ≥90% accuracy target has **not been measured with a live model** here; the recorded answers were written for the synthetic set. Run `pnpm eval:email --live` locally (and `--record` to keep the results).
+- The IMAP adapter has no automated test (no local IMAP server in CI); the Gmail adapter is tested against a fake API.
+- Gmail API sign-in in server mode needs an SSH tunnel or the IMAP option (loopback redirect).

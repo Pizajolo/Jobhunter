@@ -650,6 +650,61 @@
       "recruiter_outreach": "Recruiter",
       "job_alert": "Job alert",
       "other": "Other"
+    },
+    "settingsTitle": "Email",
+    "syncInterval": "Check every (minutes)",
+    "reviewConfidence": "Auto-update from confidence",
+    "reviewConfidenceHint": "Below this, emails go to the review queue.",
+    "noResponseDays": "\"No response\" after (days)",
+    "noResponseHint": "Applications without any reply move to Closed.",
+    "connect": {
+      "error": "Error",
+      "via": {
+        "gmail_api": "via Gmail API",
+        "imap": "via IMAP"
+      },
+      "lastSync": "Last checked {{when}}",
+      "synced": "{{processed}} job emails, {{changed}} status updates, {{review}} to review",
+      "syncNow": "Check now",
+      "disconnect": "Disconnect",
+      "labels": "Label emails in Gmail",
+      "labelsHint": "Adds labels such as Jobhunter/Rejected or Jobhunter/Interview. Nothing is deleted or sent.",
+      "sampleSent": "Use my sent emails for my writing style",
+      "sampleSentHint": "Reads up to 30 recent sent emails once, when you click the button below.",
+      "sampleNow": "Sample sent emails",
+      "sampled_one": "{{count}} sample added",
+      "sampled_other": "{{count}} samples added",
+      "intro": "Jobhunter reads job-related emails to track your applications: confirmations, rejections, interview invitations, offers and job alerts. It never sends email.",
+      "method": "Connection method",
+      "imapTab": "Gmail app password (simplest)",
+      "gmailTab": "Gmail API (own Google Cloud client)",
+      "imapHint": "Turn on 2-step verification, create an app password in your Google account, and paste it here. See docs/GMAIL_IMAP.md.",
+      "address": "Gmail address",
+      "appPassword": "App password",
+      "appPasswordHint": "16 letters. Stored in your keychain. Not your Google password.",
+      "connect": "Connect",
+      "gmailHint": "Create your own Google Cloud project and a Desktop OAuth client (docs/GMAIL_OAUTH.md), then paste its ID and secret.",
+      "clientId": "OAuth client ID",
+      "clientSecret": "OAuth client secret",
+      "signInGoogle": "Sign in with Google",
+      "finishInBrowser": "Finish the sign-in in the browser tab that opened, then click \"Check again\".",
+      "privacy": "Email bodies are read on this machine and sent to your Claude model only for classification. Jobhunter stores the subject, a short snippet and a hash, never full bodies."
     }
+  },
+  "review": {
+    "subtitle": "Emails Jobhunter couldn't match with confidence. Your choice updates the application.",
+    "application": "Application",
+    "choose": "Choose application…",
+    "meaning": "What the email means",
+    "assign": "Assign",
+    "ignore": "Ignore",
+    "empty": "Nothing to review."
+  },
+  "inbox": {
+    "subtitle": "Only job-related emails, grouped by application.",
+    "empty": "No job-related emails yet.",
+    "alerts": "Job alerts",
+    "recruiters": "Recruiters",
+    "unlinked": "Not linked to an application"
   }
 }

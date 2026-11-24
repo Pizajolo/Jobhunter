@@ -650,6 +650,61 @@
       "recruiter_outreach": "Reclutador",
       "job_alert": "Alerta de empleo",
       "other": "Otro"
+    },
+    "settingsTitle": "Correo",
+    "syncInterval": "Revisar cada (minutos)",
+    "reviewConfidence": "Actualizar automáticamente desde",
+    "reviewConfidenceHint": "Por debajo, los correos van a la cola de revisión.",
+    "noResponseDays": "\"Sin respuesta\" tras (días)",
+    "noResponseHint": "Las candidaturas sin respuesta pasan a Cerradas.",
+    "connect": {
+      "error": "Error",
+      "via": {
+        "gmail_api": "vía API de Gmail",
+        "imap": "vía IMAP"
+      },
+      "lastSync": "Última revisión {{when}}",
+      "synced": "{{processed}} correos de empleo, {{changed}} cambios de estado, {{review}} por revisar",
+      "syncNow": "Revisar ahora",
+      "disconnect": "Desconectar",
+      "labels": "Etiquetar correos en Gmail",
+      "labelsHint": "Añade etiquetas como Jobhunter/Rejected o Jobhunter/Interview. No se borra ni se envía nada.",
+      "sampleSent": "Usar mis correos enviados para mi estilo",
+      "sampleSentHint": "Lee una vez hasta 30 correos enviados recientes, cuando pulses el botón de abajo.",
+      "sampleNow": "Analizar correos enviados",
+      "sampled_one": "{{count}} ejemplo añadido",
+      "sampled_other": "{{count}} ejemplos añadidos",
+      "intro": "Jobhunter lee los correos relacionados con empleo para seguir tus candidaturas: confirmaciones, rechazos, invitaciones a entrevistas, ofertas y alertas. Nunca envía correos.",
+      "method": "Método de conexión",
+      "imapTab": "Contraseña de aplicación de Gmail (lo más sencillo)",
+      "gmailTab": "API de Gmail (cliente propio de Google Cloud)",
+      "imapHint": "Activa la verificación en dos pasos, crea una contraseña de aplicación en tu cuenta de Google y pégala aquí. Ver docs/GMAIL_IMAP.md.",
+      "address": "Dirección de Gmail",
+      "appPassword": "Contraseña de aplicación",
+      "appPasswordHint": "16 letras. Se guarda en el llavero. No es tu contraseña de Google.",
+      "connect": "Conectar",
+      "gmailHint": "Crea tu propio proyecto de Google Cloud y un cliente OAuth de tipo Escritorio (docs/GMAIL_OAUTH.md) y pega el ID y el secreto.",
+      "clientId": "ID de cliente OAuth",
+      "clientSecret": "Secreto de cliente OAuth",
+      "signInGoogle": "Iniciar sesión con Google",
+      "finishInBrowser": "Termina el inicio de sesión en la pestaña que se abrió y pulsa \"Comprobar de nuevo\".",
+      "privacy": "El contenido de los correos se lee en este equipo y se envía a tu modelo Claude solo para clasificarlo. Jobhunter guarda el asunto, un fragmento corto y un hash, nunca el contenido completo."
     }
+  },
+  "review": {
+    "subtitle": "Correos que Jobhunter no pudo asociar con seguridad. Tu elección actualiza la candidatura.",
+    "application": "Candidatura",
+    "choose": "Elegir candidatura…",
+    "meaning": "Qué significa el correo",
+    "assign": "Asignar",
+    "ignore": "Ignorar",
+    "empty": "Nada que revisar."
+  },
+  "inbox": {
+    "subtitle": "Solo correos de empleo, agrupados por candidatura.",
+    "empty": "Aún no hay correos de empleo.",
+    "alerts": "Alertas de empleo",
+    "recruiters": "Reclutadores",
+    "unlinked": "Sin candidatura asociada"
   }
 }

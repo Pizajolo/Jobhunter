@@ -17,7 +17,7 @@ export function htmlToPlain(html: string): string {
   });
   return $.root()
     .text()
-    .replace(/ /gu, ' ')
+    .replace(/\u00a0/gu, ' ')
     .replace(/[ \t]+/gu, ' ')
     .replace(/ *\n */gu, '\n')
     .replace(/\n{3,}/gu, '\n\n')
