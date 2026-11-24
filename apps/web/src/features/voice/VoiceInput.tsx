@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { api } from '../../lib/api';
 import { useSettings } from '../../lib/settings';
 import { Button, ErrorText } from '../../components/ui';
+import { onModelProgress, transcribeLocally } from './whisper';
 
 interface SpeechRecognitionLike {
   lang: string;
@@ -44,9 +44,12 @@ export function VoiceInput({ onTranscript }: { onTranscript: (text: string) => v
   const [recording, setRecording] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [download, setDownload] = useState<number | null>(null);
   const recRef = useRef<MediaRecorder | null>(null);
   const speechRef = useRef<SpeechRecognitionLike | null>(null);
   const chunks = useRef<Blob[]>([]);
+
+  useEffect(() => onModelProgress((f) => setDownload(f === null || f >= 1 ? null : f)), []);
 
   useEffect(
     () => () => {
@@ -71,11 +74,8 @@ export function VoiceInput({ onTranscript }: { onTranscript: (text: string) => v
         stream.getTracks().forEach((tr) => tr.stop());
         setBusy(true);
         try {
-          const form = new FormData();
-          form.append('language', lang);
-          form.append('audio', new Blob(chunks.current, { type: rec.mimeType || 'audio/webm' }), 'answer.webm');
-          const res = await api.post<{ text: string }>('/api/voice/transcribe', form);
-          if (res.text.trim()) onTranscript(res.text.trim());
+          const text = await transcribeLocally(new Blob(chunks.current, { type: rec.mimeType || 'audio/webm' }), lang);
+          if (text) onTranscript(text);
         } catch (err) {
           setError(err instanceof Error ? err.message : String(err));
         } finally {
@@ -127,6 +127,11 @@ export function VoiceInput({ onTranscript }: { onTranscript: (text: string) => v
         </svg>
         {recording ? t('voice.stop') : busy ? t('voice.transcribing') : t('voice.record')}
       </Button>
+      {download !== null ? (
+        <span className="text-[12px] text-ink-2" role="status">
+          {t('voice.downloading', { percent: Math.round(download * 100) })}
+        </span>
+      ) : null}
       <span className="text-[12px] text-ink-3">{mode === 'local_whisper' ? t('voice.localNote') : t('voice.browserNote')}</span>
       {error ? <ErrorText error={error} /> : null}
     </div>

@@ -1,0 +1,44 @@
+{
+  "description": "Suggests climate-tech employers in Lisbon with reasons, never a known company, never LinkedIn URLs",
+  "input": {
+    "candidate": "Alex Example. Senior Product Manager, 8 years in B2B data products (Fictional Data AG, Zurich). Speaks English, German, Portuguese.",
+    "search": {
+      "roles": ["Product Manager", "Head of Product"],
+      "seniority": ["senior"],
+      "locations": ["Lisbon", "Remote EU"],
+      "remotePolicy": "hybrid_ok",
+      "minSalary": null,
+      "industries": ["climate tech", "energy"],
+      "mustHave": [],
+      "niceToHave": ["data platform"],
+      "exclusions": ["intern"],
+      "excludedCompanies": ["Badco"],
+      "languages": ["en", "pt"]
+    },
+    "known": ["Lumen Robotics", "Badco"],
+    "max": 3
+  },
+  "vars": { "language": "en" },
+  "output": {
+    "companies": [
+      {
+        "name": "Solara Grid",
+        "website": "https://solaragrid.example",
+        "careersUrl": "https://jobs.ashbyhq.com/solaragrid",
+        "location": "Lisbon / remote EU",
+        "reason": "Battery-storage software startup in Lisbon (Series B); its careers page lists product roles."
+      },
+      {
+        "name": "Tidewater Energy",
+        "website": "https://tidewater.example",
+        "careersUrl": null,
+        "location": "Lisbon",
+        "reason": "Offshore wind analytics company building a data platform, which matches the candidate's B2B data product background."
+      }
+    ]
+  },
+  "assert": [
+    { "path": "companies.0.name", "equals": "Solara Grid" },
+    { "path": "companies.1.careersUrl", "equals": null }
+  ]
+}

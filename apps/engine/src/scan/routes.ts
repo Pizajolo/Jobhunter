@@ -26,6 +26,7 @@ import type { AppContext } from '../context.js';
 import { HttpError, notFound, parse } from '../server/http.js';
 import { registerJob } from '../scheduler.js';
 import { addCompany } from './companies.js';
+import { isDiscoveryRunning, runDiscovery } from './discovery.js';
 import { isScanRunning, matchJobs, promoteMatches, runScan } from './pipeline.js';
 import { applyProposal, listMessages, rejectProposal, sendMessage } from '../chat/service.js';
 
@@ -130,7 +131,15 @@ export function registerScanRoutes(app: FastifyInstance, ctx: AppContext): void 
     void runScan(ctx, 'manual', body).catch((err: unknown) => ctx.log.error({ err }, 'scan failed'));
     return { started: true };
   });
-  app.get('/api/scan/status', async () => ({ running: isScanRunning(), nextScanAt: ctx.runtime.nextScanAt }));
+  app.get('/api/scan/status', async () => ({ running: isScanRunning(), discoveryRunning: isDiscoveryRunning(), nextScanAt: ctx.runtime.nextScanAt }));
+  app.post('/api/discovery/run', async () => {
+    void runDiscovery(ctx, 'manual')
+      .then((r) => {
+        if (!r.ok) ctx.log.warn({ message: r.message }, 'discovery did not run');
+      })
+      .catch((err: unknown) => ctx.log.error({ err }, 'discovery failed'));
+    return { started: true };
+  });
   app.post('/api/matches/rescore', async () => {
     const ids = ctx.db.select({ id: jobs.id }).from(jobs).where(isNull(jobs.closedAt)).all().map((r) => r.id);
     void matchJobs(ctx, ids, { force: true }).then(({ shown }) => {

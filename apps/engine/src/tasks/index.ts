@@ -2,6 +2,7 @@ import type { TaskDef } from '../agent/types.js';
 import { connectionTestTask } from './connection-test.js';
 import { coverLetterTask, cvTailorTask, formAnswersTask, styleRulesTask } from './documents.js';
 import { formFillTask } from './apply.js';
+import { companyDiscoveryTask } from './discovery.js';
 import { alertParseTask, emailClassifyTask } from './email.js';
 import { chatTask, jobExtractTask, matchScoreTask, searchProfileChatTask } from './scan.js';
 import { cvInterviewTask, interviewSummaryTask, profileExtractTask, styleAnalyzeTask } from './profile.js';
@@ -25,4 +26,5 @@ export const TASKS: Record<string, TaskDef<any, any>> = {
   email_classify: emailClassifyTask,
   alert_parse: alertParseTask,
   form_fill: formFillTask,
+  company_discovery: companyDiscoveryTask,
 };

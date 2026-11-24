@@ -1,11 +1,50 @@
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { query, type SDKMessage, type SDKResultMessage } from '@anthropic-ai/claude-agent-sdk';
+import { query, type HookCallback, type HookJSONOutput, type SDKMessage, type SDKResultMessage } from '@anthropic-ai/claude-agent-sdk';
+import { registrableDomain } from '@jobhunter/shared';
 import type { BackendRequest, BackendResponse, LlmBackend, Usage } from '../types.js';
 import { TaskError } from '../types.js';
 import { claudeExecutable } from '../claude-cli.js';
 
 const WEB_TOOLS = ['WebSearch', 'WebFetch'];
+/** Sites the agent may never fetch or search (spec §2.4: no LinkedIn scraping or automation). */
+export const WEB_BLOCKED_DOMAINS = ['linkedin.com', 'lnkd.in'];
+
+const deny = (reason: string): HookJSONOutput => ({
+  hookSpecificOutput: { hookEventName: 'PreToolUse', permissionDecision: 'deny', permissionDecisionReason: reason },
+});
+
+/**
+ * PreToolUse guard for the web tools: refuses fetches of blocked sites and keeps them out of
+ * web searches. Runs inside the Claude Code process before every tool call.
+ */
+export const webGuard: HookCallback = async (input) => {
+  if (input.hook_event_name !== 'PreToolUse') return {};
+  const args = (input.tool_input ?? {}) as Record<string, unknown>;
+  if (input.tool_name === 'WebFetch') {
+    let host: string;
+    try {
+      host = registrableDomain(new URL(String(args.url ?? '')).hostname);
+    } catch {
+      return deny('Invalid URL');
+    }
+    return WEB_BLOCKED_DOMAINS.includes(host) ? deny(`${host} is blocked: Jobhunter never accesses LinkedIn. Use the company's own website.`) : {};
+  }
+  if (input.tool_name === 'WebSearch') {
+    if (/linkedin|lnkd\.in/iu.test(String(args.query ?? ''))) return deny('Searching LinkedIn is not allowed. Search for the company website instead.');
+    const allowed = Array.isArray(args.allowed_domains) ? (args.allowed_domains as string[]) : null;
+    if (allowed) return allowed.some((d) => WEB_BLOCKED_DOMAINS.includes(registrableDomain(d))) ? deny('LinkedIn is not allowed') : {};
+    const blocked = Array.isArray(args.blocked_domains) ? (args.blocked_domains as string[]) : [];
+    return {
+      hookSpecificOutput: {
+        hookEventName: 'PreToolUse',
+        permissionDecision: 'allow',
+        updatedInput: { ...args, blocked_domains: [...new Set([...blocked, ...WEB_BLOCKED_DOMAINS])] },
+      },
+    };
+  }
+  return {};
+};
 
 /**
  * Runs tasks through the Claude Agent SDK (the official Claude Code binary). Used for every task in
@@ -50,6 +89,7 @@ export class AgentSdkBackend implements LlmBackend {
           maxTurns: req.maxTurns ?? (req.mcpServers ? 30 : 3),
           ...(req.maxBudgetUsd ? { maxBudgetUsd: req.maxBudgetUsd } : {}),
           outputFormat: { type: 'json_schema', schema: req.jsonSchema },
+          ...(req.webTools ? { hooks: { PreToolUse: [{ matcher: 'WebFetch|WebSearch', hooks: [webGuard], onFailure: 'block' as const }] } } : {}),
           env,
           ...(process.env.JOBHUNTER_CLAUDE_PATH ? { pathToClaudeCodeExecutable: claudeExecutable(env) } : {}),
         },

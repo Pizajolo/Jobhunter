@@ -13,5 +13,6 @@ export default defineConfig({
       '/api': engine,
     },
   },
+  worker: { format: 'es' },
   build: { outDir: 'dist', sourcemap: true, chunkSizeWarningLimit: 1500 },
 });

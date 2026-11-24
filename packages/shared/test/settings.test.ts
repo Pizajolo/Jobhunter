@@ -16,7 +16,7 @@ describe('settings defaults (spec §8)', () => {
     expect(DEFAULT_SETTINGS.noResponseAfterDays).toBe(21);
     expect(DEFAULT_SETTINGS.emailReviewConfidence).toBe(0.8);
     expect(DEFAULT_SETTINGS.monthlyBudgetUsd).toBeNull();
-    expect(DEFAULT_SETTINGS.voice).toBe('off');
+    expect(DEFAULT_SETTINGS.voice).toBe('local_whisper');
     expect(DEFAULT_SETTINGS.auth.mode).toBe('subscription');
   });
 

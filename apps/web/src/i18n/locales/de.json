@@ -114,13 +114,24 @@
   },
   "settings": {
     "general": {
-      "title": "Sprache",
+      "title": "Sprache und Stimme",
       "uiLanguage": "App-Sprache",
       "applicationLanguage": "Bewerbungssprache",
       "applicationLanguageHint": "Sprache von Lebenslauf, Anschreiben und Formularantworten.",
       "langPosting": "Wie die Stellenanzeige",
       "langUi": "Wie die App",
-      "langFixed": "Immer {{lang}}"
+      "langFixed": "Immer {{lang}}",
+      "voice": "Sprachantworten im Interview",
+      "voiceLocal": "Lokales Whisper (auf diesem Gerät)",
+      "voiceBrowser": "Spracherkennung des Browsers",
+      "voiceOff": "Aus",
+      "voiceHint": {
+        "local_whisper": "Privat: Die Aufnahme bleibt auf diesem Gerät. Das Sprachmodell (ca. 80 MB) wird beim ersten Mal einmalig geladen.",
+        "browser": "Dein Browser schickt die Aufnahme eventuell zur Erkennung an seinen Hersteller (z. B. Google bei Chrome).",
+        "off": "Antworten werden getippt."
+      },
+      "tts": "Interviewfragen vorlesen",
+      "ttsHint": "Nutzt die Sprachausgabe deines Systems."
     },
     "claude": {
       "title": "Claude-Konto"
@@ -389,8 +400,9 @@
     "stop": "Aufnahme beenden",
     "transcribing": "Wird transkribiert…",
     "record": "Per Sprache antworten",
-    "localNote": "Wird auf diesem Gerät transkribiert.",
-    "browserNote": "Nutzt die Spracherkennung deines Browsers."
+    "localNote": "Wird auf diesem Gerät transkribiert. Die Aufnahme verlässt es nie.",
+    "browserNote": "Nutzt die Spracherkennung deines Browsers.",
+    "downloading": "Sprachmodell wird geladen (einmalig, ca. 80 MB): {{percent}} %"
   },
   "board": {
     "subtitle_one": "{{count}} Stelle im Blick",
@@ -778,5 +790,74 @@
     "newPassword": "Neues Passwort",
     "change": "Passwort ändern",
     "signOut": "Abmelden"
+  },
+  "stats": {
+    "period": "Zeitraum",
+    "periods": {
+      "30": "Letzte 30 Tage",
+      "90": "Letzte 90 Tage",
+      "365": "Letzte 12 Monate",
+      "all": "Gesamt"
+    },
+    "applied": "Beworben",
+    "ofFound": "von {{count}} gefundenen Stellen",
+    "replyRate": "Antwortquote",
+    "replies_one": "{{count}} Antwort",
+    "replies_other": "{{count}} Antworten",
+    "interviewRate": "Interviewquote",
+    "interviews_one": "{{count}} Interview",
+    "interviews_other": "{{count}} Interviews",
+    "timeToReply": "Zeit bis zur ersten Antwort",
+    "days_one": "{{count}} Tag",
+    "days_other": "{{count}} Tage",
+    "measuredOn_one": "Median aus {{count}} Antwort",
+    "measuredOn_other": "Median aus {{count}} Antworten",
+    "funnel": "Trichter",
+    "steps": {
+      "found": "Gefunden",
+      "shortlisted": "Vorgemerkt",
+      "applied": "Beworben",
+      "replied": "Antwort",
+      "interviews": "Interview",
+      "offers": "Angebot"
+    },
+    "cost": "Modellkosten pro Aufgabe",
+    "total": "Gesamt {{amount}}",
+    "task": "Aufgabe",
+    "runs": "Läufe",
+    "costCol": "Kosten",
+    "failed_one": "{{count}} fehlgeschlagen",
+    "failed_other": "{{count}} fehlgeschlagen",
+    "noRuns": "Keine Modellaufrufe in diesem Zeitraum.",
+    "costNote": "Aus den Token-Zahlen geschätzt. Mit einem Claude-Abo wird nichts pro Aufruf abgerechnet; die Zahlen zeigen, was dieselbe Nutzung über die API kosten würde.",
+    "bySource": "Nach Quelle",
+    "byRole": "Nach Rolle",
+    "source": "Quelle",
+    "role": "Rolle",
+    "otherRole": "Andere Rollen",
+    "noApplications": "In diesem Zeitraum noch keine Bewerbungen.",
+    "emptyTitle": "Noch keine Daten",
+    "emptyBody": "Statistiken erscheinen, sobald Jobhunter Stellen gefunden hat und du dich bewirbst.",
+    "sources": {
+      "manual": "Von Hand hinzugefügt",
+      "generic": "Firmenwebsite",
+      "rss": "RSS-Feed",
+      "linkedin_alert": "LinkedIn-Jobalarme",
+      "email_alert": "Jobalarm-E-Mails"
+    },
+    "noReplies": "Noch keine datierten Antworten"
+  },
+  "data": {
+    "title": "Deine Daten",
+    "intro": "Alles, was Jobhunter weiß, liegt auf diesem Rechner (oder deinem Server): eine SQLite-Datenbank und ein Dateiordner. Keine Telemetrie. Daten verlassen ihn nur für die Modellaufrufe (unter Diagnose aufgelistet), Seitenabrufe bei Jobseiten, deinen E-Mail-Anbieter nach der Verbindung und den einmaligen Download des Sprachmodells.",
+    "folder": "Ordner",
+    "size": "Größe",
+    "sizeValue": "Datenbank {{db}}, Dateien {{files}}, Bewerbungs-Browser {{browser}}",
+    "export": "Alle Daten exportieren (.zip)",
+    "exportHint": "Datenbank, Profil, Einstellungen, Dokumente und Screenshots. Schlüssel, E-Mail-Tokens und Portal-Logins sind nicht enthalten.",
+    "delete": "Alles löschen …",
+    "deleteWarning": "Dies löscht dauerhaft dein Profil, Stellen, Bewerbungen, Dokumente, E-Mail-Zuordnungen, Einstellungen, gespeicherte Schlüssel und die E-Mail-Verbindung sowie den Bewerbungs-Browser mit deinen Portal-Logins. Exportiere vorher, wenn du eine Kopie willst. Dein Claude-Login bleibt unberührt.",
+    "deleteConfirm": "Zur Bestätigung DELETE eingeben",
+    "deleteNow": "Jetzt alles löschen"
   }
 }

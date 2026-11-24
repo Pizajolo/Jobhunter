@@ -48,7 +48,14 @@ export function browserSession(ctx: AppContext): BrowserSession {
   return s;
 }
 
-registerService({ name: 'browser', start: () => undefined, stop: async (ctx) => sessions.get(ctx)?.close() });
+/** Closes the application browser (if open) so its profile folder can be removed. */
+export async function closeBrowserSession(ctx: AppContext): Promise<void> {
+  const s = sessions.get(ctx);
+  sessions.delete(ctx);
+  await s?.close();
+}
+
+registerService({ name: 'browser', start: () => undefined, stop: closeBrowserSession });
 
 function applyData(ctx: AppContext, appId: number): ApplyData {
   const p = getProfile(ctx.db).data;

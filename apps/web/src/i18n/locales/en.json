@@ -114,13 +114,24 @@
   },
   "settings": {
     "general": {
-      "title": "Language",
+      "title": "Language and voice",
       "uiLanguage": "App language",
       "applicationLanguage": "Application language",
       "applicationLanguageHint": "Language of CVs, cover letters and form answers.",
       "langPosting": "Same as the job posting",
       "langUi": "Same as the app",
-      "langFixed": "Always {{lang}}"
+      "langFixed": "Always {{lang}}",
+      "voice": "Voice answers in the interview",
+      "voiceLocal": "Local Whisper (on this device)",
+      "voiceBrowser": "Browser speech recognition",
+      "voiceOff": "Off",
+      "voiceHint": {
+        "local_whisper": "Private: audio stays on this device. The speech model (about 80 MB) downloads once on first use.",
+        "browser": "Your browser may send the audio to its vendor (for example Google in Chrome) for recognition.",
+        "off": "Type your answers."
+      },
+      "tts": "Read interview questions aloud",
+      "ttsHint": "Uses your system's speech synthesis."
     },
     "claude": {
       "title": "Claude account"
@@ -389,8 +400,9 @@
     "stop": "Stop recording",
     "transcribing": "Transcribing…",
     "record": "Answer by voice",
-    "localNote": "Transcribed on this machine.",
-    "browserNote": "Uses your browser's speech recognition."
+    "localNote": "Transcribed on this device. Audio never leaves it.",
+    "browserNote": "Uses your browser's speech recognition.",
+    "downloading": "Downloading the speech model (one time, about 80 MB): {{percent}}%"
   },
   "board": {
     "subtitle_one": "{{count}} role tracked",
@@ -778,5 +790,74 @@
     "newPassword": "New password",
     "change": "Change password",
     "signOut": "Sign out"
+  },
+  "stats": {
+    "period": "Period",
+    "periods": {
+      "30": "Last 30 days",
+      "90": "Last 90 days",
+      "365": "Last 12 months",
+      "all": "All time"
+    },
+    "applied": "Applied",
+    "ofFound": "of {{count}} jobs found",
+    "replyRate": "Reply rate",
+    "replies_one": "{{count}} reply",
+    "replies_other": "{{count}} replies",
+    "interviewRate": "Interview rate",
+    "interviews_one": "{{count}} interview",
+    "interviews_other": "{{count}} interviews",
+    "timeToReply": "Time to first reply",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "measuredOn_one": "Median of {{count}} reply",
+    "measuredOn_other": "Median of {{count}} replies",
+    "funnel": "Funnel",
+    "steps": {
+      "found": "Found",
+      "shortlisted": "Shortlisted",
+      "applied": "Applied",
+      "replied": "Replied",
+      "interviews": "Interview",
+      "offers": "Offer"
+    },
+    "cost": "Model cost per task",
+    "total": "Total {{amount}}",
+    "task": "Task",
+    "runs": "Runs",
+    "costCol": "Cost",
+    "failed_one": "{{count}} failed",
+    "failed_other": "{{count}} failed",
+    "noRuns": "No model calls in this period.",
+    "costNote": "Estimated from token counts. With a Claude subscription nothing is billed per call; the numbers show what the same usage would cost via the API.",
+    "bySource": "By source",
+    "byRole": "By role",
+    "source": "Source",
+    "role": "Role",
+    "otherRole": "Other roles",
+    "noApplications": "No applications in this period yet.",
+    "emptyTitle": "No data yet",
+    "emptyBody": "Statistics appear once Jobhunter has found jobs and you start applying.",
+    "sources": {
+      "manual": "Added by hand",
+      "generic": "Company website",
+      "rss": "RSS feed",
+      "linkedin_alert": "LinkedIn alert emails",
+      "email_alert": "Job alert emails"
+    },
+    "noReplies": "No dated replies yet"
+  },
+  "data": {
+    "title": "Your data",
+    "intro": "Everything Jobhunter knows is stored on this machine (or your server): a SQLite database and a files folder. No telemetry. Data only leaves it for the model calls (listed in Diagnostics), page requests to job sites, your email provider once connected, and the one-time speech model download.",
+    "folder": "Folder",
+    "size": "Size",
+    "sizeValue": "database {{db}}, files {{files}}, application browser {{browser}}",
+    "export": "Export all data (.zip)",
+    "exportHint": "Database, profile, settings, documents and screenshots. Keys, email tokens and portal logins are not included.",
+    "delete": "Delete everything…",
+    "deleteWarning": "This permanently deletes your profile, jobs, applications, documents, email links, settings, saved keys and email connection, and the application browser with your portal logins. Export first if you want a copy. Your Claude login is not affected.",
+    "deleteConfirm": "Type DELETE to confirm",
+    "deleteNow": "Delete everything now"
   }
 }

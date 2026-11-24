@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { TASK_NAMES, TASK_TIER, UI_LANGUAGES, type Settings } from '@jobhunter/shared';
-import { Button, Card, ErrorText, Field, Input, Select } from '../../components/ui';
+import { Button, Card, ErrorText, Field, Input, Select, Toggle } from '../../components/ui';
 import { ClaudeAccount } from '../../components/ClaudeAccount';
 import { api } from '../../lib/api';
 import { formatUsd } from '../../lib/format';
@@ -48,6 +48,16 @@ export function GeneralSection({ s, save }: SectionProps) {
             ))}
           </Select>
         </Field>
+        <Field id="voice" label={t('settings.general.voice')} hint={t(`settings.general.voiceHint.${s.voice}`)}>
+          <Select id="voice" value={s.voice} onChange={(e) => save({ voice: e.target.value as Settings['voice'] })}>
+            <option value="local_whisper">{t('settings.general.voiceLocal')}</option>
+            <option value="browser">{t('settings.general.voiceBrowser')}</option>
+            <option value="off">{t('settings.general.voiceOff')}</option>
+          </Select>
+        </Field>
+        <div className="flex items-end">
+          <Toggle checked={s.tts} onChange={(v) => save({ tts: v })} label={t('settings.general.tts')} description={t('settings.general.ttsHint')} />
+        </div>
       </div>
       <ServerAccount />
     </Card>

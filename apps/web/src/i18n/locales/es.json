@@ -114,13 +114,24 @@
   },
   "settings": {
     "general": {
-      "title": "Idioma",
+      "title": "Idioma y voz",
       "uiLanguage": "Idioma de la app",
       "applicationLanguage": "Idioma de las candidaturas",
       "applicationLanguageHint": "Idioma del CV, la carta de presentación y las respuestas de formularios.",
       "langPosting": "El mismo que la oferta",
       "langUi": "El mismo que la app",
-      "langFixed": "Siempre {{lang}}"
+      "langFixed": "Siempre {{lang}}",
+      "voice": "Respuestas por voz en la entrevista",
+      "voiceLocal": "Whisper local (en este dispositivo)",
+      "voiceBrowser": "Reconocimiento de voz del navegador",
+      "voiceOff": "Desactivado",
+      "voiceHint": {
+        "local_whisper": "Privado: el audio se queda en este dispositivo. El modelo de voz (unos 80 MB) se descarga una vez en el primer uso.",
+        "browser": "Tu navegador puede enviar el audio a su fabricante (por ejemplo, Google en Chrome) para reconocerlo.",
+        "off": "Escribe tus respuestas."
+      },
+      "tts": "Leer en voz alta las preguntas de la entrevista",
+      "ttsHint": "Usa la síntesis de voz del sistema."
     },
     "claude": {
       "title": "Cuenta de Claude"
@@ -389,8 +400,9 @@
     "stop": "Detener grabación",
     "transcribing": "Transcribiendo…",
     "record": "Responder por voz",
-    "localNote": "Se transcribe en este equipo.",
-    "browserNote": "Usa el reconocimiento de voz del navegador."
+    "localNote": "Se transcribe en este dispositivo. El audio nunca sale de él.",
+    "browserNote": "Usa el reconocimiento de voz del navegador.",
+    "downloading": "Descargando el modelo de voz (una sola vez, unos 80 MB): {{percent}} %"
   },
   "board": {
     "subtitle_one": "{{count}} oferta en seguimiento",
@@ -778,5 +790,74 @@
     "newPassword": "Nueva contraseña",
     "change": "Cambiar contraseña",
     "signOut": "Cerrar sesión"
+  },
+  "stats": {
+    "period": "Periodo",
+    "periods": {
+      "30": "Últimos 30 días",
+      "90": "Últimos 90 días",
+      "365": "Últimos 12 meses",
+      "all": "Desde el principio"
+    },
+    "applied": "Candidaturas",
+    "ofFound": "de {{count}} ofertas encontradas",
+    "replyRate": "Tasa de respuesta",
+    "replies_one": "{{count}} respuesta",
+    "replies_other": "{{count}} respuestas",
+    "interviewRate": "Tasa de entrevistas",
+    "interviews_one": "{{count}} entrevista",
+    "interviews_other": "{{count}} entrevistas",
+    "timeToReply": "Tiempo hasta la primera respuesta",
+    "days_one": "{{count}} día",
+    "days_other": "{{count}} días",
+    "measuredOn_one": "Mediana de {{count}} respuesta",
+    "measuredOn_other": "Mediana de {{count}} respuestas",
+    "funnel": "Embudo",
+    "steps": {
+      "found": "Encontradas",
+      "shortlisted": "Preseleccionadas",
+      "applied": "Candidatura",
+      "replied": "Respuesta",
+      "interviews": "Entrevista",
+      "offers": "Oferta"
+    },
+    "cost": "Coste del modelo por tarea",
+    "total": "Total {{amount}}",
+    "task": "Tarea",
+    "runs": "Ejecuciones",
+    "costCol": "Coste",
+    "failed_one": "{{count}} fallida",
+    "failed_other": "{{count}} fallidas",
+    "noRuns": "No hubo llamadas al modelo en este periodo.",
+    "costNote": "Estimado a partir de los tokens. Con una suscripción a Claude no se cobra por llamada; las cifras muestran lo que costaría el mismo uso a través de la API.",
+    "bySource": "Por fuente",
+    "byRole": "Por puesto",
+    "source": "Fuente",
+    "role": "Puesto",
+    "otherRole": "Otros puestos",
+    "noApplications": "Aún no hay candidaturas en este periodo.",
+    "emptyTitle": "Aún no hay datos",
+    "emptyBody": "Las estadísticas aparecen cuando Jobhunter encuentre ofertas y empieces a postularte.",
+    "sources": {
+      "manual": "Añadida a mano",
+      "generic": "Web de la empresa",
+      "rss": "Feed RSS",
+      "linkedin_alert": "Alertas de empleo de LinkedIn",
+      "email_alert": "Alertas de empleo por correo"
+    },
+    "noReplies": "Aún no hay respuestas con fecha"
+  },
+  "data": {
+    "title": "Tus datos",
+    "intro": "Todo lo que sabe Jobhunter se guarda en este equipo (o en tu servidor): una base de datos SQLite y una carpeta de archivos. Sin telemetría. Los datos solo salen para las llamadas al modelo (listadas en Diagnóstico), las peticiones a portales de empleo, tu proveedor de correo una vez conectado y la descarga única del modelo de voz.",
+    "folder": "Carpeta",
+    "size": "Tamaño",
+    "sizeValue": "base de datos {{db}}, archivos {{files}}, navegador de candidaturas {{browser}}",
+    "export": "Exportar todos los datos (.zip)",
+    "exportHint": "Base de datos, perfil, ajustes, documentos y capturas. No incluye claves, tokens de correo ni sesiones de portales.",
+    "delete": "Borrar todo…",
+    "deleteWarning": "Esto borra para siempre tu perfil, ofertas, candidaturas, documentos, vínculos de correo, ajustes, claves guardadas y la conexión de correo, además del navegador de candidaturas con tus sesiones en portales. Exporta antes si quieres una copia. Tu sesión de Claude no se ve afectada.",
+    "deleteConfirm": "Escribe DELETE para confirmar",
+    "deleteNow": "Borrar todo ahora"
   }
 }

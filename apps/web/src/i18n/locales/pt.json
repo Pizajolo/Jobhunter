@@ -114,13 +114,24 @@
   },
   "settings": {
     "general": {
-      "title": "Idioma",
+      "title": "Idioma e voz",
       "uiLanguage": "Idioma da app",
       "applicationLanguage": "Idioma das candidaturas",
       "applicationLanguageHint": "Idioma do CV, da carta de apresentação e das respostas a formulários.",
       "langPosting": "O mesmo do anúncio",
       "langUi": "O mesmo da app",
-      "langFixed": "Sempre {{lang}}"
+      "langFixed": "Sempre {{lang}}",
+      "voice": "Respostas por voz na entrevista",
+      "voiceLocal": "Whisper local (neste dispositivo)",
+      "voiceBrowser": "Reconhecimento de voz do navegador",
+      "voiceOff": "Desligado",
+      "voiceHint": {
+        "local_whisper": "Privado: o áudio fica neste dispositivo. O modelo de voz (cerca de 80 MB) é transferido uma vez na primeira utilização.",
+        "browser": "O navegador pode enviar o áudio ao fabricante (por exemplo, a Google no Chrome) para reconhecimento.",
+        "off": "Escreve as respostas."
+      },
+      "tts": "Ler as perguntas da entrevista em voz alta",
+      "ttsHint": "Usa a síntese de voz do sistema."
     },
     "claude": {
       "title": "Conta Claude"
@@ -389,8 +400,9 @@
     "stop": "Parar gravação",
     "transcribing": "A transcrever…",
     "record": "Responder por voz",
-    "localNote": "Transcrito neste computador.",
-    "browserNote": "Usa o reconhecimento de voz do navegador."
+    "localNote": "Transcrito neste dispositivo. O áudio nunca sai dele.",
+    "browserNote": "Usa o reconhecimento de voz do navegador.",
+    "downloading": "A transferir o modelo de voz (uma vez, cerca de 80 MB): {{percent}}%"
   },
   "board": {
     "subtitle_one": "{{count}} vaga acompanhada",
@@ -778,5 +790,74 @@
     "newPassword": "Nova palavra-passe",
     "change": "Alterar palavra-passe",
     "signOut": "Terminar sessão"
+  },
+  "stats": {
+    "period": "Período",
+    "periods": {
+      "30": "Últimos 30 dias",
+      "90": "Últimos 90 dias",
+      "365": "Últimos 12 meses",
+      "all": "Desde o início"
+    },
+    "applied": "Candidaturas",
+    "ofFound": "de {{count}} vagas encontradas",
+    "replyRate": "Taxa de resposta",
+    "replies_one": "{{count}} resposta",
+    "replies_other": "{{count}} respostas",
+    "interviewRate": "Taxa de entrevistas",
+    "interviews_one": "{{count}} entrevista",
+    "interviews_other": "{{count}} entrevistas",
+    "timeToReply": "Tempo até à primeira resposta",
+    "days_one": "{{count}} dia",
+    "days_other": "{{count}} dias",
+    "measuredOn_one": "Mediana de {{count}} resposta",
+    "measuredOn_other": "Mediana de {{count}} respostas",
+    "funnel": "Funil",
+    "steps": {
+      "found": "Encontradas",
+      "shortlisted": "Pré-selecionadas",
+      "applied": "Candidatura",
+      "replied": "Resposta",
+      "interviews": "Entrevista",
+      "offers": "Oferta"
+    },
+    "cost": "Custo do modelo por tarefa",
+    "total": "Total {{amount}}",
+    "task": "Tarefa",
+    "runs": "Execuções",
+    "costCol": "Custo",
+    "failed_one": "{{count}} falhou",
+    "failed_other": "{{count}} falharam",
+    "noRuns": "Sem chamadas ao modelo neste período.",
+    "costNote": "Estimado a partir dos tokens. Com uma subscrição Claude nada é cobrado por chamada; os valores mostram quanto custaria o mesmo uso pela API.",
+    "bySource": "Por fonte",
+    "byRole": "Por função",
+    "source": "Fonte",
+    "role": "Função",
+    "otherRole": "Outras funções",
+    "noApplications": "Ainda sem candidaturas neste período.",
+    "emptyTitle": "Ainda sem dados",
+    "emptyBody": "As estatísticas aparecem quando o Jobhunter encontrar vagas e começares a candidatar-te.",
+    "sources": {
+      "manual": "Adicionada manualmente",
+      "generic": "Site da empresa",
+      "rss": "Feed RSS",
+      "linkedin_alert": "Alertas de emprego do LinkedIn",
+      "email_alert": "Alertas de emprego por e-mail"
+    },
+    "noReplies": "Ainda sem respostas datadas"
+  },
+  "data": {
+    "title": "Os teus dados",
+    "intro": "Tudo o que o Jobhunter sabe está guardado neste computador (ou no teu servidor): uma base de dados SQLite e uma pasta de ficheiros. Sem telemetria. Os dados só saem para as chamadas ao modelo (listadas em Diagnóstico), pedidos a sites de emprego, o teu fornecedor de e-mail depois de ligado e a transferência única do modelo de voz.",
+    "folder": "Pasta",
+    "size": "Tamanho",
+    "sizeValue": "base de dados {{db}}, ficheiros {{files}}, navegador de candidaturas {{browser}}",
+    "export": "Exportar todos os dados (.zip)",
+    "exportHint": "Base de dados, perfil, definições, documentos e capturas de ecrã. Chaves, tokens de e-mail e sessões em portais não são incluídos.",
+    "delete": "Apagar tudo…",
+    "deleteWarning": "Isto apaga permanentemente o teu perfil, vagas, candidaturas, documentos, ligações de e-mail, definições, chaves guardadas e a ligação de e-mail, bem como o navegador de candidaturas com as tuas sessões nos portais. Exporta primeiro se quiseres uma cópia. A tua sessão Claude não é afetada.",
+    "deleteConfirm": "Escreve DELETE para confirmar",
+    "deleteNow": "Apagar tudo agora"
   }
 }

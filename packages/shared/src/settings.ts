@@ -133,7 +133,8 @@ export const SettingsSchema = z.object({
   emailReviewConfidence: z.number().min(0).max(1).default(0.8),
   /** null = no budget */
   monthlyBudgetUsd: z.number().positive().nullable().default(null),
-  voice: z.enum(['off', 'local_whisper', 'browser']).default('off'),
+  /** Voice answers in the CV interview. Local Whisper runs on the device; the model downloads on first use. */
+  voice: z.enum(['off', 'local_whisper', 'browser']).default('local_whisper'),
   tts: z.boolean().default(false),
   auth: z
     .object({

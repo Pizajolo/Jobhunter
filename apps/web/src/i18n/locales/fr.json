@@ -114,13 +114,24 @@
   },
   "settings": {
     "general": {
-      "title": "Langue",
+      "title": "Langue et voix",
       "uiLanguage": "Langue de l’app",
       "applicationLanguage": "Langue des candidatures",
       "applicationLanguageHint": "Langue du CV, de la lettre de motivation et des réponses aux formulaires.",
       "langPosting": "Celle de l’offre",
       "langUi": "Celle de l’app",
-      "langFixed": "Toujours {{lang}}"
+      "langFixed": "Toujours {{lang}}",
+      "voice": "Réponses vocales pendant l'entretien",
+      "voiceLocal": "Whisper local (sur cet appareil)",
+      "voiceBrowser": "Reconnaissance vocale du navigateur",
+      "voiceOff": "Désactivé",
+      "voiceHint": {
+        "local_whisper": "Privé : l'audio reste sur cet appareil. Le modèle vocal (environ 80 Mo) est téléchargé une fois, à la première utilisation.",
+        "browser": "Votre navigateur peut envoyer l'audio à son éditeur (par exemple Google dans Chrome) pour la reconnaissance.",
+        "off": "Vous tapez vos réponses."
+      },
+      "tts": "Lire les questions de l'entretien à voix haute",
+      "ttsHint": "Utilise la synthèse vocale de votre système."
     },
     "claude": {
       "title": "Compte Claude"
@@ -389,8 +400,9 @@
     "stop": "Arrêter l’enregistrement",
     "transcribing": "Transcription…",
     "record": "Répondre à voix haute",
-    "localNote": "Transcrit sur cet appareil.",
-    "browserNote": "Utilise la reconnaissance vocale du navigateur."
+    "localNote": "Transcrit sur cet appareil. L'audio ne le quitte jamais.",
+    "browserNote": "Utilise la reconnaissance vocale du navigateur.",
+    "downloading": "Téléchargement du modèle vocal (une seule fois, environ 80 Mo) : {{percent}} %"
   },
   "board": {
     "subtitle_one": "{{count}} offre suivie",
@@ -778,5 +790,74 @@
     "newPassword": "Nouveau mot de passe",
     "change": "Changer le mot de passe",
     "signOut": "Se déconnecter"
+  },
+  "stats": {
+    "period": "Période",
+    "periods": {
+      "30": "30 derniers jours",
+      "90": "90 derniers jours",
+      "365": "12 derniers mois",
+      "all": "Depuis le début"
+    },
+    "applied": "Candidatures",
+    "ofFound": "sur {{count}} offres trouvées",
+    "replyRate": "Taux de réponse",
+    "replies_one": "{{count}} réponse",
+    "replies_other": "{{count}} réponses",
+    "interviewRate": "Taux d'entretiens",
+    "interviews_one": "{{count}} entretien",
+    "interviews_other": "{{count}} entretiens",
+    "timeToReply": "Délai avant la première réponse",
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "measuredOn_one": "Médiane sur {{count}} réponse",
+    "measuredOn_other": "Médiane sur {{count}} réponses",
+    "funnel": "Entonnoir",
+    "steps": {
+      "found": "Trouvées",
+      "shortlisted": "Présélectionnées",
+      "applied": "Candidature",
+      "replied": "Réponse",
+      "interviews": "Entretien",
+      "offers": "Offre"
+    },
+    "cost": "Coût du modèle par tâche",
+    "total": "Total {{amount}}",
+    "task": "Tâche",
+    "runs": "Exécutions",
+    "costCol": "Coût",
+    "failed_one": "{{count}} échec",
+    "failed_other": "{{count}} échecs",
+    "noRuns": "Aucun appel au modèle sur cette période.",
+    "costNote": "Estimé à partir des tokens. Avec un abonnement Claude, rien n'est facturé à l'appel ; les montants indiquent ce que coûterait le même usage via l'API.",
+    "bySource": "Par source",
+    "byRole": "Par poste",
+    "source": "Source",
+    "role": "Poste",
+    "otherRole": "Autres postes",
+    "noApplications": "Pas encore de candidatures sur cette période.",
+    "emptyTitle": "Pas encore de données",
+    "emptyBody": "Les statistiques apparaissent dès que Jobhunter a trouvé des offres et que vous postulez.",
+    "sources": {
+      "manual": "Ajoutée à la main",
+      "generic": "Site de l'entreprise",
+      "rss": "Flux RSS",
+      "linkedin_alert": "Alertes emploi LinkedIn",
+      "email_alert": "Alertes emploi par e-mail"
+    },
+    "noReplies": "Pas encore de réponses datées"
+  },
+  "data": {
+    "title": "Vos données",
+    "intro": "Tout ce que Jobhunter sait est stocké sur cet ordinateur (ou votre serveur) : une base SQLite et un dossier de fichiers. Aucune télémétrie. Les données n'en sortent que pour les appels au modèle (listés dans Diagnostic), les requêtes vers les sites d'emploi, votre fournisseur e-mail une fois connecté et le téléchargement unique du modèle vocal.",
+    "folder": "Dossier",
+    "size": "Taille",
+    "sizeValue": "base de données {{db}}, fichiers {{files}}, navigateur de candidature {{browser}}",
+    "export": "Exporter toutes les données (.zip)",
+    "exportHint": "Base de données, profil, réglages, documents et captures d'écran. Les clés, jetons e-mail et connexions aux portails ne sont pas inclus.",
+    "delete": "Tout supprimer…",
+    "deleteWarning": "Cela supprime définitivement votre profil, les offres, candidatures, documents, liens e-mail, réglages, clés enregistrées et la connexion e-mail, ainsi que le navigateur de candidature avec vos connexions aux portails. Exportez d'abord si vous voulez une copie. Votre connexion Claude n'est pas touchée.",
+    "deleteConfirm": "Tapez DELETE pour confirmer",
+    "deleteNow": "Tout supprimer maintenant"
   }
 }
